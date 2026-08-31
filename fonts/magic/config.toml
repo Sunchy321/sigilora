@@ -1,0 +1,48 @@
+name = "Magic: The Gathering"
+code = "magic"
+font-version = "1.0.0"
+colr-version = "v0"
+
+[[categories]]
+name = "normal-mana"
+display-name = "基础法术力"
+
+[[categories]]
+name = "number-mana"
+display-name = "数字法术力"
+
+[[categories]]
+name = "hybrid-mana"
+display-name = "混血法术力"
+
+[[categories]]
+name = "phyrexian-mana"
+display-name = "非瑞法术力"
+
+[[categories]]
+name = "other"
+display-name = "其他符号"
+
+[[categories]]
+name = "special"
+display-name = "特殊符号"
+
+[[categories]]
+name = "loyalty"
+display-name = "忠诚度"
+
+[compose.shadow]
+offset = [8, 8]
+viewbox = "0 0 108 100"
+
+[compose.flat-simple]
+scale = 0.9
+fill-map = { "#CAC5C0" = "#000000", "#FFFCD5" = "#ABA18A", "#ABE1FA" = "#0172BB", "#F9AA8F" = "#FD2302", "#9BD3AE" = "#027920", "#C3BAB9" = "#000000", "#EAE3B1" = "#ABA18A", "#8EBBD0" = "#0172BB", "#9A8D89" = "#281C1C", "#DF8065" = "#FD2302", "#80B092" = "#027920", "#CCC2C0" = "#000000" }
+
+[compose.flat-complex]
+part-up-transform = "translate(32.32, 32.32) scale(0.9) translate(-32.32, -32.32)"
+part-down-transform = "translate(67.68, 67.68) scale(0.9) translate(-67.68, -67.68)"
+
+[compose.loyalty]
+font = "Plantin-Bold.ttf"   # external dependency, not committed
+font-size = 60
