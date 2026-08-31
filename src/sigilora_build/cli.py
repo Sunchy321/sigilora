@@ -9,6 +9,7 @@ from .build import build as build_font
 from .compose import compose_style
 from .model import load_game
 from .normalize import normalize_svg
+from .validate import ValidationError, validate as run_validation
 
 
 def _game_dir(game: str, root: Path) -> Path:
@@ -41,6 +42,32 @@ def cmd_normalize(args: argparse.Namespace) -> int:
                 counts["generated" if spec["type"] != "static" else "static"] += 1
     print(f"normalized {game.code}: {counts['generated']} composed, {counts['static']} static -> {out_dir}")
     return 0
+
+
+def cmd_validate(args: argparse.Namespace) -> int:
+    game_dir = _game_dir(args.game, args.root)
+    game = load_game(game_dir)
+    build_dir = args.build if args.build else game.path / "build"
+    game_label = game.code.capitalize()
+    fonts = []
+    for lite in (False, True):
+        suffix = "-Lite" if lite else ""
+        ttf = build_dir / f"Sigilora-{game_label}{suffix}-{game.font_version}.ttf"
+        woff2 = ttf.with_suffix(".woff2")
+        if ttf.exists() and woff2.exists():
+            fonts.append(("lite" if lite else "full", ttf, woff2))
+    if not fonts:
+        print(f"error: no built fonts found in {build_dir}", file=sys.stderr)
+        return 1
+    ok = True
+    for label, ttf, woff2 in fonts:
+        try:
+            run_validation(game, ttf, woff2, lite=(label == "lite"))
+            print(f"validate {label}: OK")
+        except ValidationError as e:
+            ok = False
+            print(f"validate {label}: FAIL: {e}", file=sys.stderr)
+    return 0 if ok else 1
 
 
 def cmd_build(args: argparse.Namespace) -> int:
@@ -82,6 +109,11 @@ def build_parser() -> argparse.ArgumentParser:
     p_build.add_argument("--full", action="store_true", help="build only the full font (all styles + ssXX)")
     p_build.add_argument("--out", type=Path, default=None, help="output dir (default: fonts/<game>/build)")
     p_build.set_defaults(func=cmd_build)
+
+    p_val = sub.add_parser("validate", help="run release-blocking validation on the built fonts")
+    p_val.add_argument("game", help="game code, e.g. magic")
+    p_val.add_argument("--build", type=Path, default=None, help="build dir (default: fonts/<game>/build)")
+    p_val.set_defaults(func=cmd_validate)
 
     return parser
 
