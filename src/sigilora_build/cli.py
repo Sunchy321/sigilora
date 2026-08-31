@@ -9,6 +9,7 @@ from .build import build as build_font
 from .compose import compose_style
 from .model import load_game
 from .normalize import normalize_svg
+from .package import package as package_font
 from .validate import ValidationError, validate as run_validation
 
 
@@ -41,6 +42,20 @@ def cmd_normalize(args: argparse.Namespace) -> int:
                 normalize_svg(target, target)
                 counts["generated" if spec["type"] != "static" else "static"] += 1
     print(f"normalized {game.code}: {counts['generated']} composed, {counts['static']} static -> {out_dir}")
+    return 0
+
+
+def cmd_package(args: argparse.Namespace) -> int:
+    game_dir = _game_dir(args.game, args.root)
+    game = load_game(game_dir)
+    build_dir = args.build if args.build else game.path / "build"
+    out_dir = args.out if args.out else args.root / "packages" / "fonts" / game.code
+    try:
+        package_font(game, build_dir, out_dir)
+    except FileNotFoundError as e:
+        print(f"error: {e}", file=sys.stderr)
+        return 1
+    print(f"packaged {game.code} -> {out_dir}")
     return 0
 
 
@@ -114,6 +129,12 @@ def build_parser() -> argparse.ArgumentParser:
     p_val.add_argument("game", help="game code, e.g. magic")
     p_val.add_argument("--build", type=Path, default=None, help="build dir (default: fonts/<game>/build)")
     p_val.set_defaults(func=cmd_validate)
+
+    p_pkg = sub.add_parser("package", help="assemble consumer artifacts into packages/fonts/<game>/")
+    p_pkg.add_argument("game", help="game code, e.g. magic")
+    p_pkg.add_argument("--build", type=Path, default=None, help="build dir (default: fonts/<game>/build)")
+    p_pkg.add_argument("--out", type=Path, default=None, help="output dir (default: packages/fonts/<game>)")
+    p_pkg.set_defaults(func=cmd_package)
 
     return parser
 

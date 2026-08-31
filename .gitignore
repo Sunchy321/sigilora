@@ -26,3 +26,6 @@ coverage/
 # generated SVGs (sigilora-build normalize output from raw + recipes)
 fonts/*/svg/
 
+# generated npm consumer artifacts (sigilora-build package output)
+packages/fonts/*/
+
