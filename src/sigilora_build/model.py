@@ -10,7 +10,6 @@ from pathlib import Path
 class Symbol:
     name: str
     ligature: list[str]
-    display_name: str
     category: str
     svg: dict[str, str]
     compose: dict[str, dict] = field(default_factory=dict)
@@ -59,7 +58,6 @@ def _load_symbols(toml_syms: list[dict]) -> list[Symbol]:
             Symbol(
                 name=s["name"],
                 ligature=lig,
-                display_name=s.get("display-name", s["name"]),
                 category=s["category"],
                 svg=dict(s["svg"]),
                 compose={k: dict(v) for k, v in s.get("compose", {}).items()},

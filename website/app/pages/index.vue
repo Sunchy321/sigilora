@@ -21,7 +21,7 @@ const manifest = magicJson
         :to="`/games/${manifest.game}`"
         class="flex items-center justify-between rounded-xl border border-default bg-elevated p-4 transition hover:border-primary"
       >
-        <span class="text-lg font-medium">{{ manifest.name }}</span>
+        <span class="text-lg font-medium">{{ $t('game-name.magic') }}</span>
         <UBadge>{{ manifest['font-version'] }}</UBadge>
       </NuxtLink>
     </section>

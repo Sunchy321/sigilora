@@ -1,15 +1,23 @@
 <script setup lang="ts">
 defineOptions({ name: 'SymbolCell' })
 
+const { t, te } = useI18n()
 const props = defineProps<{
-  symbol: { name: string; ligature: string[]; 'display-name': string }
+  symbol: { name: string; ligature: string[]; category: string }
 }>()
+
+const displayName = computed(() => {
+  const key = `symbol-name.${props.symbol.name}`
+  return te(key) ? t(key) : null
+})
 
 const copied = ref(false)
 let timer: ReturnType<typeof setTimeout> | undefined
 
 async function copy() {
-  await navigator.clipboard.writeText(props.symbol.ligature[0])
+  const text = props.symbol.ligature[0]
+  if (!text) return
+  await navigator.clipboard.writeText(text)
   copied.value = true
   clearTimeout(timer)
   timer = setTimeout(() => { copied.value = false }, 1200)
@@ -18,14 +26,16 @@ async function copy() {
 
 <template>
   <button
-    class="flex flex-col items-center gap-1.5 rounded-xl border border-default bg-elevated p-4 transition hover:border-primary"
+    class="relative flex flex-col items-center gap-1.5 rounded-xl border border-default bg-elevated p-4 transition hover:border-primary"
     @click="copy"
   >
+    <UBadge v-if="copied" color="success" class="absolute right-1 top-1" size="xs">
+      <UIcon name="i-lucide-check" class="size-3" />
+    </UBadge>
     <span class="text-3xl leading-none" style="font-family: 'Sigilora Magic'">
       {{ symbol.ligature[0] }}
     </span>
     <span class="font-mono text-xs text-muted">{{ symbol.ligature[0] }}</span>
-    <span class="text-sm">{{ symbol['display-name'] }}</span>
-    <span v-if="copied" class="text-xs text-success">{{ $t('playground.copied') }}</span>
+    <span v-if="displayName" class="text-sm">{{ displayName }}</span>
   </button>
 </template>

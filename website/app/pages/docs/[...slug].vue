@@ -16,6 +16,6 @@ const { data: doc } = await useAsyncData(
     <article v-if="doc" class="prose prose-slate max-w-none dark:prose-invert">
       <ContentRenderer :value="doc" />
     </article>
-    <p v-else class="text-muted">{{ $t('docs.notFound') }}</p>
+    <p v-else class="text-muted">{{ $t('docs.not-found') }}</p>
   </div>
 </template>

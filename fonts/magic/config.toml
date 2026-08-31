@@ -5,43 +5,33 @@ colr-version = "v0"
 
 [[categories]]
 name = "normal-mana"
-display-name = "基础法术力"
 
 [[categories]]
 name = "number-mana"
-display-name = "数字法术力"
 
 [[categories]]
 name = "hybrid-mana"
-display-name = "混血法术力"
 
 [[categories]]
 name = "phyrexian-mana"
-display-name = "非瑞法术力"
 
 [[categories]]
 name = "other"
-display-name = "其他符号"
 
 [[categories]]
 name = "special"
-display-name = "特殊符号"
 
 [[categories]]
 name = "loyalty"
-display-name = "忠诚度"
 
 [[styles]]
 name = "default"
-display-name = "默认"
 
 [[styles]]
 name = "shadow"
-display-name = "阴影"
 
 [[styles]]
 name = "flat"
-display-name = "扁平"
 
 [compose.shadow]
 offset = [8, 8]

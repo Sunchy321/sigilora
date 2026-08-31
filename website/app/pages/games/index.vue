@@ -5,9 +5,9 @@ const { t } = useI18n()
 const manifest = magicJson
 
 const columns = computed(() => [
-  { key: 'family', label: t('games.families') },
+  { key: 'family', label: t('games.family') },
   { key: 'file', label: 'File' },
-  { key: 'styles', label: t('games.styles') },
+  { key: 'styles', label: t('games.style') },
 ])
 
 const rows = computed(() => {
@@ -27,7 +27,7 @@ const rows = computed(() => {
     <UCard class="mt-8">
       <div class="flex items-center justify-between">
         <NuxtLink :to="`/games/${manifest.game}`" class="text-xl font-semibold hover:text-primary">
-          {{ manifest.name }}
+          {{ $t('game-name.magic') }}
         </NuxtLink>
         <UBadge>{{ manifest['colr-version'] }}</UBadge>
       </div>

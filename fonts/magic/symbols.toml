@@ -1,7 +1,6 @@
 [[symbols]]
 name = "white"
 ligature = ["{W}"]
-display-name = "白"
 category = "normal-mana"
 svg = { default = "W.svg", shadow = "W.svg", flat = "W.svg" }
 compose = { shadow = { type = "shadow" }, flat = { type = "flat-simple" } }
@@ -9,7 +8,6 @@ compose = { shadow = { type = "shadow" }, flat = { type = "flat-simple" } }
 [[symbols]]
 name = "blue"
 ligature = ["{U}"]
-display-name = "蓝"
 category = "normal-mana"
 svg = { default = "U.svg", shadow = "U.svg", flat = "U.svg" }
 compose = { shadow = { type = "shadow" }, flat = { type = "flat-simple" } }
@@ -17,7 +15,6 @@ compose = { shadow = { type = "shadow" }, flat = { type = "flat-simple" } }
 [[symbols]]
 name = "black"
 ligature = ["{B}"]
-display-name = "黑"
 category = "normal-mana"
 svg = { default = "B.svg", shadow = "B.svg", flat = "B.svg" }
 compose = { shadow = { type = "shadow" }, flat = { type = "flat-simple" } }
@@ -25,7 +22,6 @@ compose = { shadow = { type = "shadow" }, flat = { type = "flat-simple" } }
 [[symbols]]
 name = "red"
 ligature = ["{R}"]
-display-name = "红"
 category = "normal-mana"
 svg = { default = "R.svg", shadow = "R.svg", flat = "R.svg" }
 compose = { shadow = { type = "shadow" }, flat = { type = "flat-simple" } }
@@ -33,7 +29,6 @@ compose = { shadow = { type = "shadow" }, flat = { type = "flat-simple" } }
 [[symbols]]
 name = "green"
 ligature = ["{G}"]
-display-name = "绿"
 category = "normal-mana"
 svg = { default = "G.svg", shadow = "G.svg", flat = "G.svg" }
 compose = { shadow = { type = "shadow" }, flat = { type = "flat-simple" } }
@@ -41,7 +36,6 @@ compose = { shadow = { type = "shadow" }, flat = { type = "flat-simple" } }
 [[symbols]]
 name = "colorless"
 ligature = ["{C}"]
-display-name = "无色"
 category = "normal-mana"
 svg = { default = "C.svg", shadow = "C.svg", flat = "C.svg" }
 compose = { shadow = { type = "shadow" }, flat = { type = "flat-simple" } }
@@ -49,7 +43,6 @@ compose = { shadow = { type = "shadow" }, flat = { type = "flat-simple" } }
 [[symbols]]
 name = "0"
 ligature = ["{0}"]
-display-name = "0"
 category = "number-mana"
 svg = { default = "0.svg", shadow = "0.svg", flat = "0.svg" }
 compose = { shadow = { type = "shadow" }, flat = { type = "flat-simple" } }
@@ -57,7 +50,6 @@ compose = { shadow = { type = "shadow" }, flat = { type = "flat-simple" } }
 [[symbols]]
 name = "1"
 ligature = ["{1}"]
-display-name = "1"
 category = "number-mana"
 svg = { default = "1.svg", shadow = "1.svg", flat = "1.svg" }
 compose = { shadow = { type = "shadow" }, flat = { type = "flat-simple" } }
@@ -65,7 +57,6 @@ compose = { shadow = { type = "shadow" }, flat = { type = "flat-simple" } }
 [[symbols]]
 name = "2"
 ligature = ["{2}"]
-display-name = "2"
 category = "number-mana"
 svg = { default = "2.svg", shadow = "2.svg", flat = "2.svg" }
 compose = { shadow = { type = "shadow" }, flat = { type = "flat-simple" } }
@@ -73,7 +64,6 @@ compose = { shadow = { type = "shadow" }, flat = { type = "flat-simple" } }
 [[symbols]]
 name = "3"
 ligature = ["{3}"]
-display-name = "3"
 category = "number-mana"
 svg = { default = "3.svg", shadow = "3.svg", flat = "3.svg" }
 compose = { shadow = { type = "shadow" }, flat = { type = "flat-simple" } }
@@ -81,7 +71,6 @@ compose = { shadow = { type = "shadow" }, flat = { type = "flat-simple" } }
 [[symbols]]
 name = "4"
 ligature = ["{4}"]
-display-name = "4"
 category = "number-mana"
 svg = { default = "4.svg", shadow = "4.svg", flat = "4.svg" }
 compose = { shadow = { type = "shadow" }, flat = { type = "flat-simple" } }
@@ -89,7 +78,6 @@ compose = { shadow = { type = "shadow" }, flat = { type = "flat-simple" } }
 [[symbols]]
 name = "5"
 ligature = ["{5}"]
-display-name = "5"
 category = "number-mana"
 svg = { default = "5.svg", shadow = "5.svg", flat = "5.svg" }
 compose = { shadow = { type = "shadow" }, flat = { type = "flat-simple" } }
@@ -97,7 +85,6 @@ compose = { shadow = { type = "shadow" }, flat = { type = "flat-simple" } }
 [[symbols]]
 name = "6"
 ligature = ["{6}"]
-display-name = "6"
 category = "number-mana"
 svg = { default = "6.svg", shadow = "6.svg", flat = "6.svg" }
 compose = { shadow = { type = "shadow" }, flat = { type = "flat-simple" } }
@@ -105,7 +92,6 @@ compose = { shadow = { type = "shadow" }, flat = { type = "flat-simple" } }
 [[symbols]]
 name = "7"
 ligature = ["{7}"]
-display-name = "7"
 category = "number-mana"
 svg = { default = "7.svg", shadow = "7.svg", flat = "7.svg" }
 compose = { shadow = { type = "shadow" }, flat = { type = "flat-simple" } }
@@ -113,7 +99,6 @@ compose = { shadow = { type = "shadow" }, flat = { type = "flat-simple" } }
 [[symbols]]
 name = "8"
 ligature = ["{8}"]
-display-name = "8"
 category = "number-mana"
 svg = { default = "8.svg", shadow = "8.svg", flat = "8.svg" }
 compose = { shadow = { type = "shadow" }, flat = { type = "flat-simple" } }
@@ -121,7 +106,6 @@ compose = { shadow = { type = "shadow" }, flat = { type = "flat-simple" } }
 [[symbols]]
 name = "9"
 ligature = ["{9}"]
-display-name = "9"
 category = "number-mana"
 svg = { default = "9.svg", shadow = "9.svg", flat = "9.svg" }
 compose = { shadow = { type = "shadow" }, flat = { type = "flat-simple" } }
@@ -129,7 +113,6 @@ compose = { shadow = { type = "shadow" }, flat = { type = "flat-simple" } }
 [[symbols]]
 name = "10"
 ligature = ["{10}"]
-display-name = "10"
 category = "number-mana"
 svg = { default = "10.svg", shadow = "10.svg", flat = "10.svg" }
 compose = { shadow = { type = "shadow" }, flat = { type = "flat-simple" } }
@@ -137,7 +120,6 @@ compose = { shadow = { type = "shadow" }, flat = { type = "flat-simple" } }
 [[symbols]]
 name = "11"
 ligature = ["{11}"]
-display-name = "11"
 category = "number-mana"
 svg = { default = "11.svg", shadow = "11.svg", flat = "11.svg" }
 compose = { shadow = { type = "shadow" }, flat = { type = "flat-simple" } }
@@ -145,7 +127,6 @@ compose = { shadow = { type = "shadow" }, flat = { type = "flat-simple" } }
 [[symbols]]
 name = "12"
 ligature = ["{12}"]
-display-name = "12"
 category = "number-mana"
 svg = { default = "12.svg", shadow = "12.svg", flat = "12.svg" }
 compose = { shadow = { type = "shadow" }, flat = { type = "flat-simple" } }
@@ -153,7 +134,6 @@ compose = { shadow = { type = "shadow" }, flat = { type = "flat-simple" } }
 [[symbols]]
 name = "13"
 ligature = ["{13}"]
-display-name = "13"
 category = "number-mana"
 svg = { default = "13.svg", shadow = "13.svg", flat = "13.svg" }
 compose = { shadow = { type = "shadow" }, flat = { type = "flat-simple" } }
@@ -161,7 +141,6 @@ compose = { shadow = { type = "shadow" }, flat = { type = "flat-simple" } }
 [[symbols]]
 name = "14"
 ligature = ["{14}"]
-display-name = "14"
 category = "number-mana"
 svg = { default = "14.svg", shadow = "14.svg", flat = "14.svg" }
 compose = { shadow = { type = "shadow" }, flat = { type = "flat-simple" } }
@@ -169,7 +148,6 @@ compose = { shadow = { type = "shadow" }, flat = { type = "flat-simple" } }
 [[symbols]]
 name = "15"
 ligature = ["{15}"]
-display-name = "15"
 category = "number-mana"
 svg = { default = "15.svg", shadow = "15.svg", flat = "15.svg" }
 compose = { shadow = { type = "shadow" }, flat = { type = "flat-simple" } }
@@ -177,7 +155,6 @@ compose = { shadow = { type = "shadow" }, flat = { type = "flat-simple" } }
 [[symbols]]
 name = "16"
 ligature = ["{16}"]
-display-name = "16"
 category = "number-mana"
 svg = { default = "16.svg", shadow = "16.svg", flat = "16.svg" }
 compose = { shadow = { type = "shadow" }, flat = { type = "flat-simple" } }
@@ -185,7 +162,6 @@ compose = { shadow = { type = "shadow" }, flat = { type = "flat-simple" } }
 [[symbols]]
 name = "17"
 ligature = ["{17}"]
-display-name = "17"
 category = "number-mana"
 svg = { default = "17.svg", shadow = "17.svg", flat = "17.svg" }
 compose = { shadow = { type = "shadow" }, flat = { type = "flat-simple" } }
@@ -193,7 +169,6 @@ compose = { shadow = { type = "shadow" }, flat = { type = "flat-simple" } }
 [[symbols]]
 name = "18"
 ligature = ["{18}"]
-display-name = "18"
 category = "number-mana"
 svg = { default = "18.svg", shadow = "18.svg", flat = "18.svg" }
 compose = { shadow = { type = "shadow" }, flat = { type = "flat-simple" } }
@@ -201,7 +176,6 @@ compose = { shadow = { type = "shadow" }, flat = { type = "flat-simple" } }
 [[symbols]]
 name = "19"
 ligature = ["{19}"]
-display-name = "19"
 category = "number-mana"
 svg = { default = "19.svg", shadow = "19.svg", flat = "19.svg" }
 compose = { shadow = { type = "shadow" }, flat = { type = "flat-simple" } }
@@ -209,7 +183,6 @@ compose = { shadow = { type = "shadow" }, flat = { type = "flat-simple" } }
 [[symbols]]
 name = "20"
 ligature = ["{20}"]
-display-name = "20"
 category = "number-mana"
 svg = { default = "20.svg", shadow = "20.svg", flat = "20.svg" }
 compose = { shadow = { type = "shadow" }, flat = { type = "flat-simple" } }
@@ -217,7 +190,6 @@ compose = { shadow = { type = "shadow" }, flat = { type = "flat-simple" } }
 [[symbols]]
 name = "100"
 ligature = ["{100}"]
-display-name = "100"
 category = "number-mana"
 svg = { default = "100.svg", shadow = "100.svg" }
 compose = { shadow = { type = "static", file = "100.svg" } }
@@ -225,7 +197,6 @@ compose = { shadow = { type = "static", file = "100.svg" } }
 [[symbols]]
 name = "1000000"
 ligature = ["{1000000}"]
-display-name = "1000000"
 category = "number-mana"
 overflow = true
 svg = { default = "1000000.svg", shadow = "1000000.svg" }
@@ -234,7 +205,6 @@ compose = { shadow = { type = "static", file = "1000000.svg" } }
 [[symbols]]
 name = "x"
 ligature = ["{X}"]
-display-name = "x"
 category = "number-mana"
 svg = { default = "X.svg", shadow = "X.svg", flat = "X.svg" }
 compose = { shadow = { type = "shadow" }, flat = { type = "flat-simple" } }
@@ -242,7 +212,6 @@ compose = { shadow = { type = "shadow" }, flat = { type = "flat-simple" } }
 [[symbols]]
 name = "y"
 ligature = ["{Y}"]
-display-name = "y"
 category = "number-mana"
 svg = { default = "Y.svg", shadow = "Y.svg", flat = "Y.svg" }
 compose = { shadow = { type = "shadow" }, flat = { type = "flat-simple" } }
@@ -250,7 +219,6 @@ compose = { shadow = { type = "shadow" }, flat = { type = "flat-simple" } }
 [[symbols]]
 name = "z"
 ligature = ["{Z}"]
-display-name = "z"
 category = "number-mana"
 svg = { default = "Z.svg", shadow = "Z.svg", flat = "Z.svg" }
 compose = { shadow = { type = "shadow" }, flat = { type = "flat-simple" } }
@@ -258,7 +226,6 @@ compose = { shadow = { type = "shadow" }, flat = { type = "flat-simple" } }
 [[symbols]]
 name = "white-blue"
 ligature = ["{W/U}"]
-display-name = "白蓝"
 category = "hybrid-mana"
 svg = { default = "WU.svg", shadow = "WU.svg", flat = "WU.svg" }
 compose = { shadow = { type = "shadow" }, flat = { type = "flat-complex", parts = ["flat_split", "white_up", "blue_down"] } }
@@ -266,7 +233,6 @@ compose = { shadow = { type = "shadow" }, flat = { type = "flat-complex", parts 
 [[symbols]]
 name = "white-black"
 ligature = ["{W/B}"]
-display-name = "白黑"
 category = "hybrid-mana"
 svg = { default = "WB.svg", shadow = "WB.svg", flat = "WB.svg" }
 compose = { shadow = { type = "shadow" }, flat = { type = "flat-complex", parts = ["flat_split", "white_up", "black_down"] } }
@@ -274,7 +240,6 @@ compose = { shadow = { type = "shadow" }, flat = { type = "flat-complex", parts 
 [[symbols]]
 name = "blue-black"
 ligature = ["{U/B}"]
-display-name = "蓝黑"
 category = "hybrid-mana"
 svg = { default = "UB.svg", shadow = "UB.svg", flat = "UB.svg" }
 compose = { shadow = { type = "shadow" }, flat = { type = "flat-complex", parts = ["flat_split", "blue_up", "black_down"] } }
@@ -282,7 +247,6 @@ compose = { shadow = { type = "shadow" }, flat = { type = "flat-complex", parts 
 [[symbols]]
 name = "blue-red"
 ligature = ["{U/R}"]
-display-name = "蓝红"
 category = "hybrid-mana"
 svg = { default = "UR.svg", shadow = "UR.svg", flat = "UR.svg" }
 compose = { shadow = { type = "shadow" }, flat = { type = "flat-complex", parts = ["flat_split", "blue_up", "red_down"] } }
@@ -290,7 +254,6 @@ compose = { shadow = { type = "shadow" }, flat = { type = "flat-complex", parts 
 [[symbols]]
 name = "black-red"
 ligature = ["{B/R}"]
-display-name = "黑红"
 category = "hybrid-mana"
 svg = { default = "BR.svg", shadow = "BR.svg", flat = "BR.svg" }
 compose = { shadow = { type = "shadow" }, flat = { type = "flat-complex", parts = ["flat_split", "black_up", "red_down"] } }
@@ -298,7 +261,6 @@ compose = { shadow = { type = "shadow" }, flat = { type = "flat-complex", parts 
 [[symbols]]
 name = "black-green"
 ligature = ["{B/G}"]
-display-name = "黑绿"
 category = "hybrid-mana"
 svg = { default = "BG.svg", shadow = "BG.svg", flat = "BG.svg" }
 compose = { shadow = { type = "shadow" }, flat = { type = "flat-complex", parts = ["flat_split", "black_up", "green_down"] } }
@@ -306,7 +268,6 @@ compose = { shadow = { type = "shadow" }, flat = { type = "flat-complex", parts 
 [[symbols]]
 name = "red-green"
 ligature = ["{R/G}"]
-display-name = "红绿"
 category = "hybrid-mana"
 svg = { default = "RG.svg", shadow = "RG.svg", flat = "RG.svg" }
 compose = { shadow = { type = "shadow" }, flat = { type = "flat-complex", parts = ["flat_split", "red_up", "green_down"] } }
@@ -314,7 +275,6 @@ compose = { shadow = { type = "shadow" }, flat = { type = "flat-complex", parts 
 [[symbols]]
 name = "red-white"
 ligature = ["{R/W}"]
-display-name = "红白"
 category = "hybrid-mana"
 svg = { default = "RW.svg", shadow = "RW.svg", flat = "RW.svg" }
 compose = { shadow = { type = "shadow" }, flat = { type = "flat-complex", parts = ["flat_split", "red_up", "white_down"] } }
@@ -322,7 +282,6 @@ compose = { shadow = { type = "shadow" }, flat = { type = "flat-complex", parts 
 [[symbols]]
 name = "green-white"
 ligature = ["{G/W}"]
-display-name = "绿白"
 category = "hybrid-mana"
 svg = { default = "GW.svg", shadow = "GW.svg", flat = "GW.svg" }
 compose = { shadow = { type = "shadow" }, flat = { type = "flat-complex", parts = ["flat_split", "green_up", "white_down"] } }
@@ -330,7 +289,6 @@ compose = { shadow = { type = "shadow" }, flat = { type = "flat-complex", parts 
 [[symbols]]
 name = "green-blue"
 ligature = ["{G/U}"]
-display-name = "绿蓝"
 category = "hybrid-mana"
 svg = { default = "GU.svg", shadow = "GU.svg", flat = "GU.svg" }
 compose = { shadow = { type = "shadow" }, flat = { type = "flat-complex", parts = ["flat_split", "green_up", "blue_down"] } }
@@ -338,7 +296,6 @@ compose = { shadow = { type = "shadow" }, flat = { type = "flat-complex", parts 
 [[symbols]]
 name = "two-or-white"
 ligature = ["{2/W}"]
-display-name = "白或{2}"
 category = "hybrid-mana"
 svg = { default = "2W.svg", shadow = "2W.svg", flat = "2W.svg" }
 compose = { shadow = { type = "shadow" }, flat = { type = "flat-complex", parts = ["flat_split", "two_up", "white_down"] } }
@@ -346,7 +303,6 @@ compose = { shadow = { type = "shadow" }, flat = { type = "flat-complex", parts 
 [[symbols]]
 name = "two-or-blue"
 ligature = ["{2/U}"]
-display-name = "蓝或{2}"
 category = "hybrid-mana"
 svg = { default = "2U.svg", shadow = "2U.svg", flat = "2U.svg" }
 compose = { shadow = { type = "shadow" }, flat = { type = "flat-complex", parts = ["flat_split", "two_up", "blue_down"] } }
@@ -354,7 +310,6 @@ compose = { shadow = { type = "shadow" }, flat = { type = "flat-complex", parts 
 [[symbols]]
 name = "two-or-black"
 ligature = ["{2/B}"]
-display-name = "黑或{2}"
 category = "hybrid-mana"
 svg = { default = "2B.svg", shadow = "2B.svg", flat = "2B.svg" }
 compose = { shadow = { type = "shadow" }, flat = { type = "flat-complex", parts = ["flat_split", "two_up", "black_down"] } }
@@ -362,7 +317,6 @@ compose = { shadow = { type = "shadow" }, flat = { type = "flat-complex", parts 
 [[symbols]]
 name = "two-or-red"
 ligature = ["{2/R}"]
-display-name = "红或{2}"
 category = "hybrid-mana"
 svg = { default = "2R.svg", shadow = "2R.svg", flat = "2R.svg" }
 compose = { shadow = { type = "shadow" }, flat = { type = "flat-complex", parts = ["flat_split", "two_up", "red_down"] } }
@@ -370,7 +324,6 @@ compose = { shadow = { type = "shadow" }, flat = { type = "flat-complex", parts 
 [[symbols]]
 name = "two-or-green"
 ligature = ["{2/G}"]
-display-name = "绿或{2}"
 category = "hybrid-mana"
 svg = { default = "2G.svg", shadow = "2G.svg", flat = "2G.svg" }
 compose = { shadow = { type = "shadow" }, flat = { type = "flat-complex", parts = ["flat_split", "two_up", "green_down"] } }
@@ -378,7 +331,6 @@ compose = { shadow = { type = "shadow" }, flat = { type = "flat-complex", parts 
 [[symbols]]
 name = "colorless-or-white"
 ligature = ["{C/W}"]
-display-name = "白或无色"
 category = "hybrid-mana"
 svg = { default = "CW.svg", shadow = "CW.svg", flat = "CW.svg" }
 compose = { shadow = { type = "shadow" }, flat = { type = "flat-complex", parts = ["flat_split", "colorless_up", "white_down"] } }
@@ -386,7 +338,6 @@ compose = { shadow = { type = "shadow" }, flat = { type = "flat-complex", parts 
 [[symbols]]
 name = "colorless-or-blue"
 ligature = ["{C/U}"]
-display-name = "蓝或无色"
 category = "hybrid-mana"
 svg = { default = "CU.svg", shadow = "CU.svg", flat = "CU.svg" }
 compose = { shadow = { type = "shadow" }, flat = { type = "flat-complex", parts = ["flat_split", "colorless_up", "blue_down"] } }
@@ -394,7 +345,6 @@ compose = { shadow = { type = "shadow" }, flat = { type = "flat-complex", parts 
 [[symbols]]
 name = "colorless-or-black"
 ligature = ["{C/B}"]
-display-name = "黑或无色"
 category = "hybrid-mana"
 svg = { default = "CB.svg", shadow = "CB.svg", flat = "CB.svg" }
 compose = { shadow = { type = "shadow" }, flat = { type = "flat-complex", parts = ["flat_split", "colorless_up", "black_down"] } }
@@ -402,7 +352,6 @@ compose = { shadow = { type = "shadow" }, flat = { type = "flat-complex", parts 
 [[symbols]]
 name = "colorless-or-red"
 ligature = ["{C/R}"]
-display-name = "红或无色"
 category = "hybrid-mana"
 svg = { default = "CR.svg", shadow = "CR.svg", flat = "CR.svg" }
 compose = { shadow = { type = "shadow" }, flat = { type = "flat-complex", parts = ["flat_split", "colorless_up", "red_down"] } }
@@ -410,7 +359,6 @@ compose = { shadow = { type = "shadow" }, flat = { type = "flat-complex", parts 
 [[symbols]]
 name = "colorless-or-green"
 ligature = ["{C/G}"]
-display-name = "绿或无色"
 category = "hybrid-mana"
 svg = { default = "CG.svg", shadow = "CG.svg", flat = "CG.svg" }
 compose = { shadow = { type = "shadow" }, flat = { type = "flat-complex", parts = ["flat_split", "colorless_up", "green_down"] } }
@@ -418,7 +366,6 @@ compose = { shadow = { type = "shadow" }, flat = { type = "flat-complex", parts 
 [[symbols]]
 name = "white-phyrexian"
 ligature = ["{W/P}"]
-display-name = "白非瑞"
 category = "phyrexian-mana"
 svg = { default = "WP.svg", shadow = "WP.svg", flat = "WP.svg" }
 compose = { shadow = { type = "shadow" }, flat = { type = "flat-simple" } }
@@ -426,7 +373,6 @@ compose = { shadow = { type = "shadow" }, flat = { type = "flat-simple" } }
 [[symbols]]
 name = "blue-phyrexian"
 ligature = ["{U/P}"]
-display-name = "蓝非瑞"
 category = "phyrexian-mana"
 svg = { default = "UP.svg", shadow = "UP.svg", flat = "UP.svg" }
 compose = { shadow = { type = "shadow" }, flat = { type = "flat-simple" } }
@@ -434,7 +380,6 @@ compose = { shadow = { type = "shadow" }, flat = { type = "flat-simple" } }
 [[symbols]]
 name = "black-phyrexian"
 ligature = ["{B/P}"]
-display-name = "黑非瑞"
 category = "phyrexian-mana"
 svg = { default = "BP.svg", shadow = "BP.svg", flat = "BP.svg" }
 compose = { shadow = { type = "shadow" }, flat = { type = "flat-simple" } }
@@ -442,7 +387,6 @@ compose = { shadow = { type = "shadow" }, flat = { type = "flat-simple" } }
 [[symbols]]
 name = "red-phyrexian"
 ligature = ["{R/P}"]
-display-name = "红非瑞"
 category = "phyrexian-mana"
 svg = { default = "RP.svg", shadow = "RP.svg", flat = "RP.svg" }
 compose = { shadow = { type = "shadow" }, flat = { type = "flat-simple" } }
@@ -450,7 +394,6 @@ compose = { shadow = { type = "shadow" }, flat = { type = "flat-simple" } }
 [[symbols]]
 name = "green-phyrexian"
 ligature = ["{G/P}"]
-display-name = "绿非瑞"
 category = "phyrexian-mana"
 svg = { default = "GP.svg", shadow = "GP.svg", flat = "GP.svg" }
 compose = { shadow = { type = "shadow" }, flat = { type = "flat-simple" } }
@@ -458,7 +401,6 @@ compose = { shadow = { type = "shadow" }, flat = { type = "flat-simple" } }
 [[symbols]]
 name = "colorless-phyrexian"
 ligature = ["{C/P}"]
-display-name = "无色非瑞"
 category = "phyrexian-mana"
 svg = { default = "CP.svg", shadow = "CP.svg", flat = "CP.svg" }
 compose = { shadow = { type = "shadow" }, flat = { type = "flat-simple" } }
@@ -466,7 +408,6 @@ compose = { shadow = { type = "shadow" }, flat = { type = "flat-simple" } }
 [[symbols]]
 name = "white-blue-phyrexian"
 ligature = ["{W/U/P}"]
-display-name = "白蓝非瑞"
 category = "phyrexian-mana"
 svg = { default = "WUP.svg", shadow = "WUP.svg" }
 compose = { shadow = { type = "shadow" } }
@@ -474,7 +415,6 @@ compose = { shadow = { type = "shadow" } }
 [[symbols]]
 name = "white-black-phyrexian"
 ligature = ["{W/B/P}"]
-display-name = "白黑非瑞"
 category = "phyrexian-mana"
 svg = { default = "WBP.svg", shadow = "WBP.svg" }
 compose = { shadow = { type = "shadow" } }
@@ -482,7 +422,6 @@ compose = { shadow = { type = "shadow" } }
 [[symbols]]
 name = "blue-black-phyrexian"
 ligature = ["{U/B/P}"]
-display-name = "蓝黑非瑞"
 category = "phyrexian-mana"
 svg = { default = "UBP.svg", shadow = "UBP.svg" }
 compose = { shadow = { type = "shadow" } }
@@ -490,7 +429,6 @@ compose = { shadow = { type = "shadow" } }
 [[symbols]]
 name = "blue-red-phyrexian"
 ligature = ["{U/R/P}"]
-display-name = "蓝红非瑞"
 category = "phyrexian-mana"
 svg = { default = "URP.svg", shadow = "URP.svg" }
 compose = { shadow = { type = "shadow" } }
@@ -498,7 +436,6 @@ compose = { shadow = { type = "shadow" } }
 [[symbols]]
 name = "black-red-phyrexian"
 ligature = ["{B/R/P}"]
-display-name = "黑红非瑞"
 category = "phyrexian-mana"
 svg = { default = "BRP.svg", shadow = "BRP.svg" }
 compose = { shadow = { type = "shadow" } }
@@ -506,7 +443,6 @@ compose = { shadow = { type = "shadow" } }
 [[symbols]]
 name = "black-green-phyrexian"
 ligature = ["{B/G/P}"]
-display-name = "黑绿非瑞"
 category = "phyrexian-mana"
 svg = { default = "BGP.svg", shadow = "BGP.svg" }
 compose = { shadow = { type = "shadow" } }
@@ -514,7 +450,6 @@ compose = { shadow = { type = "shadow" } }
 [[symbols]]
 name = "red-green-phyrexian"
 ligature = ["{R/G/P}"]
-display-name = "红绿非瑞"
 category = "phyrexian-mana"
 svg = { default = "RGP.svg", shadow = "RGP.svg" }
 compose = { shadow = { type = "shadow" } }
@@ -522,7 +457,6 @@ compose = { shadow = { type = "shadow" } }
 [[symbols]]
 name = "red-white-phyrexian"
 ligature = ["{R/W/P}"]
-display-name = "红白非瑞"
 category = "phyrexian-mana"
 svg = { default = "RWP.svg", shadow = "RWP.svg" }
 compose = { shadow = { type = "shadow" } }
@@ -530,7 +464,6 @@ compose = { shadow = { type = "shadow" } }
 [[symbols]]
 name = "green-white-phyrexian"
 ligature = ["{G/W/P}"]
-display-name = "绿白非瑞"
 category = "phyrexian-mana"
 svg = { default = "GWP.svg", shadow = "GWP.svg" }
 compose = { shadow = { type = "shadow" } }
@@ -538,7 +471,6 @@ compose = { shadow = { type = "shadow" } }
 [[symbols]]
 name = "green-blue-phyrexian"
 ligature = ["{G/U/P}"]
-display-name = "绿蓝非瑞"
 category = "phyrexian-mana"
 svg = { default = "GUP.svg", shadow = "GUP.svg" }
 compose = { shadow = { type = "shadow" } }
@@ -546,7 +478,6 @@ compose = { shadow = { type = "shadow" } }
 [[symbols]]
 name = "tap"
 ligature = ["{T}"]
-display-name = "横置"
 category = "other"
 svg = { default = "T.svg", flat = "T.svg" }
 compose = { flat = { type = "flat-simple" } }
@@ -554,14 +485,12 @@ compose = { flat = { type = "flat-simple" } }
 [[symbols]]
 name = "untap"
 ligature = ["{Q}"]
-display-name = "重置"
 category = "other"
 svg = { default = "Q.svg" }
 
 [[symbols]]
 name = "snow"
 ligature = ["{S}"]
-display-name = "雪"
 category = "other"
 svg = { default = "S.svg", shadow = "S.svg", flat = "S.svg" }
 compose = { shadow = { type = "shadow" }, flat = { type = "static", file = "S.svg" } }
@@ -569,42 +498,36 @@ compose = { shadow = { type = "shadow" }, flat = { type = "static", file = "S.sv
 [[symbols]]
 name = "energy"
 ligature = ["{E}"]
-display-name = "能量"
 category = "other"
 svg = { default = "E.svg" }
 
 [[symbols]]
 name = "phyrexian"
 ligature = ["{H}"]
-display-name = "非瑞"
 category = "other"
 svg = { default = "H.svg" }
 
 [[symbols]]
 name = "ticket"
 ligature = ["{TK}"]
-display-name = "门票"
 category = "other"
 svg = { default = "TK.svg" }
 
 [[symbols]]
 name = "paw"
 ligature = ["{P}"]
-display-name = "爪印"
 category = "other"
 svg = { default = "P.svg" }
 
 [[symbols]]
 name = "acorn"
 ligature = ["{A}"]
-display-name = "橡果"
 category = "special"
 svg = { default = "A.svg" }
 
 [[symbols]]
 name = "infinity"
 ligature = ["{∞}", "{INF}"]
-display-name = "无限"
 category = "special"
 svg = { default = "INFINITY.svg", shadow = "INFINITY.svg" }
 compose = { shadow = { type = "shadow" } }
@@ -612,7 +535,6 @@ compose = { shadow = { type = "shadow" } }
 [[symbols]]
 name = "half"
 ligature = ["{½}", "{H1}", "{1/2}"]
-display-name = "半魔法力"
 category = "special"
 svg = { default = "HALF.svg", shadow = "HALF.svg" }
 compose = { shadow = { type = "shadow" } }
@@ -620,7 +542,6 @@ compose = { shadow = { type = "shadow" } }
 [[symbols]]
 name = "half-white"
 ligature = ["{HW}"]
-display-name = "半白"
 category = "special"
 svg = { default = "HW.svg", shadow = "HW.svg" }
 compose = { shadow = { type = "static", file = "HW.svg" } }
@@ -628,7 +549,6 @@ compose = { shadow = { type = "static", file = "HW.svg" } }
 [[symbols]]
 name = "half-red"
 ligature = ["{HR}"]
-display-name = "半红"
 category = "special"
 svg = { default = "HR.svg", shadow = "HR.svg" }
 compose = { shadow = { type = "static", file = "HR.svg" } }
@@ -636,35 +556,30 @@ compose = { shadow = { type = "static", file = "HR.svg" } }
 [[symbols]]
 name = "chaos"
 ligature = ["{CHAOS}"]
-display-name = "混沌"
 category = "special"
 svg = { default = "CHAOS.svg" }
 
 [[symbols]]
 name = "planeswalker"
 ligature = ["{PW}"]
-display-name = "鹏洛客"
 category = "special"
 svg = { default = "PW.svg" }
 
 [[symbols]]
 name = "land-drop"
 ligature = ["{D}"]
-display-name = "地落"
 category = "special"
 svg = { default = "D.svg" }
 
 [[symbols]]
 name = "legendary-mana"
 ligature = ["{L}"]
-display-name = "传说法术力"
 category = "special"
 svg = { default = "L.svg" }
 
 [[symbols]]
 name = "loyalty-0"
 ligature = ["[0]"]
-display-name = "忠诚度 0"
 category = "loyalty"
 svg = { default = "loyalty_0.svg" }
 compose = { default = { type = "loyalty", base = "naught" } }
@@ -672,7 +587,6 @@ compose = { default = { type = "loyalty", base = "naught" } }
 [[symbols]]
 name = "loyalty+1"
 ligature = ["[+1]"]
-display-name = "忠诚度 +1"
 category = "loyalty"
 svg = { default = "loyalty_plus_1.svg" }
 compose = { default = { type = "loyalty", base = "up" } }
@@ -680,7 +594,6 @@ compose = { default = { type = "loyalty", base = "up" } }
 [[symbols]]
 name = "loyalty+2"
 ligature = ["[+2]"]
-display-name = "忠诚度 +2"
 category = "loyalty"
 svg = { default = "loyalty_plus_2.svg" }
 compose = { default = { type = "loyalty", base = "up" } }
@@ -688,7 +601,6 @@ compose = { default = { type = "loyalty", base = "up" } }
 [[symbols]]
 name = "loyalty+3"
 ligature = ["[+3]"]
-display-name = "忠诚度 +3"
 category = "loyalty"
 svg = { default = "loyalty_plus_3.svg" }
 compose = { default = { type = "loyalty", base = "up" } }
@@ -696,7 +608,6 @@ compose = { default = { type = "loyalty", base = "up" } }
 [[symbols]]
 name = "loyalty+4"
 ligature = ["[+4]"]
-display-name = "忠诚度 +4"
 category = "loyalty"
 svg = { default = "loyalty_plus_4.svg" }
 compose = { default = { type = "loyalty", base = "up" } }
@@ -704,7 +615,6 @@ compose = { default = { type = "loyalty", base = "up" } }
 [[symbols]]
 name = "loyalty+5"
 ligature = ["[+5]"]
-display-name = "忠诚度 +5"
 category = "loyalty"
 svg = { default = "loyalty_plus_5.svg" }
 compose = { default = { type = "loyalty", base = "up" } }
@@ -712,7 +622,6 @@ compose = { default = { type = "loyalty", base = "up" } }
 [[symbols]]
 name = "loyalty+6"
 ligature = ["[+6]"]
-display-name = "忠诚度 +6"
 category = "loyalty"
 svg = { default = "loyalty_plus_6.svg" }
 compose = { default = { type = "loyalty", base = "up" } }
@@ -720,7 +629,6 @@ compose = { default = { type = "loyalty", base = "up" } }
 [[symbols]]
 name = "loyalty+7"
 ligature = ["[+7]"]
-display-name = "忠诚度 +7"
 category = "loyalty"
 svg = { default = "loyalty_plus_7.svg" }
 compose = { default = { type = "loyalty", base = "up" } }
@@ -728,7 +636,6 @@ compose = { default = { type = "loyalty", base = "up" } }
 [[symbols]]
 name = "loyalty+8"
 ligature = ["[+8]"]
-display-name = "忠诚度 +8"
 category = "loyalty"
 svg = { default = "loyalty_plus_8.svg" }
 compose = { default = { type = "loyalty", base = "up" } }
@@ -736,7 +643,6 @@ compose = { default = { type = "loyalty", base = "up" } }
 [[symbols]]
 name = "loyalty+9"
 ligature = ["[+9]"]
-display-name = "忠诚度 +9"
 category = "loyalty"
 svg = { default = "loyalty_plus_9.svg" }
 compose = { default = { type = "loyalty", base = "up" } }
@@ -744,7 +650,6 @@ compose = { default = { type = "loyalty", base = "up" } }
 [[symbols]]
 name = "loyalty+X"
 ligature = ["[+X]"]
-display-name = "忠诚度 +X"
 category = "loyalty"
 svg = { default = "loyalty_plus_X.svg" }
 compose = { default = { type = "loyalty", base = "up" } }
@@ -752,7 +657,6 @@ compose = { default = { type = "loyalty", base = "up" } }
 [[symbols]]
 name = "loyalty+N"
 ligature = ["[+N]"]
-display-name = "忠诚度 +N"
 category = "loyalty"
 svg = { default = "loyalty_plus_N.svg" }
 compose = { default = { type = "loyalty", base = "up" } }
@@ -760,7 +664,6 @@ compose = { default = { type = "loyalty", base = "up" } }
 [[symbols]]
 name = "loyalty-1"
 ligature = ["[-1]"]
-display-name = "忠诚度 -1"
 category = "loyalty"
 svg = { default = "loyalty_minus_1.svg" }
 compose = { default = { type = "loyalty", base = "down" } }
@@ -768,7 +671,6 @@ compose = { default = { type = "loyalty", base = "down" } }
 [[symbols]]
 name = "loyalty-2"
 ligature = ["[-2]"]
-display-name = "忠诚度 -2"
 category = "loyalty"
 svg = { default = "loyalty_minus_2.svg" }
 compose = { default = { type = "loyalty", base = "down" } }
@@ -776,7 +678,6 @@ compose = { default = { type = "loyalty", base = "down" } }
 [[symbols]]
 name = "loyalty-3"
 ligature = ["[-3]"]
-display-name = "忠诚度 -3"
 category = "loyalty"
 svg = { default = "loyalty_minus_3.svg" }
 compose = { default = { type = "loyalty", base = "down" } }
@@ -784,7 +685,6 @@ compose = { default = { type = "loyalty", base = "down" } }
 [[symbols]]
 name = "loyalty-4"
 ligature = ["[-4]"]
-display-name = "忠诚度 -4"
 category = "loyalty"
 svg = { default = "loyalty_minus_4.svg" }
 compose = { default = { type = "loyalty", base = "down" } }
@@ -792,7 +692,6 @@ compose = { default = { type = "loyalty", base = "down" } }
 [[symbols]]
 name = "loyalty-5"
 ligature = ["[-5]"]
-display-name = "忠诚度 -5"
 category = "loyalty"
 svg = { default = "loyalty_minus_5.svg" }
 compose = { default = { type = "loyalty", base = "down" } }
@@ -800,7 +699,6 @@ compose = { default = { type = "loyalty", base = "down" } }
 [[symbols]]
 name = "loyalty-6"
 ligature = ["[-6]"]
-display-name = "忠诚度 -6"
 category = "loyalty"
 svg = { default = "loyalty_minus_6.svg" }
 compose = { default = { type = "loyalty", base = "down" } }
@@ -808,7 +706,6 @@ compose = { default = { type = "loyalty", base = "down" } }
 [[symbols]]
 name = "loyalty-7"
 ligature = ["[-7]"]
-display-name = "忠诚度 -7"
 category = "loyalty"
 svg = { default = "loyalty_minus_7.svg" }
 compose = { default = { type = "loyalty", base = "down" } }
@@ -816,7 +713,6 @@ compose = { default = { type = "loyalty", base = "down" } }
 [[symbols]]
 name = "loyalty-8"
 ligature = ["[-8]"]
-display-name = "忠诚度 -8"
 category = "loyalty"
 svg = { default = "loyalty_minus_8.svg" }
 compose = { default = { type = "loyalty", base = "down" } }
@@ -824,7 +720,6 @@ compose = { default = { type = "loyalty", base = "down" } }
 [[symbols]]
 name = "loyalty-9"
 ligature = ["[-9]"]
-display-name = "忠诚度 -9"
 category = "loyalty"
 svg = { default = "loyalty_minus_9.svg" }
 compose = { default = { type = "loyalty", base = "down" } }
@@ -832,7 +727,6 @@ compose = { default = { type = "loyalty", base = "down" } }
 [[symbols]]
 name = "loyalty-10"
 ligature = ["[-10]"]
-display-name = "忠诚度 -10"
 category = "loyalty"
 svg = { default = "loyalty_minus_10.svg" }
 compose = { default = { type = "loyalty", base = "down" } }
@@ -840,7 +734,6 @@ compose = { default = { type = "loyalty", base = "down" } }
 [[symbols]]
 name = "loyalty-11"
 ligature = ["[-11]"]
-display-name = "忠诚度 -11"
 category = "loyalty"
 svg = { default = "loyalty_minus_11.svg" }
 compose = { default = { type = "loyalty", base = "down" } }
@@ -848,7 +741,6 @@ compose = { default = { type = "loyalty", base = "down" } }
 [[symbols]]
 name = "loyalty-12"
 ligature = ["[-12]"]
-display-name = "忠诚度 -12"
 category = "loyalty"
 svg = { default = "loyalty_minus_12.svg" }
 compose = { default = { type = "loyalty", base = "down" } }
@@ -856,7 +748,6 @@ compose = { default = { type = "loyalty", base = "down" } }
 [[symbols]]
 name = "loyalty-13"
 ligature = ["[-13]"]
-display-name = "忠诚度 -13"
 category = "loyalty"
 svg = { default = "loyalty_minus_13.svg" }
 compose = { default = { type = "loyalty", base = "down" } }
@@ -864,7 +755,6 @@ compose = { default = { type = "loyalty", base = "down" } }
 [[symbols]]
 name = "loyalty-14"
 ligature = ["[-14]"]
-display-name = "忠诚度 -14"
 category = "loyalty"
 svg = { default = "loyalty_minus_14.svg" }
 compose = { default = { type = "loyalty", base = "down" } }
@@ -872,7 +762,6 @@ compose = { default = { type = "loyalty", base = "down" } }
 [[symbols]]
 name = "loyalty-15"
 ligature = ["[-15]"]
-display-name = "忠诚度 -15"
 category = "loyalty"
 svg = { default = "loyalty_minus_15.svg" }
 compose = { default = { type = "loyalty", base = "down" } }
@@ -880,7 +769,6 @@ compose = { default = { type = "loyalty", base = "down" } }
 [[symbols]]
 name = "loyalty-25"
 ligature = ["[-25]"]
-display-name = "忠诚度 -25"
 category = "loyalty"
 svg = { default = "loyalty_minus_25.svg" }
 compose = { default = { type = "loyalty", base = "down" } }
@@ -888,7 +776,6 @@ compose = { default = { type = "loyalty", base = "down" } }
 [[symbols]]
 name = "loyalty-X"
 ligature = ["[-X]"]
-display-name = "忠诚度 -X"
 category = "loyalty"
 svg = { default = "loyalty_minus_X.svg" }
 compose = { default = { type = "loyalty", base = "down" } }
@@ -896,7 +783,6 @@ compose = { default = { type = "loyalty", base = "down" } }
 [[symbols]]
 name = "loyalty-N"
 ligature = ["[-N]"]
-display-name = "忠诚度 -N"
 category = "loyalty"
 svg = { default = "loyalty_minus_N.svg" }
 compose = { default = { type = "loyalty", base = "down" } }

@@ -9,7 +9,7 @@ const symbols = symbolsJson
 <template>
   <div class="container mx-auto px-4 py-12">
     <div class="flex flex-wrap items-center gap-3">
-      <h1 class="text-3xl font-bold">{{ manifest.name }}</h1>
+      <h1 class="text-3xl font-bold">{{ $t('game-name.magic') }}</h1>
       <UBadge>{{ manifest['font-version'] }}</UBadge>
       <UBadge variant="soft">{{ manifest['colr-version'] }}</UBadge>
     </div>
