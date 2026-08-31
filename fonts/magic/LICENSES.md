@@ -23,5 +23,5 @@ This file records the asset sources and license basis for `fonts/magic/`.
 ## 4. Plantin-Bold font (external dependency, not committed)
 
 - Purpose: the font used by `compose.loyalty` to convert loyalty-counter text (e.g., "+1") into paths.
-- Location: not in this repository; read from an external path at build time (see `[compose.loyalty].font` in `config.toml`).
-- License: commercial font by Monotype. Its binary is not included or distributed. The final font embeds glyph outline paths rendered from it.
+- Location: `fonts/magic/external/Plantin-Bold.ttf` — not committed to the repository; you must provide it yourself (see `external/README.md`).
+- License: commercial font by Monotype. Its binary is not committed or distributed. The final font embeds glyph outline paths rendered from it.

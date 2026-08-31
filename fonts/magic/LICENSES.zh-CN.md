@@ -23,5 +23,5 @@
 ## 4. Plantin-Bold 字体（外部依赖，不入库）
 
 - 用途：`compose.loyalty` 将忠诚计数器文本（"+1" 等）转为路径时使用的字体。
-- 位置：不在本仓库；构建时从外部路径读取（见 `config.toml` 的 `[compose.loyalty].font`）。
-- 许可：Monotype 的商业字体。其二进制不包含在本仓库，也不随字体或包分发。最终字体中嵌入的是由它渲染出的字形轮廓路径。
+- 位置：`fonts/magic/external/Plantin-Bold.ttf`——不入库，需自行提供（见 `external/README.md`）。
+- 许可：Monotype 的商业字体。其二进制不入库、不随字体或包分发。最终字体中嵌入的是由它渲染出的字形轮廓路径。

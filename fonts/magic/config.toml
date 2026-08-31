@@ -44,5 +44,5 @@ part-up-transform = "translate(32.32, 32.32) scale(0.9) translate(-32.32, -32.32
 part-down-transform = "translate(67.68, 67.68) scale(0.9) translate(-67.68, -67.68)"
 
 [compose.loyalty]
-font = "Plantin-Bold.ttf"   # external dependency, not committed
+font = "Plantin-Bold.ttf"   # resolved from external/ (user-provided)
 font-size = 60

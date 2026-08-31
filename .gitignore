@@ -10,6 +10,7 @@ __pycache__/
 *.py[cod]
 .venv/
 venv/
+*.egg-info/
 
 # build outputs
 dist/
@@ -21,3 +22,7 @@ coverage/
 # font binaries are built and published via GitHub Actions, never committed
 *.woff2
 *.ttf
+
+# generated SVGs (sigilora-build normalize output from raw + recipes)
+fonts/*/svg/
+

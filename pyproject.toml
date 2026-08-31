@@ -1,0 +1,23 @@
+[project]
+name = "sigilora-build"
+version = "0.1.0"
+description = "Build and validation toolchain for the Sigilora symbol font project"
+requires-python = ">=3.11"
+dependencies = [
+    "fonttools>=4.40",
+    "uharfbuzz>=0.39",
+    "svgutils>=0.3.4",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[project.scripts]
+sigilora-build = "sigilora_build.cli:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
