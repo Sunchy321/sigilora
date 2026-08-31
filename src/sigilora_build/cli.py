@@ -5,6 +5,7 @@ import argparse
 import sys
 from pathlib import Path
 
+from .build import build as build_font
 from .compose import compose_style
 from .model import load_game
 from .normalize import normalize_svg
@@ -42,6 +43,27 @@ def cmd_normalize(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_build(args: argparse.Namespace) -> int:
+    game_dir = _game_dir(args.game, args.root)
+    if not (game_dir / "config.toml").exists():
+        print(f"error: no source data found at {game_dir}", file=sys.stderr)
+        return 1
+    game = load_game(game_dir)
+    if not (game.svg_dir / "default").exists():
+        print(f"error: run normalize first (missing {game.svg_dir})", file=sys.stderr)
+        return 1
+    out_dir = args.out if args.out else game.path / "build"
+    if not args.full and not args.lite:
+        args.full = args.lite = True
+    if args.full:
+        result = build_font(game, out_dir, lite=False)
+        print(f"built {result['family']} -> {result['ttf']} / {result['woff2']}")
+    if args.lite:
+        result = build_font(game, out_dir, lite=True)
+        print(f"built {result['family']} -> {result['ttf']} / {result['woff2']}")
+    return 0
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(prog="sigilora-build")
     parser.add_argument("--root", default=Path.cwd(), type=Path, help="repo root (default: cwd)")
@@ -53,6 +75,13 @@ def build_parser() -> argparse.ArgumentParser:
     p_norm.add_argument("--plantin", type=str, default=None,
                         help="override path to Plantin-Bold.ttf (default: fonts/<game>/external/)")
     p_norm.set_defaults(func=cmd_normalize)
+
+    p_build = sub.add_parser("build", help="build TTF/WOFF2 with ligature features via nanoemoji")
+    p_build.add_argument("game", help="game code, e.g. magic")
+    p_build.add_argument("--lite", action="store_true", help="build only the lite font (default style + liga)")
+    p_build.add_argument("--full", action="store_true", help="build only the full font (all styles + ssXX)")
+    p_build.add_argument("--out", type=Path, default=None, help="output dir (default: fonts/<game>/build)")
+    p_build.set_defaults(func=cmd_build)
 
     return parser
 

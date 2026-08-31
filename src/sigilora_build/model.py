@@ -25,6 +25,7 @@ class GameData:
     font_version: str
     colr_version: str
     categories: list[dict]
+    styles: list[dict]
     compose: dict
     symbols: list[Symbol]
 
@@ -43,13 +44,9 @@ class GameData:
         return self.path / "svg"
 
     @property
-    def styles(self) -> list[str]:
-        styles = []
-        for s in self.symbols:
-            for st in s.svg:
-                if st not in styles:
-                    styles.append(st)
-        return styles
+    def style_order(self) -> list[str]:
+        """Stable style order: 'default' first, then declared styles in config order."""
+        return [st["name"] for st in self.styles]
 
 
 def _load_symbols(toml_syms: list[dict]) -> list[Symbol]:
@@ -82,6 +79,7 @@ def load_game(game_dir: Path) -> GameData:
         font_version=config["font-version"],
         colr_version=config["colr-version"],
         categories=config["categories"],
+        styles=config["styles"],
         compose=config["compose"],
         symbols=_load_symbols(symbols_toml["symbols"]),
     )

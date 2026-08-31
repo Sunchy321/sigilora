@@ -31,6 +31,18 @@ display-name = "特殊符号"
 name = "loyalty"
 display-name = "忠诚度"
 
+[[styles]]
+name = "default"
+display-name = "默认"
+
+[[styles]]
+name = "shadow"
+display-name = "阴影"
+
+[[styles]]
+name = "flat"
+display-name = "扁平"
+
 [compose.shadow]
 offset = [8, 8]
 viewbox = "0 0 108 100"
