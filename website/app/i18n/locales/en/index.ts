@@ -34,4 +34,7 @@ export default {
     title: 'Symbols',
     clickToCopy: 'Click a symbol to copy its ligature',
   },
+  docs: {
+    notFound: 'Document not found.',
+  },
 }

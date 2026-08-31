@@ -1,5 +1,7 @@
 <script setup lang="ts">
-const { data: manifest } = await useFetch('/fonts/magic/magic.json')
+import magicJson from '~/data/magic.json'
+
+const manifest = magicJson
 </script>
 
 <template>
@@ -13,7 +15,7 @@ const { data: manifest } = await useFetch('/fonts/magic/magic.json')
       </div>
     </section>
 
-    <section v-if="manifest" class="mx-auto mt-16 max-w-2xl">
+    <section class="mx-auto mt-16 max-w-2xl">
       <h2 class="mb-4 text-xl font-semibold">{{ $t('nav.games') }}</h2>
       <NuxtLink
         :to="`/games/${manifest.game}`"

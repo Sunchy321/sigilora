@@ -1,6 +1,8 @@
 <script setup lang="ts">
+import magicJson from '~/data/magic.json'
+
 const { t } = useI18n()
-const { data: manifest } = await useFetch('/fonts/magic/magic.json')
+const manifest = magicJson
 
 const columns = computed(() => [
   { key: 'family', label: t('games.families') },
@@ -9,8 +11,7 @@ const columns = computed(() => [
 ])
 
 const rows = computed(() => {
-  if (!manifest.value) return []
-  return manifest.value.fonts.map((f: { family: string; file: string; styles: string[] }) => ({
+  return manifest.fonts.map((f: { family: string; file: string; styles: string[] }) => ({
     family: f.family,
     file: f.file,
     styles: f.styles.join(', '),
@@ -23,7 +24,7 @@ const rows = computed(() => {
     <h1 class="text-3xl font-bold">{{ $t('games.title') }}</h1>
     <p class="mt-2 text-muted">{{ $t('games.subtitle') }}</p>
 
-    <UCard v-if="manifest" class="mt-8">
+    <UCard class="mt-8">
       <div class="flex items-center justify-between">
         <NuxtLink :to="`/games/${manifest.game}`" class="text-xl font-semibold hover:text-primary">
           {{ manifest.name }}

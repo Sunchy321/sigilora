@@ -34,4 +34,7 @@ export default {
     title: '符号',
     clickToCopy: '点击符号复制其 ligature 文本',
   },
+  docs: {
+    notFound: '未找到文档。',
+  },
 }

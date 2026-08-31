@@ -31,4 +31,10 @@ packages/fonts/*/
 
 # generated website font artifacts (website sync script)
 website/public/fonts/
+website/app/data/
+
+# Nuxt Content v3 cache (SQLite index)
+website/.data/
+website/.nuxt/
+website/node_modules/
 
