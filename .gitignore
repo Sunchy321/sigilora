@@ -29,3 +29,6 @@ fonts/*/svg/
 # generated npm consumer artifacts (sigilora-build package output)
 packages/fonts/*/
 
+# generated website font artifacts (website sync script)
+website/public/fonts/
+

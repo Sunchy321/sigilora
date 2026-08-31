@@ -60,3 +60,17 @@ def package(game: GameData, build_dir: Path, out_dir: Path) -> None:
     (out_dir / "magic.json").write_text(
         json.dumps(meta, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
     )
+
+    symbols = [
+        {
+            "name": s.name,
+            "ligature": s.ligature,
+            "display-name": s.display_name,
+            "category": s.category,
+            "styles": list(s.svg.keys()),
+        }
+        for s in game.symbols
+    ]
+    (out_dir / "symbols.json").write_text(
+        json.dumps(symbols, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
+    )

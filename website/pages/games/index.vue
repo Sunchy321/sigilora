@@ -1,0 +1,46 @@
+<script setup lang="ts">
+const { t } = useI18n()
+const { data: manifest } = await useFetch('/fonts/magic/magic.json')
+
+const columns = computed(() => [
+  { key: 'family', label: t('games.families') },
+  { key: 'file', label: 'File' },
+  { key: 'styles', label: t('games.styles') },
+])
+
+const rows = computed(() => {
+  if (!manifest.value) return []
+  return manifest.value.fonts.map((f: { family: string; file: string; styles: string[] }) => ({
+    family: f.family,
+    file: f.file,
+    styles: f.styles.join(', '),
+  }))
+})
+</script>
+
+<template>
+  <div class="container mx-auto px-4 py-12">
+    <h1 class="text-3xl font-bold">{{ $t('games.title') }}</h1>
+    <p class="mt-2 text-muted">{{ $t('games.subtitle') }}</p>
+
+    <UCard v-if="manifest" class="mt-8">
+      <div class="flex items-center justify-between">
+        <NuxtLink :to="`/games/${manifest.game}`" class="text-xl font-semibold hover:text-primary">
+          {{ manifest.name }}
+        </NuxtLink>
+        <UBadge>{{ manifest['colr-version'] }}</UBadge>
+      </div>
+      <dl class="mt-4 grid grid-cols-2 gap-4 text-sm">
+        <div>
+          <dt class="text-muted">{{ $t('games.version') }}</dt>
+          <dd>{{ manifest['font-version'] }}</dd>
+        </div>
+        <div>
+          <dt class="text-muted">{{ $t('games.symbols') }}</dt>
+          <dd>{{ manifest.symbols }}</dd>
+        </div>
+      </dl>
+      <UTable :rows="rows" :columns="columns" class="mt-6" />
+    </UCard>
+  </div>
+</template>
