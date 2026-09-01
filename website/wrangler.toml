@@ -1,0 +1,14 @@
+name = "sigilora"
+main = "./.output/server/index.mjs"
+compatibility_date = "2025-07-15"
+compatibility_flags = ["nodejs_compat"]
+
+workers_dev = false
+
+[[routes]]
+pattern = "font.tcg.cards"
+custom_domain = true
+
+[assets]
+binding = "ASSETS"
+directory = "./.output/public/"

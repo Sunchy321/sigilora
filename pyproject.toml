@@ -8,6 +8,8 @@ dependencies = [
     "uharfbuzz>=0.39",
     "svgutils>=0.3.4",
     "brotli>=1.1",
+    "nanoemoji>=1.0",
+    "ninja>=1.11",
 ]
 
 [project.optional-dependencies]

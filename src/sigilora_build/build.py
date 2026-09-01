@@ -172,7 +172,14 @@ def _to_woff2(ttf_path: Path) -> Path:
 
 
 def _nanoemoji_path(game: GameData) -> str:
-    return str(game.path.parent.parent / ".venv" / "bin" / "nanoemoji")
+    # Prefer the project venv (local dev), else the one installed by pip on PATH (CI).
+    venv = game.path.parent.parent / ".venv" / "bin" / "nanoemoji"
+    if venv.exists():
+        return str(venv)
+    found = shutil.which("nanoemoji")
+    if not found:
+        raise FileNotFoundError("nanoemoji not found; install it (pip install -e .)")
+    return found
 
 
 def build(game: GameData, out_dir: Path, lite: bool = False):

@@ -1,0 +1,107 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    env:
+      PACKAGE_VERSION: ${{ github.ref_name }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+
+      - name: Install toolchain
+        run: python -m pip install --upgrade pip && python -m pip install -e .
+
+      - name: Setup Node (npm publish)
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Setup Bun (website)
+        uses: oven-sh/setup-bun@v2
+
+      - name: Normalize SVG sources
+        run: sigilora normalize magic
+
+      - name: Build font
+        run: sigilora build magic
+
+      - name: Validate font (release-blocking)
+        run: sigilora validate magic
+
+      - name: Package consumer artifacts
+        run: sigilora package magic
+
+      - name: Get font version
+        id: fv
+        run: |
+          FV=$(python -c "import tomllib;print(tomllib.load(open('fonts/magic/config.toml','rb'))['font-version'])")
+          echo "font=$FV" >> "$GITHUB_OUTPUT"
+
+      - name: Assemble release assets
+        run: |
+          set -e
+          FONT="${{ steps.fv.outputs.font }}"
+          PV="${PACKAGE_VERSION#v}"
+          DOWN="fonts/magic/build"
+          OUT="release-assets"
+          mkdir -p "$OUT"
+
+          # Per-game desktop zip: TTF + license
+          mkdir -p "$OUT/magic"
+          cp "$DOWN/Sigilora-Magic-$FONT.ttf" "$DOWN/Sigilora-Magic-Lite-$FONT.ttf" LICENSE "$OUT/magic/"
+          (cd "$OUT" && zip -q -r "Sigilora-Magic-$FONT.zip" magic && rm -rf magic)
+
+          # Full snapshot zip: all games' TTFs + license
+          mkdir -p "$OUT/Sigilora-Fonts"
+          cp "$DOWN/Sigilora-Magic-$FONT.ttf" "$DOWN/Sigilora-Magic-Lite-$FONT.ttf" LICENSE "$OUT/Sigilora-Fonts/"
+          (cd "$OUT" && zip -q -r "Sigilora-Fonts-$PV.zip" Sigilora-Fonts && rm -rf Sigilora-Fonts)
+
+          # Checksums
+          (cd "$OUT" && sha256sum *.zip > SHA256SUMS)
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          name: "Sigilora v${{ github.ref_name }}"
+          generate_release_notes: true
+          files: release-assets/*
+
+      - name: Publish npm package
+        run: |
+          PV="${PACKAGE_VERSION#v}"
+          npm version "$PV" --no-git-tag-version
+          npm publish --access public
+        working-directory: packages/fonts
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Sync fonts to website
+        run: bun run fonts:sync
+        working-directory: website
+
+      - name: Build website
+        run: bun run build
+        working-directory: website
+
+      - name: Deploy website to Cloudflare
+        run: npx wrangler deploy
+        working-directory: website
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}

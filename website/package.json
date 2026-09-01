@@ -16,5 +16,9 @@
     "@nuxtjs/i18n": "^10.2.3",
     "@tailwindcss/typography": "^0.5.16",
     "nuxt": "^4.3.1"
+  },
+  "devDependencies": {
+    "nitro-cloudflare-dev": "^0.2.2",
+    "wrangler": "^4.85.0"
   }
 }

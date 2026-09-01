@@ -1,0 +1,26 @@
+{
+  "name": "@sigilora/fonts",
+  "version": "0.0.0",
+  "description": "Color symbol fonts for game text via OpenType ligatures and COLR/CPAL.",
+  "type": "module",
+  "license": "CC-BY-NC-4.0",
+  "files": [
+    "magic"
+  ],
+  "exports": {
+    "./magic.css": "./magic/magic.css",
+    "./magic.json": "./magic/magic.json",
+    "./symbols.json": "./magic/symbols.json"
+  },
+  "keywords": [
+    "fonts",
+    "opentype",
+    "ligatures",
+    "colr",
+    "cpal",
+    "color-fonts"
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
+}
