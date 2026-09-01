@@ -5,13 +5,51 @@ description: Version history and compatibility notes.
 
 # Changelog
 
-Font versions follow SemVer. A font **Major** bump means removed ligatures, changed text mappings, or removed glyphs; **Minor** adds symbols or compatible aliases; **Patch** is visual fixes.
+Sigilora Magic is a color symbol font for Magic: The Gathering text. It ships as the full `Sigilora Magic` family (default, shadow, and flat styles, switched via `ss01` / `ss02`) and the lite `Sigilora Magic Lite` family (default style only). The current release covers 114 symbols — mana, hybrid, phyrexian, other, special, and loyalty counters — using COLRv0.
+
+Font versions follow SemVer: a **Major** bump removes ligatures, changes existing text mappings, or removes glyphs; a **Minor** bump adds symbols or compatible aliases; a **Patch** is a visual fix.
+
+## Sigilora Magic 1.2.0
+
+- Dark-mode support.
+
+## Sigilora Magic 1.1.0
+
+- Add a ligature for `{½}`.
+- Support `[+N]` / `[-N]` loyalty-counter rendering.
+
+## Sigilora Magic 1.0.1
+
+- Adjust the flat `{W}` color.
 
 ## Sigilora Magic 1.0.0
 
-_Initial release._
+- Add loyalty-counter symbols.
 
-- Full font `Sigilora Magic` with default, shadow, and flat styles (switch via `ss01` / `ss02`).
-- Lite font `Sigilora Magic Lite` with the default style only.
-- 114 symbols covering mana, hybrid, phyrexian, other, special, and loyalty counters.
-- COLRv0.
+## Sigilora Magic 0.6.0
+
+- Add the flat style for `{S}`.
+
+## Sigilora Magic 0.5.0
+
+- Complete the flat symbol styles.
+
+## Sigilora Magic 0.4.1
+
+- Fix shadow rendering.
+
+## Sigilora Magic 0.4.0
+
+- Add shadow-style icons.
+
+## Sigilora Magic 0.3.0
+
+- Add the complete icon set.
+
+## Sigilora Magic 0.2.0
+
+- Support multiple ligatures per symbol.
+
+## Sigilora Magic 0.1.0
+
+- Create the Magic symbol font.

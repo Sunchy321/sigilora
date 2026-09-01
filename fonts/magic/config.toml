@@ -1,6 +1,6 @@
 name = "Magic: The Gathering"
 code = "magic"
-font-version = "1.0.0"
+font-version = "1.2.0"
 colr-version = "v0"
 
 [[categories]]
