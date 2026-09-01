@@ -5,7 +5,7 @@ const props = defineProps<{ text: string; family?: string; activeStyle?: string 
 
 const glyphStyle = computed(() => {
   const style: Record<string, string> = {
-    fontFamily: props.family ?? "'Sigilora Magic'",
+    fontFamily: `'${props.family ?? 'Sigilora Magic'}'`,
     fontFeatureSettings: "'liga'",
     display: 'inline-block',
     lineHeight: '1',

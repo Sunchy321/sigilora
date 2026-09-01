@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import magicJson from '~/data/magic.json'
+import lorcanaJson from '~/data/lorcana.json'
 
-const manifest = magicJson
+const manifests = [magicJson, lorcanaJson]
 </script>
 
 <template>
@@ -17,13 +18,17 @@ const manifest = magicJson
 
     <section class="mx-auto mt-16 max-w-2xl">
       <h2 class="mb-4 text-xl font-semibold">{{ $t('nav.games') }}</h2>
-      <NuxtLink
-        :to="`/game/${manifest.game}`"
-        class="flex items-center justify-between rounded-xl border border-default bg-elevated p-4 transition hover:border-primary"
-      >
-        <span class="text-lg font-medium">{{ $t('game-name.magic') }}</span>
-        <UBadge>{{ manifest['font-version'] }}</UBadge>
-      </NuxtLink>
+      <div class="flex flex-col gap-3">
+        <NuxtLink
+          v-for="manifest in manifests"
+          :key="manifest.game"
+          :to="`/game/${manifest.game}`"
+          class="flex items-center justify-between rounded-xl border border-default bg-elevated p-4 transition hover:border-primary"
+        >
+          <span class="text-lg font-medium">{{ $t(`game-name.${manifest.game}`) }}</span>
+          <UBadge>{{ manifest['font-version'] }}</UBadge>
+        </NuxtLink>
+      </div>
     </section>
   </div>
 </template>

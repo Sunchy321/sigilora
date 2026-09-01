@@ -14,6 +14,7 @@ export default defineNuxtConfig({
       htmlAttrs: { lang: 'en' },
       link: [
         { rel: 'stylesheet', href: '/fonts/magic/magic.css' },
+        { rel: 'stylesheet', href: '/fonts/lorcana/lorcana.css' },
       ],
     },
   },

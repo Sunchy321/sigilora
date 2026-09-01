@@ -35,59 +35,44 @@ jobs:
       - name: Setup Bun (website)
         uses: oven-sh/setup-bun@v2
 
-      - name: Normalize SVG sources
-        run: sigilora normalize magic
-
-      - name: Build font
-        run: sigilora build magic
-
-      - name: Validate font (release-blocking)
-        run: sigilora validate magic
-
-      - name: Package consumer artifacts
-        run: sigilora package magic
-
-      - name: Get font version
-        id: fv
+      # The game list and its order come from games.json (single source of
+      # truth); adding a new game requires no changes to this workflow.
+      - name: Build all fonts (normalize / build / validate / package)
         run: |
-          FV=$(python -c "import tomllib;print(tomllib.load(open('fonts/magic/config.toml','rb'))['font-version'])")
-          echo "font=$FV" >> "$GITHUB_OUTPUT"
+          for game in $(jq -r '.games[]' games.json); do
+            sigilora normalize "$game"
+            sigilora build "$game"
+            sigilora validate "$game"
+            sigilora package "$game"
+          done
+
+      - name: Generate npm package.json
+        run: node scripts/gen-package-json.mjs
 
       - name: Assemble release assets
         run: |
           set -e
-          FONT="${{ steps.fv.outputs.font }}"
           PV="${PACKAGE_VERSION#v}"
-          DOWN="fonts/magic/build"
           OUT="release-assets"
           mkdir -p "$OUT"
+          for game in $(jq -r '.games[]' games.json); do
+            LABEL="${game^}"
+            FV=$(python -c "import tomllib;print(tomllib.load(open('fonts/$game/config.toml','rb'))['font-version'])")
+            DOWN="fonts/$game/build"
 
-          # Per-game desktop zip: TTF + license
-          mkdir -p "$OUT/magic"
-          cp "$DOWN/Sigilora-Magic-$FONT.ttf" "$DOWN/Sigilora-Magic-Lite-$FONT.ttf" LICENSE "$OUT/magic/"
-          (cd "$OUT" && zip -q -r "Sigilora-Magic-$FONT.zip" magic && rm -rf magic)
+            # Per-game desktop zip: TTF + license
+            mkdir -p "$OUT/$game"
+            cp "$DOWN/Sigilora-$LABEL-$FV.ttf" "$DOWN/Sigilora-$LABEL-Lite-$FV.ttf" LICENSE "$OUT/$game/"
+            (cd "$OUT" && zip -q -r "Sigilora-$LABEL-$FV.zip" "$game" && rm -rf "$game")
 
-          # Full snapshot zip: all games' TTFs + license
-          mkdir -p "$OUT/Sigilora-Fonts"
-          cp "$DOWN/Sigilora-Magic-$FONT.ttf" "$DOWN/Sigilora-Magic-Lite-$FONT.ttf" LICENSE "$OUT/Sigilora-Fonts/"
+            # Full snapshot zip: all games' TTFs + license
+            mkdir -p "$OUT/Sigilora-Fonts/$game"
+            cp "$DOWN/Sigilora-$LABEL-$FV.ttf" "$DOWN/Sigilora-$LABEL-Lite-$FV.ttf" LICENSE "$OUT/Sigilora-Fonts/$game/"
+          done
           (cd "$OUT" && zip -q -r "Sigilora-Fonts-$PV.zip" Sigilora-Fonts && rm -rf Sigilora-Fonts)
 
           # Checksums
           (cd "$OUT" && sha256sum *.zip > SHA256SUMS)
-
-      - name: Create GitHub Release
-        uses: softprops/action-gh-release@v2
-        with:
-          name: "Sigilora ${{ github.ref_name }}"
-          generate_release_notes: true
-          files: release-assets/*
-
-      - name: Publish npm package (Trusted Publishing)
-        run: |
-          PV="${PACKAGE_VERSION#v}"
-          npm version "$PV" --no-git-tag-version
-          npm publish --access public --provenance
-        working-directory: packages/fonts
 
       - name: Install website dependencies
         run: bun install
@@ -107,3 +92,20 @@ jobs:
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+
+      # Publish actions run last, after every build and deploy succeeded, so a
+      # later failure never leaves an unre-runnable release or immutable npm
+      # version already published.
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          name: "Sigilora ${{ github.ref_name }}"
+          generate_release_notes: true
+          files: release-assets/*
+
+      - name: Publish npm package (Trusted Publishing)
+        run: |
+          PV="${PACKAGE_VERSION#v}"
+          npm version "$PV" --no-git-tag-version
+          npm publish --access public --provenance
+        working-directory: packages/fonts

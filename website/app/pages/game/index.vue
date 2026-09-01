@@ -1,22 +1,23 @@
 <script setup lang="ts">
 import magicJson from '~/data/magic.json'
+import lorcanaJson from '~/data/lorcana.json'
 
 const { t } = useI18n()
-const manifest = magicJson
+const manifests = [magicJson, lorcanaJson]
 
 const columns = computed(() => [
-  { id: 'family', label: t('games.family') },
-  { id: 'file', label: 'File' },
-  { id: 'styles', label: t('games.style') },
+  { accessorKey: 'family', header: t('games.family') },
+  { accessorKey: 'file', header: 'File' },
+  { accessorKey: 'styles', header: t('games.style') },
 ])
 
-const rows = computed(() => {
-  return manifest.fonts.map((f: { family: string; file: string; styles: string[] }) => ({
+function rows(manifest: { fonts: Array<{ family: string; file: string; styles: string[] }> }) {
+  return manifest.fonts.map((f) => ({
     family: f.family,
     file: f.file,
     styles: f.styles.join(', '),
   }))
-})
+}
 </script>
 
 <template>
@@ -24,10 +25,10 @@ const rows = computed(() => {
     <h1 class="text-3xl font-bold">{{ $t('games.title') }}</h1>
     <p class="mt-2 text-muted">{{ $t('games.subtitle') }}</p>
 
-    <UCard class="mt-8">
+    <UCard v-for="manifest in manifests" :key="manifest.game" class="mt-8">
       <div class="flex items-center justify-between">
         <NuxtLink :to="`/game/${manifest.game}`" class="text-xl font-semibold hover:text-primary">
-          {{ $t('game-name.magic') }}
+          {{ $t(`game-name.${manifest.game}`) }}
         </NuxtLink>
         <UBadge>{{ manifest['colr-version'] }}</UBadge>
       </div>
@@ -41,7 +42,7 @@ const rows = computed(() => {
           <dd>{{ manifest.symbols }}</dd>
         </div>
       </dl>
-      <UTable :data="rows" :columns="columns" class="mt-6" />
+      <UTable :data="rows(manifest)" :columns="columns" class="mt-6" />
     </UCard>
   </div>
 </template>

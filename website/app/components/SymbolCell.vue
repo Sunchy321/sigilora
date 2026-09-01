@@ -5,11 +5,12 @@ const { t, te } = useI18n()
 const props = defineProps<{
   symbol: { name: string; ligature: string[]; category: string; overflow?: boolean }
   activeStyle?: string
+  family?: string
 }>()
 
 const glyphStyle = computed(() => {
   const style: Record<string, string> = {
-    fontFamily: "'Sigilora Magic'",
+    fontFamily: `'${props.family ?? 'Sigilora Magic'}'`,
     fontFeatureSettings: "'liga'",
     display: 'inline-block',
     lineHeight: '1',

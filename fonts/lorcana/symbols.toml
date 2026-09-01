@@ -1,0 +1,47 @@
+[[symbols]]
+name = "strength"
+ligature = ["{S}"]
+category = "default"
+svg = { default = "strength.svg" }
+
+
+[[symbols]]
+name = "willpower"
+ligature = ["{W}"]
+category = "default"
+svg = { default = "willpower.svg" }
+
+
+[[symbols]]
+name = "lore"
+ligature = ["{L}"]
+category = "default"
+svg = { default = "lore.svg" }
+
+
+[[symbols]]
+name = "move-cost"
+ligature = ["{M}"]
+category = "default"
+svg = { default = "move-cost.svg" }
+
+
+[[symbols]]
+name = "ink"
+ligature = ["{I}"]
+category = "default"
+svg = { default = "ink.svg" }
+
+
+[[symbols]]
+name = "inkwell"
+ligature = ["{C}"]
+category = "default"
+svg = { default = "inkwell.svg" }
+
+
+[[symbols]]
+name = "exert"
+ligature = ["{E}"]
+category = "default"
+svg = { default = "exert.svg" }

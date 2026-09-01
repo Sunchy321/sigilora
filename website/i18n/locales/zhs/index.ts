@@ -24,12 +24,16 @@ export default {
   playground: {
     title: 'Playground',
     subtitle: '输入游戏文本，实时预览彩色符号。',
+    game: '游戏',
     full: '全量',
     lite: 'Lite',
     default: '默认',
     shadow: '阴影',
     flat: '扁平',
-    placeholder: '{\'输入文本，例如 {W}{U}{R} Lightning Bolt 造成 {3} 点伤害。\'}',
+    placeholder: {
+      magic: '{\'输入文本，例如 {W}{U}{R} Lightning Bolt 造成 {3} 点伤害。\'}',
+      lorcana: '{\'输入文本，例如 支付 {3}{I} 打出此角色。\'}',
+    },
     copied: '已复制',
   },
   symbols: {
@@ -43,16 +47,34 @@ export default {
   },
   examples: {
     title: '示例句子',
-    list: [
-      '{\'{W}{U}{U}，{T}，支付 X 个 {E}：抓 X 张牌。\'}',
-      '{\'由你操控的鹏洛客具有「[0]：增殖」与「[-12]：于本回合后进行额外的一个回合」。\'}',
-    ],
+    magic: {
+      list: [
+        '{\'{W}{U}{U}，{T}，支付 X 个 {E}：抓 X 张牌。\'}',
+        '{\'由你操控的鹏洛客具有「[0]：增殖」与「[-12]：于本回合后进行额外的一个回合」。\'}',
+      ],
+    },
+    lorcana: {
+      list: [
+        '{\'支付 {3}{I} 打出此角色。它具有 {4}{S} 与 {5}{W}。\'}',
+        '{\'横置 {E} 此角色以获得 2 点 {L}。\'}',
+        '{\'支付 {M} 将此牌移入你的墨水池 {C}。\'}',
+      ],
+    },
   },
   docs: {
     'not-found': '未找到文档。',
+    nav: {
+      guide: '指南',
+      install: '安装',
+      installNpm: 'npm 包',
+      installDesktop: '桌面安装',
+      knownLimitations: '已知限制',
+      changelog: '版本记录',
+    },
   },
   'game-name': {
     magic: '万智牌',
+    lorcana: '洛卡纳',
   },
   'category-name': {
     'normal-mana': '基础法术力',
@@ -62,6 +84,7 @@ export default {
     other: '其他符号',
     special: '特殊符号',
     loyalty: '忠诚度',
+    default: '符号',
   },
   'style-name': {
     default: '默认',
@@ -91,5 +114,12 @@ export default {
     planeswalker: '鹏洛客',
     'land-drop': '地落',
     'legendary-mana': '传说法术力',
+    strength: '力量',
+    willpower: '意志',
+    lore: '传说',
+    'move-cost': '移动费用',
+    ink: '墨水',
+    inkwell: '墨水池',
+    exert: '横置',
   },
 }

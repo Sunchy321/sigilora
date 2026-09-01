@@ -8,14 +8,17 @@
   },
   "license": "CC-BY-NC-4.0",
   "files": [
-    "magic"
+    "magic",
+    "lorcana"
   ],
   "sideEffects": [
     "*.css"
   ],
   "exports": {
     "./magic.css": "./magic/magic.css",
-    "./magic/*": "./magic/*"
+    "./magic/*": "./magic/*",
+    "./lorcana.css": "./lorcana/lorcana.css",
+    "./lorcana/*": "./lorcana/*"
   },
   "keywords": [
     "fonts",

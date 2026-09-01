@@ -34,3 +34,17 @@ The loyalty-counter digit glyphs and related monochrome outlines are
 **original work redrawn by the project author**, based on the existing
 loyalty-counter presentation in Magic: The Gathering. They do not rely
 on any third-party commercial font.
+
+## Lorcana symbol artwork
+
+The Lorcana game-symbol graphics (`fonts/lorcana/raw/default/`) are
+**purchased third-party SVG assets** (Disney Lorcana game symbols:
+strength, willpower, lore, move-cost, ink, inkwell, exert). The purchase
+terms were not recorded alongside the assets, so it is **not verified**
+whether they permit converting the graphics into font glyphs, distributing
+them with a font binary, or re-licensing them. This font is **not**
+declared as OFL. See
+[fonts/lorcana/LICENSES.md](fonts/lorcana/LICENSES.md) for details.
+
+Disney Lorcana and its logos are trademarks of their respective owners.
+This project is not affiliated with, endorsed by, or sponsored by them.

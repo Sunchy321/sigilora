@@ -1,0 +1,12 @@
+name = "Lorcana"
+code = "lorcana"
+font-version = "1.0.0"
+colr-version = "v0"
+
+[[categories]]
+name = "default"
+
+[[styles]]
+name = "default"
+
+[compose]

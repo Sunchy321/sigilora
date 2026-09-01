@@ -24,12 +24,16 @@ export default {
   playground: {
     title: 'Playground',
     subtitle: 'Type game text and watch it become color symbols.',
+    game: 'Game',
     full: 'Full',
     lite: 'Lite',
     default: 'Default',
     shadow: 'Shadow',
     flat: 'Flat',
-    placeholder: '{\'Type text, e.g. {W}{U}{R} Lightning Bolt deals {3} damage.\'}',
+    placeholder: {
+      magic: '{\'Type text, e.g. {W}{U}{R} Lightning Bolt deals {3} damage.\'}',
+      lorcana: '{\'Type text, e.g. Play this character for {3}{I}.\'}',
+    },
     copied: 'Copied',
   },
   symbols: {
@@ -43,16 +47,34 @@ export default {
   },
   examples: {
     title: 'Examples',
-    list: [
-      '{\'{W}{U}{U}, {T}, Pay X {E}: Draw X cards.\'}',
-      '{\'Planeswalkers you control have "[0]: Proliferate" and "[-12]: Take an extra turn after this one."\'}',
-    ],
+    magic: {
+      list: [
+        '{\'{W}{U}{U}, {T}, Pay X {E}: Draw X cards.\'}',
+        '{\'Planeswalkers you control have "[0]: Proliferate" and "[-12]: Take an extra turn after this one."\'}',
+      ],
+    },
+    lorcana: {
+      list: [
+        '{\'Play this character for {3}{I}. It has {4}{S} and {5}{W}.\'}',
+        '{\'Exert {E} this character to gain 2 {L}.\'}',
+        '{\'Pay {M} to move this card to your inkwell {C}.\'}',
+      ],
+    },
   },
   docs: {
     'not-found': 'Document not found.',
+    nav: {
+      guide: 'Guide',
+      install: 'Installation',
+      installNpm: 'npm package',
+      installDesktop: 'Desktop',
+      knownLimitations: 'Known limitations',
+      changelog: 'Changelog',
+    },
   },
   'game-name': {
     magic: 'Magic: The Gathering',
+    lorcana: 'Lorcana',
   },
   'category-name': {
     'normal-mana': 'Mana',
@@ -62,6 +84,7 @@ export default {
     other: 'Other',
     special: 'Special',
     loyalty: 'Loyalty',
+    default: 'Symbols',
   },
   'style-name': {
     default: 'Default',
@@ -91,5 +114,12 @@ export default {
     planeswalker: 'Planeswalker',
     'land-drop': 'Land drop',
     'legendary-mana': 'Legendary mana',
+    strength: 'Strength',
+    willpower: 'Willpower',
+    lore: 'Lore',
+    'move-cost': 'Move cost',
+    ink: 'Ink',
+    inkwell: 'Inkwell',
+    exert: 'Exert',
   },
 }
