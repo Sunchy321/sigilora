@@ -14,151 +14,151 @@
 name = "exhaust"
 ligature = ["[E]"]
 category = "action"
-svg = { default = "exhaust.svg", inverted = "exhaust-inv.svg" }
+svg = { default = "exhaust.svg", inverted = "exhaust.svg" }
 
 
 [[symbols]]
 name = "might"
 ligature = ["[M]"]
 category = "action"
-svg = { default = "might.svg", inverted = "might-inv.svg" }
+svg = { default = "might.svg", inverted = "might.svg" }
 
 
 [[symbols]]
 name = "fury"
 ligature = ["[R]"]
 category = "domain"
-svg = { default = "fury.svg", inverted = "fury-inv.svg" }
+svg = { default = "fury.svg", inverted = "fury.svg" }
 
 
 [[symbols]]
 name = "calm"
 ligature = ["[G]"]
 category = "domain"
-svg = { default = "calm.svg", inverted = "calm-inv.svg" }
+svg = { default = "calm.svg", inverted = "calm.svg" }
 
 
 [[symbols]]
 name = "mind"
 ligature = ["[B]"]
 category = "domain"
-svg = { default = "mind.svg", inverted = "mind-inv.svg" }
+svg = { default = "mind.svg", inverted = "mind.svg" }
 
 
 [[symbols]]
 name = "body"
 ligature = ["[O]"]
 category = "domain"
-svg = { default = "body.svg", inverted = "body-inv.svg" }
+svg = { default = "body.svg", inverted = "body.svg" }
 
 
 [[symbols]]
 name = "chaos"
 ligature = ["[P]"]
 category = "domain"
-svg = { default = "chaos.svg", inverted = "chaos-inv.svg" }
+svg = { default = "chaos.svg", inverted = "chaos.svg" }
 
 
 [[symbols]]
 name = "order"
 ligature = ["[Y]"]
 category = "domain"
-svg = { default = "order.svg", inverted = "order-inv.svg" }
+svg = { default = "order.svg", inverted = "order.svg" }
 
 
 [[symbols]]
 name = "any"
 ligature = ["[A]"]
 category = "power"
-svg = { default = "any.svg", inverted = "any-inv.svg" }
+svg = { default = "any.svg", inverted = "any.svg" }
 
 
 [[symbols]]
 name = "0"
 ligature = ["[0]"]
 category = "number"
-svg = { default = "0.svg", inverted = "0-inv.svg" }
+svg = { default = "0.svg", inverted = "0.svg" }
 
 
 [[symbols]]
 name = "1"
 ligature = ["[1]"]
 category = "number"
-svg = { default = "1.svg", inverted = "1-inv.svg" }
+svg = { default = "1.svg", inverted = "1.svg" }
 
 
 [[symbols]]
 name = "2"
 ligature = ["[2]"]
 category = "number"
-svg = { default = "2.svg", inverted = "2-inv.svg" }
+svg = { default = "2.svg", inverted = "2.svg" }
 
 
 [[symbols]]
 name = "3"
 ligature = ["[3]"]
 category = "number"
-svg = { default = "3.svg", inverted = "3-inv.svg" }
+svg = { default = "3.svg", inverted = "3.svg" }
 
 
 [[symbols]]
 name = "4"
 ligature = ["[4]"]
 category = "number"
-svg = { default = "4.svg", inverted = "4-inv.svg" }
+svg = { default = "4.svg", inverted = "4.svg" }
 
 
 [[symbols]]
 name = "5"
 ligature = ["[5]"]
 category = "number"
-svg = { default = "5.svg", inverted = "5-inv.svg" }
+svg = { default = "5.svg", inverted = "5.svg" }
 
 
 [[symbols]]
 name = "6"
 ligature = ["[6]"]
 category = "number"
-svg = { default = "6.svg", inverted = "6-inv.svg" }
+svg = { default = "6.svg", inverted = "6.svg" }
 
 
 [[symbols]]
 name = "7"
 ligature = ["[7]"]
 category = "number"
-svg = { default = "7.svg", inverted = "7-inv.svg" }
+svg = { default = "7.svg", inverted = "7.svg" }
 
 
 [[symbols]]
 name = "8"
 ligature = ["[8]"]
 category = "number"
-svg = { default = "8.svg", inverted = "8-inv.svg" }
+svg = { default = "8.svg", inverted = "8.svg" }
 
 
 [[symbols]]
 name = "9"
 ligature = ["[9]"]
 category = "number"
-svg = { default = "9.svg", inverted = "9-inv.svg" }
+svg = { default = "9.svg", inverted = "9.svg" }
 
 
 [[symbols]]
 name = "10"
 ligature = ["[10]"]
 category = "number"
-svg = { default = "10.svg", inverted = "10-inv.svg" }
+svg = { default = "10.svg", inverted = "10.svg" }
 
 
 [[symbols]]
 name = "11"
 ligature = ["[11]"]
 category = "number"
-svg = { default = "11.svg", inverted = "11-inv.svg" }
+svg = { default = "11.svg", inverted = "11.svg" }
 
 
 [[symbols]]
 name = "12"
 ligature = ["[12]"]
 category = "number"
-svg = { default = "12.svg", inverted = "12-inv.svg" }
+svg = { default = "12.svg", inverted = "12.svg" }

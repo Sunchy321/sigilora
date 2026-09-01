@@ -32,8 +32,8 @@ def cmd_normalize(args: argparse.Namespace) -> int:
             target = out_dir / style / _file
             target.parent.mkdir(parents=True, exist_ok=True)
             if spec is None:
-                # default style without a compose spec: normalize the raw default
-                src = game.raw_dir / "default" / _file
+                # style without a compose spec: normalize the raw source for that style
+                src = game.raw_dir / style / _file
                 normalize_svg(src, target)
                 counts["generated"] += 1
             else:
