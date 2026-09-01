@@ -74,6 +74,7 @@ Pixel-level snapshots are not a release blocker initially; visual checks go thro
 - Reuse the behavior pattern only; do not depend on the website's `@tcg-cards/*` configuration or UI packages.
 - UI copy via `vue-i18n`; guides, font documentation, and version history as per-language Nuxt Content Markdown.
 - The site dev server hot-reloads source changes; no restart is needed when editing the website.
+- Never start the dev server yourself. The user runs it (`! npm run dev` in the website directory).
 
 ## Licensing Boundary
 
