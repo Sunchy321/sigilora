@@ -7,6 +7,7 @@ on:
 
 permissions:
   contents: write
+  id-token: write
 
 jobs:
   release:
@@ -29,8 +30,7 @@ jobs:
       - name: Setup Node (npm publish)
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
-          registry-url: 'https://registry.npmjs.org'
+          node-version: '24'
 
       - name: Setup Bun (website)
         uses: oven-sh/setup-bun@v2
@@ -78,18 +78,16 @@ jobs:
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
-          name: "Sigilora v${{ github.ref_name }}"
+          name: "Sigilora ${{ github.ref_name }}"
           generate_release_notes: true
           files: release-assets/*
 
-      - name: Publish npm package
+      - name: Publish npm package (Trusted Publishing)
         run: |
           PV="${PACKAGE_VERSION#v}"
           npm version "$PV" --no-git-tag-version
-          npm publish --access public
+          npm publish --access public --provenance
         working-directory: packages/fonts
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Sync fonts to website
         run: bun run fonts:sync

@@ -2,15 +2,20 @@
   "name": "@sigilora/fonts",
   "version": "0.0.0",
   "description": "Color symbol fonts for game text via OpenType ligatures and COLR/CPAL.",
-  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Sunchy321/sigilora"
+  },
   "license": "CC-BY-NC-4.0",
   "files": [
     "magic"
   ],
+  "sideEffects": [
+    "*.css"
+  ],
   "exports": {
     "./magic.css": "./magic/magic.css",
-    "./magic.json": "./magic/magic.json",
-    "./symbols.json": "./magic/symbols.json"
+    "./magic/*": "./magic/*"
   },
   "keywords": [
     "fonts",
