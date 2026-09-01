@@ -48,3 +48,19 @@ declared as OFL. See
 
 Disney Lorcana and its logos are trademarks of their respective owners.
 This project is not affiliated with, endorsed by, or sponsored by them.
+
+## Riftbound symbol artwork
+
+The Riftbound game-symbol graphics (`fonts/riftbound/raw/default/` and
+`fonts/riftbound/raw/inverted/`) are sourced from Riot Games' public
+asset CDN
+(`assetcdn.rgpub.io/public/live/riot-shared/player-experiences/riot-glyphs/rb/latest/`).
+Riot's fan-content and digital-tools policies restrict non-commercial
+community use and asset redistribution, so it is **not verified** whether
+they permit converting the graphics into font glyphs, distributing them
+with a font binary, or re-licensing them. This font is **not** declared
+as OFL. See [fonts/riftbound/LICENSES.md](fonts/riftbound/LICENSES.md)
+for details.
+
+Riftbound and League of Legends are trademarks of Riot Games. This
+project is not affiliated with, endorsed by, or sponsored by Riot Games.
