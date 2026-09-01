@@ -37,4 +37,5 @@ website/app/data/
 website/.data/
 website/.nuxt/
 website/node_modules/
+website/.wrangler/
 

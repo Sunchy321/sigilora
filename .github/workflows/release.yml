@@ -89,6 +89,10 @@ jobs:
           npm publish --access public --provenance
         working-directory: packages/fonts
 
+      - name: Install website dependencies
+        run: bun install
+        working-directory: website
+
       - name: Sync fonts to website
         run: bun run fonts:sync
         working-directory: website
