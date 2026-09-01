@@ -18,6 +18,15 @@ function toggleDark() {
           <NuxtLink to="/docs/guide/changelog" class="hover:text-primary">{{ $t('nav.changelog') }}</NuxtLink>
           <UButton :icon="isDark ? 'i-lucide-moon' : 'i-lucide-sun'" variant="ghost" square @click="toggleDark" />
           <LanguageSwitcher />
+          <a
+            href="https://github.com/Sunchy321/sigilora"
+            target="_blank"
+            rel="noopener"
+            class="flex items-center text-muted transition hover:text-primary"
+            aria-label="GitHub"
+          >
+            <UIcon name="i-simple-icons-github" class="size-5" />
+          </a>
         </nav>
       </div>
     </header>
