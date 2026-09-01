@@ -12,7 +12,7 @@ function toggleDark() {
       <div class="container mx-auto flex items-center justify-between px-4 py-3">
         <NuxtLink to="/" class="text-lg font-bold">Sigilora</NuxtLink>
         <nav class="flex items-center gap-4">
-          <NuxtLink to="/games" class="hover:text-primary">{{ $t('nav.games') }}</NuxtLink>
+          <NuxtLink to="/game" class="hover:text-primary">{{ $t('nav.games') }}</NuxtLink>
           <NuxtLink to="/playground" class="hover:text-primary">{{ $t('nav.playground') }}</NuxtLink>
           <NuxtLink to="/docs/guide/install" class="hover:text-primary">{{ $t('nav.docs') }}</NuxtLink>
           <NuxtLink to="/docs/guide/changelog" class="hover:text-primary">{{ $t('nav.changelog') }}</NuxtLink>
