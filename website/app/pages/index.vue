@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import magicJson from '~/data/magic.json'
 import lorcanaJson from '~/data/lorcana.json'
+import riftboundJson from '~/data/riftbound.json'
 
-const manifests = [magicJson, lorcanaJson]
+const manifests = [magicJson, lorcanaJson, riftboundJson]
 </script>
 
 <template>
