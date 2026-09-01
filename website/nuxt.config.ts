@@ -1,6 +1,11 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ['@nuxtjs/i18n', '@nuxt/ui', '@nuxt/content'],
+  content: {
+    experimental: {
+      sqliteConnector: 'native',
+    },
+  },
   nitro: {
     preset: 'cloudflare_module',
     cloudflare: {
