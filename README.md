@@ -20,3 +20,11 @@ sigilora/
 - Architecture design (English): [docs/project-architecture.md](docs/project-architecture.md)
 - Architecture design (简体中文): [docs/project-architecture.zh-CN.md](docs/project-architecture.zh-CN.md)
 - Agent guidance: [AGENTS.md](AGENTS.md)
+
+## License
+
+Layered licensing. Code, build tooling, and website source are MIT; the
+font binaries and graphic assets are **CC BY-NC 4.0** (non-commercial,
+attribution required). The underlying Magic: The Gathering symbol art is
+owned by Wizards of the Coast. See [LICENSE](LICENSE) and
+[THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).

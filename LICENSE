@@ -1,0 +1,52 @@
+# Sigilora License
+
+Sigilora is a color symbol font project for game text (see
+[docs/project-architecture.md](docs/project-architecture.md)). This
+repository is licensed under the following layered terms.
+
+## 1. Code, build tooling, and website source
+
+Files under `src/`, `pyproject.toml`, `scripts/`, and the hand-written
+source under `website/` are licensed under the MIT License:
+
+> Copyright (c) 2026 Sigilora contributors
+>
+> Permission is hereby granted, free of charge, to any person obtaining a
+> copy of this software and associated documentation files (the "Software"),
+> to deal in the Software without restriction, including without limitation
+> the rights to use, copy, modify, merge, publish, distribute, sublicense,
+> and/or sell copies of the Software, and to permit persons to whom the
+> Software is furnished to do so, subject to the following conditions:
+>
+> The above copyright notice and this permission notice shall be included in
+> all copies or substantial portions of the Software.
+>
+> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+> IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+> FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+> AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+> LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+> FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+> DEALINGS IN THE SOFTWARE.
+
+## 2. Font binaries and graphic assets
+
+The generated font binaries (`packages/fonts/**`) and the normalized /
+source graphic assets under `fonts/` are licensed under the **Creative
+Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)**.
+
+This means you may share and adapt these assets for **non-commercial**
+purposes, provided you give appropriate credit, indicate any changes, and
+do not use them for commercial gain. Full terms:
+<https://creativecommons.org/licenses/by-nc/4.0/>
+
+> This license covers only the parts of the fonts and assets that are the
+> original work of this project. It does **not** grant any rights to
+> third-party content embedded in or derived from them — see the Third-Party
+> notices below.
+
+## 3. Third-party and attribution
+
+See [THIRD_PARTY_NOTICES](THIRD_PARTY_NOTICES.md) for the copyright
+ownership and provenance of the Magic: The Gathering symbol artwork and
+other materials referenced by this project.
