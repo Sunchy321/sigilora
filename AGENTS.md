@@ -73,6 +73,7 @@ Pixel-level snapshots are not a release blocker initially; visual checks go thro
 - i18n: `@nuxtjs/i18n`, `no_prefix` routing, initial language from browser language + Cookie, `setLocale` on change, Nuxt UI locale synced with the site language.
 - Reuse the behavior pattern only; do not depend on the website's `@tcg-cards/*` configuration or UI packages.
 - UI copy via `vue-i18n`; guides, font documentation, and version history as per-language Nuxt Content Markdown.
+- The site dev server hot-reloads source changes; no restart is needed when editing the website.
 
 ## Licensing Boundary
 
@@ -94,3 +95,7 @@ Do not complete these designs on your own; confirm them before entering their im
 ## Commit Messages
 
 Use Conventional Commits, matching the current website repository's convention. `fix` commits must describe the problem that was solved, not how it was fixed.
+
+Use the most specific reasonable scope (e.g. `fonts/magic`, `website/game`, `website/docs`) rather than a broad generic scope.
+
+When the user asks to commit, create the commit directly without waiting for confirmation of the commit message, then show the message after it is created.
