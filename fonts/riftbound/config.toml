@@ -1,6 +1,6 @@
 name = "Riftbound"
 code = "riftbound"
-font-version = "0.1.0"
+font-version = "0.2.0"
 colr-version = "v1"
 
 [[categories]]

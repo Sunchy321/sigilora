@@ -141,3 +141,24 @@ name = "9"
 ligature = ["[9]"]
 category = "number"
 svg = { default = "9.svg", inverted = "9-inv.svg" }
+
+
+[[symbols]]
+name = "10"
+ligature = ["[10]"]
+category = "number"
+svg = { default = "10.svg", inverted = "10-inv.svg" }
+
+
+[[symbols]]
+name = "11"
+ligature = ["[11]"]
+category = "number"
+svg = { default = "11.svg", inverted = "11-inv.svg" }
+
+
+[[symbols]]
+name = "12"
+ligature = ["[12]"]
+category = "number"
+svg = { default = "12.svg", inverted = "12-inv.svg" }
