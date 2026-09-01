@@ -23,10 +23,10 @@ coverage/
 *.woff2
 *.ttf
 
-# generated SVGs (sigilora-build normalize output from raw + recipes)
+# generated SVGs (sigilora normalize output from raw + recipes)
 fonts/*/svg/
 
-# generated npm consumer artifacts (sigilora-build package output)
+# generated npm consumer artifacts (sigilora package output)
 packages/fonts/*/
 
 # generated website font artifacts (website sync script)

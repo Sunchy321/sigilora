@@ -1,4 +1,4 @@
-"""sigilora-build command-line interface."""
+"""sigilora command-line interface."""
 from __future__ import annotations
 
 import argparse
@@ -107,7 +107,7 @@ def cmd_build(args: argparse.Namespace) -> int:
 
 
 def build_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(prog="sigilora-build")
+    parser = argparse.ArgumentParser(prog="sigilora")
     parser.add_argument("--root", default=Path.cwd(), type=Path, help="repo root (default: cwd)")
     sub = parser.add_subparsers(dest="command", required=True)
 

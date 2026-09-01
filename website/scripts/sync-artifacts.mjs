@@ -1,6 +1,6 @@
 // Copies the built consumer artifacts from packages/fonts/<game>/ into
 // public/fonts/<game>/ so the site serves them. Run after
-// `sigilora-build package <game>`.
+// `sigilora package <game>`.
 import { cp, mkdir } from 'node:fs/promises'
 import { existsSync } from 'node:fs'
 import { dirname, join } from 'node:path'
@@ -16,7 +16,7 @@ const dataDir = join(siteDir, 'app', 'data')
 for (const game of games) {
   const from = join(srcDir, game)
   if (!existsSync(from)) {
-    console.warn(`skip ${game}: packages/fonts/${game} missing (run sigilora-build package ${game})`)
+    console.warn(`skip ${game}: packages/fonts/${game} missing (run sigilora package ${game})`)
     continue
   }
   const to = join(publicDir, 'fonts', game)

@@ -2,7 +2,7 @@
 
 npm publish directory for consumer artifacts.
 
-This directory is a **generated staging area** produced by `sigilora-build package <game>`; its per-game subdirectories are gitignored. Each game's package contains:
+This directory is a **generated staging area** produced by `sigilora package <game>`; its per-game subdirectories are gitignored. Each game's package contains:
 
 - `magic.css` — a single CSS declaring both `@font-face` entries (full and lite)
 - `magic.woff2` — full font (all styles, `ssXX` switching)
