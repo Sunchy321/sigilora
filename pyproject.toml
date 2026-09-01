@@ -1,5 +1,5 @@
 [project]
-name = "sigilora-build"
+name = "sigilora"
 version = "0.1.0"
 description = "Build and validation toolchain for the Sigilora symbol font project"
 requires-python = ">=3.11"
@@ -8,7 +8,7 @@ dependencies = [
     "uharfbuzz>=0.39",
     "svgutils>=0.3.4",
     "brotli>=1.1",
-    "nanoemoji>=1.0",
+    "nanoemoji>=0.16",
     "ninja>=1.11",
 ]
 

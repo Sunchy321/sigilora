@@ -9,14 +9,12 @@ Produces the target SVG for each (symbol, style) from the raw materials:
 """
 from __future__ import annotations
 
+import json
 import re
 import xml.etree.ElementTree as ET
 from pathlib import Path
 
 import svgutils.transform as sg
-from fontTools.pens.svgPathPen import SVGPathPen
-from fontTools.pens.transformPen import TransformPen
-from fontTools.ttLib import TTFont
 
 from .model import GameData, Symbol
 
@@ -25,7 +23,7 @@ SVG_NS = "{http://www.w3.org/2000/svg}"
 ET.register_namespace("", "http://www.w3.org/2000/svg")
 
 
-def compose_style(game: GameData, sym: Symbol, style: str, out: Path, plantin: Path | None) -> None:
+def compose_style(game: GameData, sym: Symbol, style: str, out: Path) -> None:
     spec = sym.compose.get(style)
     if spec is None:
         raise ValueError(f"{sym.name}: style '{style}' has no compose spec")
@@ -37,7 +35,7 @@ def compose_style(game: GameData, sym: Symbol, style: str, out: Path, plantin: P
     elif kind == "flat-complex":
         _compose_flat_complex(game, sym, spec["parts"], out)
     elif kind == "loyalty":
-        _compose_loyalty(game, sym, spec["base"], out, plantin)
+        _compose_loyalty(game, sym, spec["base"], out)
     elif kind == "static":
         _copy_static(game, sym, style, out)
     else:
@@ -115,58 +113,39 @@ def _compose_flat_complex(game: GameData, sym: Symbol, parts: list[str], out: Pa
     fig.save(str(out))
 
 
-def _text_to_path(font_path: Path, text: str, font_size: int):
-    font = TTFont(str(font_path))
-    head = font.get("head")
-    units_per_em = getattr(head, "unitsPerEm", 1000)
-    scale = font_size / units_per_em
-    glyph_set = font.getGlyphSet()
-    cmap = font.getBestCmap()
-    svg_path_pen = SVGPathPen(glyph_set)
-    total_width = 0
-    path_commands = []
-    for char in text:
-        glyph_name = cmap.get(ord(char))
-        if glyph_name is None:
-            continue
-        glyph = glyph_set[glyph_name]
-        transform = (scale, 0, 0, -scale, total_width * scale, 0)
-        transform_pen = TransformPen(svg_path_pen, transform)
-        glyph.draw(transform_pen)
-        path_commands.append(svg_path_pen.getCommands())
-        svg_path_pen = SVGPathPen(glyph_set)
-        total_width += glyph.width
-    all_path_data = " ".join(path_commands)
-    text_width = total_width * scale
-    text_height = font_size * 0.784
-    return all_path_data, text_width, text_height
-
-
-def _compose_loyalty(game: GameData, sym: Symbol, base: str, out: Path, plantin: Path | None) -> None:
-    if plantin is None:
-        plantin = game.path / "external" / game.compose["loyalty"]["font"]
-    if not plantin.exists():
-        raise ValueError(
-            f"{sym.name}: loyalty font not found at {plantin}; see fonts/{game.code}/external/README.md"
-        )
-
-    params = game.compose["loyalty"]
+def _compose_loyalty(game: GameData, sym: Symbol, base: str, out: Path, plantin: Path | None = None) -> None:
+    glyphs = json.loads((game.path / "raw" / "loyalty_glyphs.json").read_text(encoding="utf-8"))
+    table = glyphs["glyphs"]
+    text_height = glyphs["text-height"]
     text = sym.ligature[0].strip("[]").replace("-", "−")
+
     component = game.raw_dir / "components" / f"_loyalty_{base}.svg"
     tree = ET.parse(component)
     root = tree.getroot()
     viewbox = root.get("viewBox", "")
     width = int(viewbox.split()[2])
     height = int(viewbox.split()[3])
-    path_data, text_width, text_height = _text_to_path(plantin, text, params["font-size"])
-    if not path_data:
-        raise ValueError(f"{sym.name}: cannot render loyalty text '{text}' to path")
-    path_elem = ET.SubElement(root, f"{SVG_NS}path")
-    path_elem.set("d", path_data)
-    path_elem.set("fill", "currentColor")
-    x_offset = (width - text_width) / 2
+
+    widths = []
+    total = 0.0
+    for ch in text:
+        g = table.get(ch)
+        if g is None:
+            continue
+        widths.append(g["advance"])
+        total += g["advance"]
+
+    x_offset = (width - total) / 2
     y_offset = height / 2 + text_height * 0.35
-    path_elem.set("transform", f"translate({x_offset}, {y_offset})")
+
+    cum = 0.0
+    for ch, adv in zip(text, widths):
+        g = table[ch]
+        path_elem = ET.SubElement(root, f"{SVG_NS}path")
+        path_elem.set("d", g["path"])
+        path_elem.set("fill", "currentColor")
+        path_elem.set("transform", f"translate({x_offset + cum}, {y_offset})")
+        cum += adv
     tree.write(out, encoding="utf-8", xml_declaration=True)
 
 

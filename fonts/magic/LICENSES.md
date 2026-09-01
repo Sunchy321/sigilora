@@ -20,8 +20,8 @@ This file records the asset sources and license basis for `fonts/magic/`.
 - Source: not part of Scryfall's card-symbol set; the project's own decomposition parts for composing hybrid, phyrexian, loyalty-counter, and other symbols.
 - License: original building blocks, combined with the Scryfall base glyphs.
 
-## 4. Plantin-Bold font (external dependency, not committed)
+## 4. Loyalty-counter glyph outlines
 
-- Purpose: the font used by `compose.loyalty` to convert loyalty-counter text (e.g., "+1") into paths.
-- Location: `fonts/magic/external/Plantin-Bold.ttf` — not committed to the repository; you must provide it yourself (see `external/README.md`).
-- License: commercial font by Monotype. Its binary is not committed or distributed. The final font embeds glyph outline paths rendered from it.
+- Location: `fonts/magic/raw/loyalty_glyphs.json` — the digit/sign glyph outlines (`0-9`, `+`, `−`, `X`, `N`) used to build the loyalty counters.
+- Source: original work by the project author, extracted as pure SVG geometry. No external commercial font is required at build time.
+- License: the outlines are treated as the project's own layered work (see THIRD_PARTY_NOTICES.md); the loyalty counter presentation is based on the existing Magic: The Gathering depiction.

@@ -25,7 +25,6 @@ def cmd_normalize(args: argparse.Namespace) -> int:
     game = load_game(game_dir)
     out_dir = args.out / game.code if args.out else game.svg_dir
     out_dir.mkdir(parents=True, exist_ok=True)
-    plantin = Path(args.plantin) if args.plantin else None
     counts = {"generated": 0, "static": 0}
     for sym in game.symbols:
         for style, _file in sym.svg.items():
@@ -38,7 +37,7 @@ def cmd_normalize(args: argparse.Namespace) -> int:
                 normalize_svg(src, target)
                 counts["generated"] += 1
             else:
-                compose_style(game, sym, style, target, plantin)
+                compose_style(game, sym, style, target)
                 normalize_svg(target, target)
                 counts["generated" if spec["type"] != "static" else "static"] += 1
     print(f"normalized {game.code}: {counts['generated']} composed, {counts['static']} static -> {out_dir}")
@@ -114,8 +113,6 @@ def build_parser() -> argparse.ArgumentParser:
     p_norm = sub.add_parser("normalize", help="compose and normalize target SVGs from raw materials")
     p_norm.add_argument("game", help="game code, e.g. magic")
     p_norm.add_argument("--out", type=Path, default=None, help="output dir (default: fonts/<game>/svg)")
-    p_norm.add_argument("--plantin", type=str, default=None,
-                        help="override path to Plantin-Bold.ttf (default: fonts/<game>/external/)")
     p_norm.set_defaults(func=cmd_normalize)
 
     p_build = sub.add_parser("build", help="build TTF/WOFF2 with ligature features via nanoemoji")
