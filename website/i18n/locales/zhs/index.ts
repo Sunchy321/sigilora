@@ -26,6 +26,7 @@ export default {
     subtitle: '输入游戏文本，实时预览彩色符号。',
     full: '全量',
     lite: 'Lite',
+    default: '默认',
     shadow: '阴影',
     flat: '扁平',
     placeholder: '{\'输入文本，例如 {W}{U}{R} Lightning Bolt 造成 {3} 点伤害。\'}',

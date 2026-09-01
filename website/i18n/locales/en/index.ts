@@ -26,6 +26,7 @@ export default {
     subtitle: 'Type game text and watch it become color symbols.',
     full: 'Full',
     lite: 'Lite',
+    default: 'Default',
     shadow: 'Shadow',
     flat: 'Flat',
     placeholder: '{\'Type text, e.g. {W}{U}{R} Lightning Bolt deals {3} damage.\'}',

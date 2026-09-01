@@ -1,11 +1,11 @@
 <script setup lang="ts">
 defineOptions({ name: 'SymbolText' })
 
-const props = defineProps<{ text: string; activeStyle?: string }>()
+const props = defineProps<{ text: string; family?: string; activeStyle?: string }>()
 
 const glyphStyle = computed(() => {
   const style: Record<string, string> = {
-    fontFamily: "'Sigilora Magic'",
+    fontFamily: props.family ?? "'Sigilora Magic'",
     fontFeatureSettings: "'liga'",
   }
   if (props.activeStyle === 'shadow') style.fontFeatureSettings = "'liga', 'ss01'"

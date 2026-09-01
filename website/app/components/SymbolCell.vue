@@ -22,6 +22,8 @@ const displayName = computed(() => {
   return te(key) ? t(key) : null
 })
 
+const allLigatures = computed(() => props.symbol.ligature.join(', '))
+
 const copied = ref(false)
 let timer: ReturnType<typeof setTimeout> | undefined
 
@@ -46,7 +48,7 @@ async function copy() {
     <span class="leading-none" :class="symbol.overflow ? 'text-lg' : 'text-3xl'" :style="glyphStyle">
       {{ symbol.ligature[0] }}
     </span>
-    <span class="font-mono text-xs text-muted">{{ symbol.ligature[0] }}</span>
+    <span class="font-mono text-xs text-muted">{{ allLigatures }}</span>
     <span v-if="displayName" class="text-sm">{{ displayName }}</span>
   </button>
 </template>

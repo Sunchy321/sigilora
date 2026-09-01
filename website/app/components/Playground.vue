@@ -3,19 +3,11 @@ defineOptions({ name: 'Playground' })
 
 const input = ref('{W}{U}{R} Lightning Bolt deals {3} damage.')
 const family = ref<'full' | 'lite'>('full')
-const shadow = ref(true)
-const flat = ref(false)
+const style = ref<'default' | 'shadow' | 'flat'>('default')
 const fontSize = ref(24)
 
 const fontFamily = computed(() => (family.value === 'full' ? "'Sigilora Magic'" : "'Sigilora Magic Lite'"))
-const featureStyle = computed(() => {
-  const features: string[] = ["'liga'"]
-  if (family.value === 'full') {
-    if (shadow.value) features.push("'ss01'")
-    if (flat.value) features.push("'ss02'")
-  }
-  return { fontFeatureSettings: features.join(', ') }
-})
+const activeStyle = computed(() => (family.value === 'lite' ? 'default' : style.value))
 </script>
 
 <template>
@@ -30,8 +22,21 @@ const featureStyle = computed(() => {
           {{ $t('playground.lite') }}
         </UButton>
       </UButtonGroup>
-      <UCheckbox v-model="shadow" :disabled="family === 'lite'" :label="$t('playground.shadow')" />
-      <UCheckbox v-model="flat" :disabled="family === 'lite'" :label="$t('playground.flat')" />
+      <UButtonGroup>
+        <UButton
+          :variant="style === 'default' && family === 'full' ? 'solid' : 'ghost'"
+          :disabled="family === 'lite'"
+          @click="style = 'default'"
+        >
+          {{ $t('playground.default') }}
+        </UButton>
+        <UButton :variant="style === 'shadow' ? 'solid' : 'ghost'" :disabled="family === 'lite'" @click="style = 'shadow'">
+          {{ $t('playground.shadow') }}
+        </UButton>
+        <UButton :variant="style === 'flat' ? 'solid' : 'ghost'" :disabled="family === 'lite'" @click="style = 'flat'">
+          {{ $t('playground.flat') }}
+        </UButton>
+      </UButtonGroup>
       <div class="flex items-center gap-2">
         <UIcon name="i-lucide-type" class="size-4 text-muted" />
         <USlider v-model="fontSize" :min="12" :max="72" class="w-32" />
@@ -40,9 +45,9 @@ const featureStyle = computed(() => {
     </div>
     <div
       class="rounded-xl border border-default bg-elevated p-6 leading-relaxed"
-      :style="{ fontFamily, fontSize: `${fontSize}px`, ...featureStyle }"
+      :style="{ fontSize: `${fontSize}px` }"
     >
-      {{ input }}
+      <SymbolText :text="input" :family="fontFamily" :active-style="activeStyle" />
     </div>
   </div>
 </template>
