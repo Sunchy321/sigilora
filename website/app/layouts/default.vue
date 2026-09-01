@@ -1,3 +1,11 @@
+<script setup lang="ts">
+const colorMode = useColorMode()
+const isDark = computed(() => colorMode.value === 'dark')
+function toggleDark() {
+  colorMode.preference = isDark.value ? 'light' : 'dark'
+}
+</script>
+
 <template>
   <div class="flex min-h-dvh flex-col">
     <header class="border-b border-default">
@@ -7,6 +15,8 @@
           <NuxtLink to="/games" class="hover:text-primary">{{ $t('nav.games') }}</NuxtLink>
           <NuxtLink to="/playground" class="hover:text-primary">{{ $t('nav.playground') }}</NuxtLink>
           <NuxtLink to="/docs/guide/install" class="hover:text-primary">{{ $t('nav.docs') }}</NuxtLink>
+          <NuxtLink to="/docs/guide/changelog" class="hover:text-primary">{{ $t('nav.changelog') }}</NuxtLink>
+          <UButton :icon="isDark ? 'i-lucide-moon' : 'i-lucide-sun'" variant="ghost" square @click="toggleDark" />
           <LanguageSwitcher />
         </nav>
       </div>

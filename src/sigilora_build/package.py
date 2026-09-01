@@ -67,6 +67,7 @@ def package(game: GameData, build_dir: Path, out_dir: Path) -> None:
             "ligature": s.ligature,
             "category": s.category,
             "styles": list(s.svg.keys()),
+            "overflow": s.overflow,
         }
         for s in game.symbols
     ]

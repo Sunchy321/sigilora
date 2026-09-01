@@ -4,6 +4,7 @@ export default {
     games: '游戏',
     playground: 'Playground',
     docs: '文档',
+    changelog: '版本记录',
   },
   hero: {
     title: '保留文本身份的彩色符号',
@@ -27,12 +28,24 @@ export default {
     lite: 'Lite',
     shadow: '阴影',
     flat: '扁平',
-    placeholder: '输入文本，例如 {W}{U}{R} Lightning Bolt 造成 {3} 点伤害。',
+    placeholder: '{\'输入文本，例如 {W}{U}{R} Lightning Bolt 造成 {3} 点伤害。\'}',
     copied: '已复制',
   },
   symbols: {
     title: '符号',
     'click-to-copy': '点击符号复制其 ligature 文本',
+  },
+  usage: {
+    title: '使用示例',
+    html: 'HTML',
+    css: 'CSS',
+  },
+  examples: {
+    title: '示例句子',
+    list: [
+      '{\'{W}{U}{U}，{T}，支付 X 个 {E}：抓 X 张牌。\'}',
+      '{\'由你操控的鹏洛客具有「[0]：增殖」与「[-12]：于本回合后进行额外的一个回合」。\'}',
+    ],
   },
   docs: {
     'not-found': '未找到文档。',

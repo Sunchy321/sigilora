@@ -4,6 +4,7 @@ export default {
     games: 'Games',
     playground: 'Playground',
     docs: 'Docs',
+    changelog: 'Changelog',
   },
   hero: {
     title: 'Color symbols that keep their text identity',
@@ -27,12 +28,24 @@ export default {
     lite: 'Lite',
     shadow: 'Shadow',
     flat: 'Flat',
-    placeholder: 'Type text, e.g. {W}{U}{R} Lightning Bolt deals {3} damage.',
+    placeholder: '{\'Type text, e.g. {W}{U}{R} Lightning Bolt deals {3} damage.\'}',
     copied: 'Copied',
   },
   symbols: {
     title: 'Symbols',
     'click-to-copy': 'Click a symbol to copy its ligature',
+  },
+  usage: {
+    title: 'Usage',
+    html: 'HTML',
+    css: 'CSS',
+  },
+  examples: {
+    title: 'Examples',
+    list: [
+      '{\'{W}{U}{U}, {T}, Pay X {E}: Draw X cards.\'}',
+      '{\'Planeswalkers you control have "[0]: Proliferate" and "[-12]: Take an extra turn after this one."\'}',
+    ],
   },
   docs: {
     'not-found': 'Document not found.',
