@@ -14,6 +14,7 @@ class Symbol:
     svg: dict[str, str]
     compose: dict[str, dict] = field(default_factory=dict)
     overflow: bool = False
+    flat_foreground: bool = False
 
 
 @dataclass
@@ -62,6 +63,7 @@ def _load_symbols(toml_syms: list[dict]) -> list[Symbol]:
                 svg=dict(s["svg"]),
                 compose={k: dict(v) for k, v in s.get("compose", {}).items()},
                 overflow=s.get("overflow", False),
+                flat_foreground=s.get("flat-foreground", False),
             )
         )
     return out

@@ -81,12 +81,15 @@ def _compose_flat_simple(game: GameData, sym: Symbol, out: Path) -> None:
             continue
         child.set("transform", f"translate(50, 50) scale({scale}) translate(-50, -50)")
         if "fill" in child.keys():
-            if fill_map.get(basic_fill) is None:
-                raise ValueError(f"Unknown fill color: {basic_fill} in {sym.svg['default']}")
-            child.set("fill", fill_map[basic_fill])
+            if sym.flat_foreground:
+                child.set("fill", "currentColor")
+            else:
+                if fill_map.get(basic_fill) is None:
+                    raise ValueError(f"Unknown fill color: {basic_fill} in {sym.svg['default']}")
+                child.set("fill", fill_map[basic_fill])
         g.root.append(child)
     circle = plot2[0]
-    circle.root.set("fill", fill_map[basic_fill])
+    circle.root.set("fill", "currentColor" if sym.flat_foreground else fill_map[basic_fill])
     fig.append([plot2, plot1])
     fig.root.set("viewBox", "0 0 100 100")
     fig.save(str(out))
@@ -103,6 +106,9 @@ def _compose_flat_complex(game: GameData, sym: Symbol, parts: list[str], out: Pa
             part_root.root.set("transform", params["part-up-transform"])
         elif part.endswith("_down"):
             part_root.root.set("transform", params["part-down-transform"])
+        if sym.flat_foreground and (part == "flat_split" or part.startswith("two")):
+            # frame/split line and the numeric half follow the foreground color
+            part_root.root.set("fill", "currentColor")
         content.append(part_root)
     fig.append(content)
     fig.root.set("viewBox", "0 0 100 100")

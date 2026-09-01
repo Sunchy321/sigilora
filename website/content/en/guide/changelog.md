@@ -9,6 +9,10 @@ Sigilora Magic is a color symbol font for Magic: The Gathering text. It ships as
 
 Font versions follow SemVer: a **Major** bump removes ligatures, changes existing text mappings, or removes glyphs; a **Minor** bump adds symbols or compatible aliases; a **Patch** is a visual fix.
 
+## Sigilora Magic 1.2.1
+
+- Flat-mode foregrounds follow the text color: numeric-mana symbols (including `{X}`/`{Y}`/`{Z}`), the tap symbol, hybrid-mana frames and their numeric halves, and the snow frame.
+
 ## Sigilora Magic 1.2.0
 
 - Dark-mode support.
