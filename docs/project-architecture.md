@@ -193,13 +193,13 @@ Each release creates a GitHub Release aligned with the npm package version and a
 
 The release includes:
 
-- `Sigilora-Fonts-<package-version>.zip`: complete snapshot of all desktop fonts
-- `Sigilora-<Game>-<font-version>.zip`: independent download package per game font
+- `Sigilora-Fonts-<package-version>.zip`: complete snapshot of all font files (TTF and WOFF2)
+- `Sigilora-<Game>-<font-version>.zip`: independent download package per game font (TTF and WOFF2)
 - `SHA256SUMS`: checksums of release assets
 
 Each release re-attaches all games' independent ZIPs, even if some fonts did not change in that release. The font files are small, and a complete snapshot matters more than saving a little storage.
 
-Desktop ZIPs are primarily TTF and related license information. Web artifacts are primarily the WOFF2 in the npm package. This division matches the release practice of common open-source font projects such as Noto Color Emoji, Material Symbols, and Font Awesome.
+Release ZIPs contain both TTF and WOFF2 plus license information: TTF for desktop installation, WOFF2 for direct web self-hosting. Web consumption through npm still uses the per-game CSS and WOFF2 in the package. This practice matches common open-source font projects such as Noto Color Emoji, Material Symbols, and Font Awesome.
 
 ## 10. Validation and Quality Gates
 

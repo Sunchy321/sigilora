@@ -193,13 +193,13 @@ npm 包版本只描述发布容器和公共接口：
 
 Release 包含：
 
-- `Sigilora-Fonts-<package-version>.zip`：全部桌面字体的完整快照
-- `Sigilora-<Game>-<font-version>.zip`：每个游戏字体的独立下载包
+- `Sigilora-Fonts-<package-version>.zip`：全部字体文件（TTF 和 WOFF2）的完整快照
+- `Sigilora-<Game>-<font-version>.zip`：每个游戏字体的独立下载包（TTF 和 WOFF2）
 - `SHA256SUMS`：Release 资产校验值
 
 每个 Release 重新附带全部游戏的独立 ZIP，即使某些字体在本次发布中没有变化。字体体积较小，完整快照比节省少量存储更重要。
 
-桌面 ZIP 以 TTF 和相关许可证信息为主。Web 产物以 npm 包中的 WOFF2 为主。这一分工与 Noto Color Emoji、Material Symbols、Font Awesome 等常见开源字体项目的发布实践一致。
+Release ZIP 同时包含 TTF 和 WOFF2 及许可证信息：TTF 用于桌面安装，WOFF2 用于 Web 直接自托管。通过 npm 的 Web 消费仍使用包内按游戏提供的 CSS 和 WOFF2。这一实践与 Noto Color Emoji、Material Symbols、Font Awesome 等常见开源字体项目一致。
 
 ## 10. 验证与质量门槛
 

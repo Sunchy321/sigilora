@@ -60,14 +60,14 @@ jobs:
             FV=$(python -c "import tomllib;print(tomllib.load(open('fonts/$game/config.toml','rb'))['font-version'])")
             DOWN="fonts/$game/build"
 
-            # Per-game desktop zip: TTF + license
+            # Per-game zip: TTF + WOFF2 + license
             mkdir -p "$OUT/$game"
-            cp "$DOWN/Sigilora-$LABEL-$FV.ttf" "$DOWN/Sigilora-$LABEL-Lite-$FV.ttf" LICENSE "$OUT/$game/"
+            cp "$DOWN/Sigilora-$LABEL-$FV.ttf" "$DOWN/Sigilora-$LABEL-$FV.woff2" "$DOWN/Sigilora-$LABEL-Lite-$FV.ttf" "$DOWN/Sigilora-$LABEL-Lite-$FV.woff2" LICENSE "$OUT/$game/"
             (cd "$OUT" && zip -q -r "Sigilora-$LABEL-$FV.zip" "$game" && rm -rf "$game")
 
-            # Full snapshot zip: all games' TTFs + license
+            # Full snapshot zip: all games' TTF + WOFF2 + license
             mkdir -p "$OUT/Sigilora-Fonts/$game"
-            cp "$DOWN/Sigilora-$LABEL-$FV.ttf" "$DOWN/Sigilora-$LABEL-Lite-$FV.ttf" LICENSE "$OUT/Sigilora-Fonts/$game/"
+            cp "$DOWN/Sigilora-$LABEL-$FV.ttf" "$DOWN/Sigilora-$LABEL-$FV.woff2" "$DOWN/Sigilora-$LABEL-Lite-$FV.ttf" "$DOWN/Sigilora-$LABEL-Lite-$FV.woff2" LICENSE "$OUT/Sigilora-Fonts/$game/"
           done
           (cd "$OUT" && zip -q -r "Sigilora-Fonts-$PV.zip" Sigilora-Fonts && rm -rf Sigilora-Fonts)
 
