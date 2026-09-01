@@ -2,11 +2,11 @@
 const { locale } = useI18n()
 const route = useRoute()
 const slug = computed(() => (route.params.slug as string[] || []).join('/'))
-const path = computed(() => `/${locale.value}/guide/${slug.value || 'install'}`)
+const path = computed(() => `/${locale.value}/${slug.value || 'guide/install'}`)
 
 const { data: doc } = await useAsyncData(
   'doc',
-  () => queryContent(path.value).findOne(),
+  () => queryCollection('content').path(path.value).first(),
   { watch: [path] },
 )
 </script>
