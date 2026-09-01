@@ -4,13 +4,10 @@ font-version = "0.2.0"
 colr-version = "v1"
 
 [[categories]]
-name = "action"
+name = "symbol"
 
 [[categories]]
 name = "domain"
-
-[[categories]]
-name = "power"
 
 [[categories]]
 name = "number"

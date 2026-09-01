@@ -13,14 +13,14 @@
 [[symbols]]
 name = "exhaust"
 ligature = ["[E]"]
-category = "action"
+category = "symbol"
 svg = { default = "exhaust.svg", inverted = "exhaust.svg" }
 
 
 [[symbols]]
 name = "might"
 ligature = ["[M]"]
-category = "action"
+category = "symbol"
 svg = { default = "might.svg", inverted = "might.svg" }
 
 
@@ -69,7 +69,7 @@ svg = { default = "order.svg", inverted = "order.svg" }
 [[symbols]]
 name = "any"
 ligature = ["[A]"]
-category = "power"
+category = "symbol"
 svg = { default = "any.svg", inverted = "any.svg" }
 
 

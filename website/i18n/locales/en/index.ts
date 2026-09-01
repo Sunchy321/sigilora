@@ -94,9 +94,8 @@ export default {
     special: 'Special',
     loyalty: 'Loyalty',
     default: 'Symbols',
-    action: 'Actions',
+    symbol: 'Symbols',
     domain: 'Domains',
-    power: 'Power',
     number: 'Numbers',
   },
   'style-name': {

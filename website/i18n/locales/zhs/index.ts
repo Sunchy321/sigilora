@@ -94,9 +94,8 @@ export default {
     special: '特殊符号',
     loyalty: '忠诚度',
     default: '符号',
-    action: '行动',
-    domain: '域',
-    power: '力量',
+    symbol: '符号',
+    domain: '符文特性',
     number: '数字',
   },
   'style-name': {
