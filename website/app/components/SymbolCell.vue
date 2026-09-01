@@ -6,18 +6,16 @@ const props = defineProps<{
   symbol: { name: string; ligature: string[]; category: string; overflow?: boolean }
   activeStyle?: string
   family?: string
+  hasInverted?: boolean
 }>()
 
 const glyphStyle = computed(() => {
   const style: Record<string, string> = {
     fontFamily: `'${props.family ?? 'Sigilora Magic'}'`,
-    fontFeatureSettings: "'liga'",
     display: 'inline-block',
     lineHeight: '1',
     whiteSpace: 'nowrap',
   }
-  if (props.activeStyle === 'shadow') style.fontFeatureSettings = "'liga', 'ss01'"
-  else if (props.activeStyle === 'flat') style.fontFeatureSettings = "'liga', 'ss02'"
   return style
 })
 
@@ -49,7 +47,13 @@ async function copy() {
     <UBadge v-if="copied" color="success" class="absolute right-1 top-1" size="xs">
       <UIcon name="i-lucide-check" class="size-3" />
     </UBadge>
-    <span class="leading-none" :class="symbol.overflow ? 'text-lg' : 'text-3xl'" :style="glyphStyle">
+    <span
+      class="leading-none"
+      :class="symbol.overflow ? 'text-lg' : 'text-3xl'"
+      :style="glyphStyle"
+      :data-sigilora-style="activeStyle"
+      :data-sigilora-invertable="hasInverted || undefined"
+    >
       {{ symbol.ligature[0] }}
     </span>
     <span class="font-mono text-xs text-muted">{{ allLigatures }}</span>

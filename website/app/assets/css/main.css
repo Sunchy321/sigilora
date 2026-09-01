@@ -1,3 +1,21 @@
 @import "tailwindcss";
 @import "@nuxt/ui";
 @plugin "@tailwindcss/typography";
+
+/* Sigilora symbol glyph rendering.
+   Manual style selection is exposed as data-sigilora-style; games that ship an
+   "inverted" style are marked data-sigilora-invertable so dark mode auto-switches
+   to the inverted glyphs (readable on dark) via the site's .dark class. */
+[data-sigilora-style] {
+  font-feature-settings: 'liga';
+}
+[data-sigilora-style='inverted'],
+[data-sigilora-style='shadow'] {
+  font-feature-settings: 'liga', 'ss01';
+}
+[data-sigilora-style='flat'] {
+  font-feature-settings: 'liga', 'ss02';
+}
+html.dark [data-sigilora-invertable] {
+  font-feature-settings: 'liga', 'ss01';
+}

@@ -20,6 +20,7 @@ export default defineNuxtConfig({
       link: [
         { rel: 'stylesheet', href: '/fonts/magic/magic.css' },
         { rel: 'stylesheet', href: '/fonts/lorcana/lorcana.css' },
+        { rel: 'stylesheet', href: '/fonts/riftbound/riftbound.css' },
       ],
     },
   },

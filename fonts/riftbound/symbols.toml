@@ -1,0 +1,143 @@
+# Riftbound symbol font mappings.
+# Text representations follow the official Riftbound shorthand:
+# [E] exhaust, [M] Might, domain runes by color letter ([R][G][B][O][P][Y]),
+# [A] any-domain power, [0]-[9] + [X] number symbols.
+# [C] (own-domain power) is intentionally absent: it has no printed graphic;
+# cards print the card's own domain rune instead, so authors write the domain letter.
+#
+# Styles: default (colored as printed; runes are bare domain-color glyphs without
+# the UI circle, numbers are dark circle + white digit). "inverted" (反色) is a
+# monochrome style via ss01: white glyphs for everything except numbers, which
+# become white circle + dark digit (the Riot energy_* form).
+
+[[symbols]]
+name = "exhaust"
+ligature = ["[E]"]
+category = "action"
+svg = { default = "exhaust.svg", inverted = "exhaust-inv.svg" }
+
+
+[[symbols]]
+name = "might"
+ligature = ["[M]"]
+category = "action"
+svg = { default = "might.svg", inverted = "might-inv.svg" }
+
+
+[[symbols]]
+name = "fury"
+ligature = ["[R]"]
+category = "domain"
+svg = { default = "fury.svg", inverted = "fury-inv.svg" }
+
+
+[[symbols]]
+name = "calm"
+ligature = ["[G]"]
+category = "domain"
+svg = { default = "calm.svg", inverted = "calm-inv.svg" }
+
+
+[[symbols]]
+name = "mind"
+ligature = ["[B]"]
+category = "domain"
+svg = { default = "mind.svg", inverted = "mind-inv.svg" }
+
+
+[[symbols]]
+name = "body"
+ligature = ["[O]"]
+category = "domain"
+svg = { default = "body.svg", inverted = "body-inv.svg" }
+
+
+[[symbols]]
+name = "chaos"
+ligature = ["[P]"]
+category = "domain"
+svg = { default = "chaos.svg", inverted = "chaos-inv.svg" }
+
+
+[[symbols]]
+name = "order"
+ligature = ["[Y]"]
+category = "domain"
+svg = { default = "order.svg", inverted = "order-inv.svg" }
+
+
+[[symbols]]
+name = "any"
+ligature = ["[A]"]
+category = "power"
+svg = { default = "any.svg", inverted = "any-inv.svg" }
+
+
+[[symbols]]
+name = "0"
+ligature = ["[0]"]
+category = "number"
+svg = { default = "0.svg", inverted = "0-inv.svg" }
+
+
+[[symbols]]
+name = "1"
+ligature = ["[1]"]
+category = "number"
+svg = { default = "1.svg", inverted = "1-inv.svg" }
+
+
+[[symbols]]
+name = "2"
+ligature = ["[2]"]
+category = "number"
+svg = { default = "2.svg", inverted = "2-inv.svg" }
+
+
+[[symbols]]
+name = "3"
+ligature = ["[3]"]
+category = "number"
+svg = { default = "3.svg", inverted = "3-inv.svg" }
+
+
+[[symbols]]
+name = "4"
+ligature = ["[4]"]
+category = "number"
+svg = { default = "4.svg", inverted = "4-inv.svg" }
+
+
+[[symbols]]
+name = "5"
+ligature = ["[5]"]
+category = "number"
+svg = { default = "5.svg", inverted = "5-inv.svg" }
+
+
+[[symbols]]
+name = "6"
+ligature = ["[6]"]
+category = "number"
+svg = { default = "6.svg", inverted = "6-inv.svg" }
+
+
+[[symbols]]
+name = "7"
+ligature = ["[7]"]
+category = "number"
+svg = { default = "7.svg", inverted = "7-inv.svg" }
+
+
+[[symbols]]
+name = "8"
+ligature = ["[8]"]
+category = "number"
+svg = { default = "8.svg", inverted = "8-inv.svg" }
+
+
+[[symbols]]
+name = "9"
+ligature = ["[9]"]
+category = "number"
+svg = { default = "9.svg", inverted = "9-inv.svg" }

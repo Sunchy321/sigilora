@@ -1,9 +1,10 @@
 <script setup lang="ts">
 import magicJson from '~/data/magic.json'
 import lorcanaJson from '~/data/lorcana.json'
+import riftboundJson from '~/data/riftbound.json'
 
 const { t } = useI18n()
-const manifests = [magicJson, lorcanaJson]
+const manifests = [magicJson, lorcanaJson, riftboundJson]
 
 const columns = computed(() => [
   { accessorKey: 'family', header: t('games.family') },

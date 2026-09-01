@@ -2,7 +2,8 @@
 
 Faithfully ports the predecessor build pipeline: assign Private Use Area
 codepoints to every (symbol, style) glyph, stage the normalized SVGs,
-run nanoemoji (COLRv0), then add OpenType features via fontTools.
+run nanoemoji (COLR version from the game config), then add OpenType
+features via fontTools.
 """
 from __future__ import annotations
 
@@ -81,11 +82,11 @@ def _stage_svgs(game: GameData, entries, work_dir: Path) -> list[str]:
     return staged
 
 
-def _run_nanoemoji(family: str, svgs: list[str], output_file: Path, nanoemoji: str) -> None:
+def _run_nanoemoji(family: str, svgs: list[str], output_file: Path, nanoemoji: str, color_format: str) -> None:
     cmd = [
         nanoemoji,
         "--family", family,
-        "--color_format", "glyf_colr_0",
+        "--color_format", color_format,
         "--output_file", str(output_file),
         "--width", "0",
         "--ascender", "850",
@@ -182,6 +183,16 @@ def _nanoemoji_path(game: GameData) -> str:
     return found
 
 
+_COLOR_FORMATS = {"v0": "glyf_colr_0", "v1": "glyf_colr_1"}
+
+
+def _color_format(game: GameData) -> str:
+    try:
+        return _COLOR_FORMATS[game.colr_version]
+    except KeyError:
+        raise ValueError(f"unsupported colr-version {game.colr_version!r} for {game.code}") from None
+
+
 def build(game: GameData, out_dir: Path, lite: bool = False):
     out_dir.mkdir(parents=True, exist_ok=True)
     game_label = game.code.capitalize()
@@ -191,7 +202,7 @@ def build(game: GameData, out_dir: Path, lite: bool = False):
         work = Path(tmp)
         svgs = _stage_svgs(game, entries, work)
         ttf = out_dir / f"Sigilora-{game_label}{'-Lite' if lite else ''}-{game.font_version}.ttf"
-        _run_nanoemoji(family, svgs, ttf, _nanoemoji_path(game))
+        _run_nanoemoji(family, svgs, ttf, _nanoemoji_path(game), _color_format(game))
         _add_features(ttf, game, entries, lite)
         woff2 = _to_woff2(ttf)
     return {"family": family, "ttf": ttf, "woff2": woff2, "entries": entries}

@@ -1,0 +1,24 @@
+name = "Riftbound"
+code = "riftbound"
+font-version = "0.1.0"
+colr-version = "v1"
+
+[[categories]]
+name = "action"
+
+[[categories]]
+name = "domain"
+
+[[categories]]
+name = "power"
+
+[[categories]]
+name = "number"
+
+[[styles]]
+name = "default"
+
+[[styles]]
+name = "inverted"
+
+[compose]

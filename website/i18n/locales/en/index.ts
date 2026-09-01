@@ -33,6 +33,7 @@ export default {
     placeholder: {
       magic: '{\'Type text, e.g. {W}{U}{R} Lightning Bolt deals {3} damage.\'}',
       lorcana: '{\'Type text, e.g. Play this character for {3}{I}.\'}',
+      riftbound: '{\'Type text, e.g. pay [R] to give a unit +2 [M] this turn.\'}',
     },
     copied: 'Copied',
   },
@@ -60,6 +61,13 @@ export default {
         '{\'Pay {M} to move this card to your inkwell {C}.\'}',
       ],
     },
+    riftbound: {
+      list: [
+        '{\'When I attack, you may pay [R] to give me +2 [M] this turn.\'}',
+        '{\'The next card you play costs [2][A][A] less.\'}',
+        '{\'You may pay [E] and [G] to heal a unit and recall it.\'}',
+      ],
+    },
   },
   docs: {
     'not-found': 'Document not found.',
@@ -75,6 +83,7 @@ export default {
   'game-name': {
     magic: 'Magic: The Gathering',
     lorcana: 'Lorcana',
+    riftbound: 'Riftbound',
   },
   'category-name': {
     'normal-mana': 'Mana',
@@ -85,11 +94,16 @@ export default {
     special: 'Special',
     loyalty: 'Loyalty',
     default: 'Symbols',
+    action: 'Actions',
+    domain: 'Domains',
+    power: 'Power',
+    number: 'Numbers',
   },
   'style-name': {
     default: 'Default',
     shadow: 'Shadow',
     flat: 'Flat',
+    inverted: 'Inverted',
   },
   'symbol-name': {
     white: 'White',
@@ -121,5 +135,13 @@ export default {
     ink: 'Ink',
     inkwell: 'Inkwell',
     exert: 'Exert',
+    exhaust: 'Exhaust',
+    might: 'Might',
+    fury: 'Fury',
+    calm: 'Calm',
+    mind: 'Mind',
+    body: 'Body',
+    order: 'Order',
+    any: 'Any power',
   },
 }

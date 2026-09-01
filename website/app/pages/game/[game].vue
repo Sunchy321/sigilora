@@ -1,8 +1,10 @@
 <script setup lang="ts">
 import magicJson from '~/data/magic.json'
 import lorcanaJson from '~/data/lorcana.json'
+import riftboundJson from '~/data/riftbound.json'
 import magicSymbols from '~/data/magic-symbols.json'
 import lorcanaSymbols from '~/data/lorcana-symbols.json'
+import riftboundSymbols from '~/data/riftbound-symbols.json'
 
 interface GameManifest {
   game: string
@@ -24,8 +26,8 @@ interface GameSymbol {
 const route = useRoute()
 const { t, tm, rt } = useI18n()
 
-const manifests = { magic: magicJson, lorcana: lorcanaJson } as Record<string, GameManifest>
-const symbolSets = { magic: magicSymbols, lorcana: lorcanaSymbols } as Record<string, GameSymbol[]>
+const manifests = { magic: magicJson, lorcana: lorcanaJson, riftbound: riftboundJson } as Record<string, GameManifest>
+const symbolSets = { magic: magicSymbols, lorcana: lorcanaSymbols, riftbound: riftboundSymbols } as Record<string, GameSymbol[]>
 
 const game = computed(() => (route.params.game as string) || 'magic')
 const manifest = computed(() => manifests[game.value]!)
@@ -39,6 +41,8 @@ const styleOptions = computed(() => manifest.value.fonts[0]!.styles.map((s: stri
   value: s,
 })))
 const activeStyle = ref('default')
+const availableStyles = computed(() => manifest.value.fonts[0]!.styles)
+const hasInverted = computed(() => availableStyles.value.includes('inverted'))
 const examples = computed(() => {
   const list = tm(`examples.${game.value}.list`) as unknown as unknown[]
   return list.map((item) => rt(item as string))
@@ -47,6 +51,7 @@ const examples = computed(() => {
 const htmlSamples: Record<string, { sym: string; plain: string }> = {
   magic: { sym: '{W}{U}{R}', plain: 'Lightning Bolt' },
   lorcana: { sym: '{S}{W}', plain: 'A character' },
+  riftbound: { sym: '[R][M]', plain: 'Fury unit' },
 }
 const htmlCode = computed(() => {
   const s = htmlSamples[game.value] ?? { sym: '', plain: '' }
@@ -85,7 +90,7 @@ const cssCode = computed(() => `.sigilora-${code.value} {\n  font-family: '${fam
           :key="i"
           class="rounded-xl border border-default bg-elevated p-4 text-xl leading-relaxed"
         >
-          <SymbolText :text="ex" :family="family" :active-style="activeStyle" />
+          <SymbolText :text="ex" :family="family" :active-style="activeStyle" :has-inverted="hasInverted" />
         </div>
       </div>
     </section>
@@ -95,6 +100,7 @@ const cssCode = computed(() => `.sigilora-${code.value} {\n  font-family: '${fam
       :categories="manifest.categories"
       :active-style="activeStyle"
       :family="family"
+      :has-inverted="hasInverted"
       class="mt-10"
     />
   </div>

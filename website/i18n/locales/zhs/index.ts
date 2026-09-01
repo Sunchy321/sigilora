@@ -33,6 +33,7 @@ export default {
     placeholder: {
       magic: '{\'输入文本，例如 {W}{U}{R} Lightning Bolt 造成 {3} 点伤害。\'}',
       lorcana: '{\'输入文本，例如 支付 {3}{I} 打出此角色。\'}',
+      riftbound: '{\'输入文本，例如 支付 [R] 使一个单位本回合 +2 [M]。\'}',
     },
     copied: '已复制',
   },
@@ -60,6 +61,13 @@ export default {
         '{\'支付 {M} 将此牌移入你的墨水池 {C}。\'}',
       ],
     },
+    riftbound: {
+      list: [
+        '{\'当我攻击时，你可以支付 [R]，本回合使我获得 +2 [M]。\'}',
+        '{\'你本回合打出的下一张牌费用减少 [2][A][A]。\'}',
+        '{\'你可以支付 [E] 与 [G] 以治疗一个单位并将其召回。\'}',
+      ],
+    },
   },
   docs: {
     'not-found': '未找到文档。',
@@ -75,6 +83,7 @@ export default {
   'game-name': {
     magic: '万智牌',
     lorcana: '洛卡纳',
+    riftbound: 'Riftbound',
   },
   'category-name': {
     'normal-mana': '基础法术力',
@@ -85,11 +94,16 @@ export default {
     special: '特殊符号',
     loyalty: '忠诚度',
     default: '符号',
+    action: '行动',
+    domain: '域',
+    power: '力量',
+    number: '数字',
   },
   'style-name': {
     default: '默认',
     shadow: '阴影',
     flat: '扁平',
+    inverted: '反色',
   },
   'symbol-name': {
     white: '白',
@@ -121,5 +135,13 @@ export default {
     ink: '墨水',
     inkwell: '墨水池',
     exert: '横置',
+    exhaust: '横置',
+    might: '战力',
+    fury: '暴怒',
+    calm: '平静',
+    mind: '心智',
+    body: '体魄',
+    order: '秩序',
+    any: '任意力',
   },
 }
