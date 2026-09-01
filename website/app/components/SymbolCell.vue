@@ -11,6 +11,9 @@ const glyphStyle = computed(() => {
   const style: Record<string, string> = {
     fontFamily: "'Sigilora Magic'",
     fontFeatureSettings: "'liga'",
+    display: 'inline-block',
+    lineHeight: '1',
+    whiteSpace: 'nowrap',
   }
   if (props.activeStyle === 'shadow') style.fontFeatureSettings = "'liga', 'ss01'"
   else if (props.activeStyle === 'flat') style.fontFeatureSettings = "'liga', 'ss02'"
