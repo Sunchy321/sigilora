@@ -36,4 +36,4 @@ import '@sigilora/fonts/magic.css'
 - **Sigilora Magic** —— 全量字体，包含全部样式。用 `font-feature-settings: 'ss01'`（阴影）或 `'ss02'`（扁平）切换样式。
 - **Sigilora Magic Lite** —— 仅默认样式，体积更小。
 
-> 另见：[npm 包](/docs/guide/install-npm) · [桌面安装](/docs/guide/install-desktop)
+> 另见：[npm 包](/docs/guide/install-npm) · [桌面安装](/docs/guide/install-desktop) · [已知限制](/docs/guide/known-limitations)

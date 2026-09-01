@@ -108,6 +108,8 @@ Each game font prefers the mature native symbol text representation already esta
 
 As long as the corresponding Sigilora font is applied, matching text is converted to symbols by default through the standard `liga` feature. Code blocks or areas that should not be converted are handled by the consumer not applying the font, or by explicitly disabling ligatures.
 
+Known browser limitation: in WebKit browsers (Safari on macOS and iOS), a `liga` ligature whose input contains an ASCII hyphen-minus (`-`, U+002D) immediately followed by a letter is not applied, because WebKit splits the shaping run at that position. For the Magic font this affects `[-X]` and `[-N]`. No alternate input characters are currently mapped for these two symbols. This is a shaping-engine behavior, not a font defect, and is not caught by HarfBuzz-based validation.
+
 ### 6.3 COLR Version
 
 The COLR version is an independent build property of each font, not a project-wide global constraint:

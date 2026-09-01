@@ -36,4 +36,4 @@ Matching text such as `{W}{U}{B}{R}{G}` is converted to color symbols automatica
 - **Sigilora Magic** — the full font with all styles. Switch styles with `font-feature-settings: 'ss01'` (shadow) or `'ss02'` (flat).
 - **Sigilora Magic Lite** — the default style only; smaller.
 
-> See also: [npm package](/docs/guide/install-npm) · [desktop](/docs/guide/install-desktop)
+> See also: [npm package](/docs/guide/install-npm) · [desktop](/docs/guide/install-desktop) · [known limitations](/docs/guide/known-limitations)
