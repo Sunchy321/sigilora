@@ -1,3 +1,5 @@
+**NEVER commit without the user's explicit approval. Wait for an explicit request to commit.**
+
 **NEVER make design decisions on your own. Always ask the user before deciding.**
 
 **NEVER revert design decisions previously made without the user's explicit request.**
