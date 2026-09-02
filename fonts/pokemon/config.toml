@@ -1,7 +1,12 @@
 name = "Pokémon TCG"
 code = "pokemon"
-font-version = "0.2.0"
+font-version = "0.3.0"
 colr-version = "v1"
+
+# The Lite family carries only the default style (bare currentColor symbols),
+# which is fully COLRv0-expressible. Unlike the full family it is therefore
+# built as COLRv0 directly — it needs neither COLRv1 nor a fallback flavor.
+lite-colr-version = "v0"
 
 [[categories]]
 name = "energy"
@@ -20,3 +25,12 @@ name = "orb"
 name = "flat"
 
 [compose]
+
+# Engines without COLRv1 (Safari / WKWebView / native CoreText etc.) get a v0
+# fallback flavor built from this same source: identical glyphs and version,
+# colour encoding downgraded to COLRv0. orb's glossy gradient cannot be
+# expressed in v0, so in the fallback flavor the orb style draws flat's art
+# (the same flat disc); default (bare currentColor symbol) and flat are v0
+# as-is.
+[colr-fallback]
+style-art = { orb = "flat" }

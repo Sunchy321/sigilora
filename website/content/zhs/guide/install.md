@@ -79,4 +79,6 @@ import '@sigilora/fonts/pokemon.css'
 - **Sigilora <Game>** —— 全量字体。Magic 另有阴影与扁平样式，用 `font-feature-settings: 'ss01'`（阴影）或 `'ss02'`（扁平）切换；符文战场另有反色样式，用 `'ss01'` 切换。宝可梦卡牌另有能量球（orb）与扁平样式，用 `'ss01'`（能量球）或 `'ss02'`（扁平）切换；其默认样式为随文字颜色的裸能量符号。
 - **Sigilora <Game> Lite** —— 仅默认样式，体积更小。
 
+宝可梦卡牌与符文战场的全量字体，以及符文战场 Lite，使用 COLRv1。它们的 CSS 也会向不支持 COLRv1 的引擎（如 Safari）提供 COLRv0 回退 flavor，需要 COLRv1 的效果（光泽能量球、符文战场 `[A]` 彩虹）在这些引擎上自动降级为平涂或文字色。宝可梦卡牌 Lite 直接以 COLRv0 构建，无需回退即可在任何引擎渲染。无需任何操作。
+
 > 另见：[npm 包](/docs/guide/install-npm) · [桌面安装](/docs/guide/install-desktop) · [已知限制](/docs/guide/known-limitations)

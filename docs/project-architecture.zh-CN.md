@@ -117,6 +117,8 @@ COLR 版本是每个字体的独立构建属性，不是项目级全局约束：
 - 当前已实现且只需要纯色叠层的字体使用 COLRv0
 - PTCG 等需要渐变、透明度或复杂变换的字体可以使用 COLRv1
 - 不为统一技术栈而提前升级不需要 COLRv1 的字体
+- COLRv1 字体可额外附带 COLRv0 回退 flavor：同字形、同 ligature、同映射、同字体版本，仅编码降为 COLRv0（平涂色 + `currentColor`），使不支持 COLRv1 的引擎——Safari/WebKit、原生 CoreText、Windows 10 DirectWrite、Android 13 以下——渲染符号而非空白。Web 端每个游戏的 CSS 先声明 v0 face、再在 `@supports font-tech(color-COLRv1)` 内声明 v1 face：能渲染 COLRv1 的引擎加载 v1 flavor，其余引擎自然回退到 v0。桌面 ZIP 同时分发两种 flavor，作为独立命名的字体族（`… V0`）。
+- COLR 版本按字体族而非按游戏选择：同一游戏的全量与 Lite 字体族可以不同。只含 COLRv0 可表达字形（平涂与 `currentColor`）的字体族可直接以 COLRv0 构建——宝可梦卡牌 Lite 即如此——因此无需 `-v0` 回退。回退机制只适用于本身为 COLRv1 的字体族。
 
 ## 7. 源数据与构建
 
@@ -199,7 +201,7 @@ Release 包含：
 
 每个 Release 重新附带全部游戏的独立 ZIP，即使某些字体在本次发布中没有变化。字体体积较小，完整快照比节省少量存储更重要。
 
-Release ZIP 同时包含 TTF 和 WOFF2 及许可证信息：TTF 用于桌面安装，WOFF2 用于 Web 直接自托管。通过 npm 的 Web 消费仍使用包内按游戏提供的 CSS 和 WOFF2。这一实践与 Noto Color Emoji、Material Symbols、Font Awesome 等常见开源字体项目一致。
+Release ZIP 同时包含 TTF 和 WOFF2 及许可证信息：TTF 用于桌面安装，WOFF2 用于 Web 直接自托管。COLRv1 字体在相同 ZIP 中额外附带其 `-v0` 回退 TTF 与 WOFF2。通过 npm 的 Web 消费仍使用包内按游戏提供的 CSS 和 WOFF2。这一实践与 Noto Color Emoji、Material Symbols、Font Awesome 等常见开源字体项目一致。
 
 ## 10. 验证与质量门槛
 

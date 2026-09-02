@@ -11,6 +11,11 @@ Sigilora Riftbound 以 `Sigilora Riftbound`（默认样式）与精简版 `Sigil
 
 字体版本遵循 SemVer：**Major** 表示删除 ligature、改变既有文本映射或移除字形；**Minor** 表示新增符号或兼容别名；**Patch** 为视觉修正。
 
+## Sigilora Riftbound 0.3.0
+
+- 新增字体的 COLRv0 回退 flavor：字形、ligature 与版本完全一致。不支持 COLRv1 的引擎——Safari/WebKit、原生 CoreText、Windows 10 DirectWrite、Android 13 及以下——在 Web 端通过游戏 CSS 自动获得该 flavor（或安装随附的 `… V0` 桌面字体），符号正常渲染而非空白。
+- v0 flavor 中，唯一需要 COLRv1 的字形 `[A]` 任意的彩虹渐变改用专门的 `currentColor`（文字色）图形；其余字形——域符文、数字与反色样式——本就是平涂或单色，保持不变。
+
 ## Sigilora Riftbound 0.2.0
 
 - 新增 Riftbound 符号集：`[E]` 休眠、`[M]` 🧍、域符文 `[R]` `[G]` `[B]` `[O]` `[P]` `[Y]`、`[A]` 任意、数字 `[0]`–`[12]`。

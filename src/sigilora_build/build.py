@@ -71,11 +71,36 @@ def _assign_codepoints(game: GameData, lite: bool):
     return entries
 
 
-def _stage_svgs(game: GameData, entries, work_dir: Path) -> list[str]:
+def _default_resolve(game: GameData):
+    """Identity art resolver: draw each (symbol, style) glyph from svg/<style>/<file>."""
+    def resolve(sym, style):
+        return game.svg_dir / style / sym.svg[style]
+    return resolve
+
+
+def _fallback_resolve(game: GameData):
+    """COLRv0-flavor art resolver: apply colr-fallback overrides — first any
+    per-(symbol, style) override-art, then style-art style substitution."""
+    fb = game.colr_fallback
+    overrides = {(o.name, o.style): o.file for o in fb.override_art}
+
+    def resolve(sym, style):
+        file = overrides.get((sym.name, style))
+        if file is not None:
+            return game.svg_dir / style / file
+        art_style = fb.style_art.get(style, style)
+        file = sym.svg[art_style] if art_style in sym.svg else sym.svg[style]
+        return game.svg_dir / art_style / file
+    return resolve
+
+
+def _stage_svgs(game: GameData, entries, work_dir: Path, resolve=None) -> list[str]:
+    if resolve is None:
+        resolve = _default_resolve(game)
     staged = []
     for name, style, cp in entries:
         sym = game.by_name(name)
-        svg = game.svg_dir / style / sym.svg[style]
+        svg = resolve(sym, style)
         target = work_dir / f"emoji_u{cp:04X}.svg"
         shutil.copy2(svg, target)
         staged.append(str(target))
@@ -186,23 +211,61 @@ def _nanoemoji_path(game: GameData) -> str:
 _COLOR_FORMATS = {"v0": "glyf_colr_0", "v1": "glyf_colr_1"}
 
 
-def _color_format(game: GameData) -> str:
-    try:
-        return _COLOR_FORMATS[game.colr_version]
-    except KeyError:
-        raise ValueError(f"unsupported colr-version {game.colr_version!r} for {game.code}") from None
+def flavor_specs(game: GameData, lite: bool) -> list[dict]:
+    """Which binaries one family is built from: its primary flavor plus, when the
+    family's COLR version is v1 and the game declares [colr-fallback], a COLRv0
+    fallback flavor (`-v0`). The lite family's COLR version is lite-colr-version
+    (default: the full one) — a lite family whose glyphs are all COLRv0-
+    expressible can set it to v0 and needs no fallback."""
+    color = game.colr_for(lite)
+    specs = [{"suffix": "", "colr": color}]
+    if color == "v1" and game.colr_fallback is not None:
+        specs.append({"suffix": "-v0", "colr": "v0"})
+    return specs
 
 
-def build(game: GameData, out_dir: Path, lite: bool = False):
-    out_dir.mkdir(parents=True, exist_ok=True)
+def _build_flavor(
+    game: GameData,
+    out_dir: Path,
+    lite: bool,
+    *,
+    resolve,
+    color_format: str,
+    file_suffix: str = "",
+    family_suffix: str = "",
+):
     game_label = game.code.capitalize()
-    family = f"Sigilora {game_label}{' Lite' if lite else ''}"
+    family = f"Sigilora {game_label}{' Lite' if lite else ''}{family_suffix}"
     entries = _assign_codepoints(game, lite)
     with tempfile.TemporaryDirectory() as tmp:
         work = Path(tmp)
-        svgs = _stage_svgs(game, entries, work)
-        ttf = out_dir / f"Sigilora-{game_label}{'-Lite' if lite else ''}-{game.font_version}.ttf"
-        _run_nanoemoji(family, svgs, ttf, _nanoemoji_path(game), _color_format(game))
+        svgs = _stage_svgs(game, entries, work, resolve)
+        stem = f"Sigilora-{game_label}{'-Lite' if lite else ''}-{game.font_version}{file_suffix}"
+        ttf = out_dir / f"{stem}.ttf"
+        _run_nanoemoji(family, svgs, ttf, _nanoemoji_path(game), color_format)
         _add_features(ttf, game, entries, lite)
         woff2 = _to_woff2(ttf)
-    return {"family": family, "ttf": ttf, "woff2": woff2, "entries": entries}
+    return {"family": family, "stem": stem, "ttf": ttf, "woff2": woff2, "entries": entries}
+
+
+def build(game: GameData, out_dir: Path, lite: bool = False) -> list[dict]:
+    """Build one font family from its flavor specs (see flavor_specs). A family
+    whose COLR version is v1 and whose game declares [colr-fallback] is also
+    built as a COLRv0 fallback flavor with the same glyphs/features — same
+    codepoints and liga/ssXX, colour encoding downgraded to v0, a `-v0` file
+    suffix, and a distinct internal family so desktop installs of both can
+    coexist. A lite family set to COLRv0 is built as one v0 font."""
+    out_dir.mkdir(parents=True, exist_ok=True)
+    results = []
+    for spec in flavor_specs(game, lite):
+        fallback = spec["suffix"] == "-v0"
+        results.append(
+            _build_flavor(
+                game, out_dir, lite,
+                resolve=_fallback_resolve(game) if fallback else _default_resolve(game),
+                color_format=_COLOR_FORMATS[spec["colr"]],
+                file_suffix=spec["suffix"],
+                family_suffix=" V0" if fallback else "",
+            )
+        )
+    return results

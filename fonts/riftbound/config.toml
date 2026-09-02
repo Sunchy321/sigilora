@@ -1,6 +1,6 @@
 name = "Riftbound"
 code = "riftbound"
-font-version = "0.2.0"
+font-version = "0.3.0"
 colr-version = "v1"
 
 [[categories]]
@@ -19,3 +19,15 @@ name = "default"
 name = "inverted"
 
 [compose]
+
+# Engines without COLRv1 (Safari / WKWebView / native CoreText etc.) get a v0
+# fallback flavor built from this same source: identical glyphs and version,
+# colour encoding downgraded to COLRv0. Every riftbound glyph is already flat
+# or monochrome and survives v0 unchanged, except the any-domain rune whose
+# rainbow linear gradient cannot be expressed in COLRv0 — that glyph uses a
+# currentColor override art (any-currentcolor.svg) instead.
+[colr-fallback]
+[[colr-fallback.override-art]]
+name = "any"
+style = "default"
+file = "any-currentcolor.svg"

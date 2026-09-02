@@ -117,6 +117,8 @@ The COLR version is an independent build property of each font, not a project-wi
 - Fonts that currently need only flat color layers use COLRv0
 - Fonts like PTCG that need gradients, opacity, or complex transforms can use COLRv1
 - Fonts that do not need COLRv1 are not upgraded early just for a unified technology stack
+- A COLRv1 font may additionally ship a COLRv0 fallback flavor: the same glyphs, ligatures, mappings, and font version encoded in COLRv0 (flat colors plus `currentColor`), so engines without COLRv1 — Safari/WebKit, native CoreText, Windows 10 DirectWrite, Android < 13 — render symbols instead of blank space. On the web the per-game CSS declares the v0 face first and the v1 face inside `@supports font-tech(color-COLRv1)`, so COLRv1-capable engines load the v1 flavor and everything else fails closed to v0. Desktop ZIPs distribute both flavors as separately named families (`… V0`).
+- The COLR version is chosen per family, not per game: the full and Lite families of one game can differ. A family that only carries glyphs expressible in COLRv0 (flat fills and `currentColor`) can be built directly as COLRv0 — Pokémon TCG Lite does this — and then needs no `-v0` fallback. The fallback mechanism applies only to a family that is itself COLRv1.
 
 ## 7. Source Data and Build
 
@@ -199,7 +201,7 @@ The release includes:
 
 Each release re-attaches all games' independent ZIPs, even if some fonts did not change in that release. The font files are small, and a complete snapshot matters more than saving a little storage.
 
-Release ZIPs contain both TTF and WOFF2 plus license information: TTF for desktop installation, WOFF2 for direct web self-hosting. Web consumption through npm still uses the per-game CSS and WOFF2 in the package. This practice matches common open-source font projects such as Noto Color Emoji, Material Symbols, and Font Awesome.
+Release ZIPs contain both TTF and WOFF2 plus license information: TTF for desktop installation, WOFF2 for direct web self-hosting. COLRv1 fonts include their `-v0` fallback TTF and WOFF2 in the same ZIPs. Web consumption through npm still uses the per-game CSS and WOFF2 in the package. This practice matches common open-source font projects such as Noto Color Emoji, Material Symbols, and Font Awesome.
 
 ## 10. Validation and Quality Gates
 

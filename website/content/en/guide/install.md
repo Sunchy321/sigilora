@@ -79,4 +79,6 @@ Each game provides two families:
 - **Sigilora <Game>** — the full font. Magic additionally ships shadow and flat styles, switched via `font-feature-settings: 'ss01'` (shadow) or `'ss02'` (flat). Riftbound ships an inverted (反色) style via `'ss01'`. Pokémon TCG ships orb and flat styles, switched via `'ss01'` (orb) or `'ss02'` (flat); its default style is the bare energy symbol in the text color.
 - **Sigilora <Game> Lite** — the default style only; smaller.
 
+The full Pokémon TCG and Riftbound fonts — and Riftbound Lite — are COLRv1. Their CSS also serves a COLRv0 fallback flavor to engines without COLRv1 — such as Safari — where the effects that need COLRv1 (the glossy orb, the Riftbound `[A]` rainbow) degrade to flat or text-color art automatically. Pokémon TCG Lite is built as COLRv0 directly, so it renders everywhere without a fallback. No action is needed.
+
 > See also: [npm package](/docs/guide/install-npm) · [desktop](/docs/guide/install-desktop) · [known limitations](/docs/guide/known-limitations)

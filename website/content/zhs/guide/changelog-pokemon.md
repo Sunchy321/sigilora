@@ -11,6 +11,12 @@ Sigilora Pokemon 以全量 `Sigilora Pokemon`（default / orb / flat 三种样�
 
 字体版本遵循 SemVer：**Major** 表示删除 ligature、改变既有文本映射或移除字形；**Minor** 表示新增符号或兼容别名；**Patch** 为视觉修正。
 
+## Sigilora Pokemon 0.3.0
+
+- 全量字体新增 COLRv0 回退 flavor：字形、ligature 与版本完全一致。不支持 COLRv1 的引擎——Safari/WebKit、原生 CoreText、Windows 10 DirectWrite、Android 13 及以下——在 Web 端通过游戏 CSS 自动获得（或安装随附的 `… V0` 桌面字体），符号正常渲染而非空白。
+- 在该 v0 回退中，`orb`（`ss01`）样式改用 `flat` 样式的图形，因此无 COLRv1 的环境下光泽能量球渲染为平面圆徽。默认的文字色裸符号与 flat 盘面保持不变。
+- Lite（仅默认样式）现直接以 COLRv0 构建——裸 `currentColor` 符号不需要 COLRv1——因此没有 v1/回退之分，任何引擎都能渲染。
+
 ## Sigilora Pokemon 0.2.0
 
 - 为每个能量新增两种样式：`orb`（`ss01`，带光泽的能量球）与 `flat`（`ss02`，平面圆徽，盘面填充字体官方基色）。

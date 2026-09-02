@@ -75,6 +75,12 @@ def check_mappings(game: GameData) -> None:
             if not svg.exists():
                 missing_svg.append(f"{s.name}/{style}/{f}")
             referenced.add((style, f))
+    if game.colr_fallback is not None:
+        for o in game.colr_fallback.override_art:
+            svg = game.svg_dir / o.style / o.file
+            if not svg.exists():
+                missing_svg.append(f"{o.name}/{o.style}/{o.file}")
+            referenced.add((o.style, o.file))
     for style_dir in game.svg_dir.iterdir():
         if not style_dir.is_dir():
             continue
@@ -94,14 +100,14 @@ def check_mappings(game: GameData) -> None:
         raise ValidationError("; ".join(problems))
 
 
-def check_colr(game: GameData, font: TTFont) -> None:
+def check_colr(expected_version: str, font: TTFont) -> None:
     colr = font.get("COLR")
     if colr is None:
         raise ValidationError("font has no COLR table")
-    expected = {"v0": 0, "v1": 1}[game.colr_version]
+    expected = {"v0": 0, "v1": 1}[expected_version]
     if colr.version != expected:
         raise ValidationError(
-            f"COLR version {colr.version} does not match declared {game.colr_version}"
+            f"COLR version {colr.version} does not match expected {expected_version}"
         )
 
 
@@ -115,10 +121,17 @@ def check_consistency(font: TTFont, woff2: Path) -> None:
         raise ValidationError("TTF and WOFF2 version strings differ")
 
 
-def validate(game: GameData, ttf: Path, woff2: Path, lite: bool = False) -> None:
+def validate(
+    game: GameData,
+    ttf: Path,
+    woff2: Path,
+    lite: bool = False,
+    expected_colr_version: str | None = None,
+) -> None:
+    expected_colr_version = expected_colr_version or game.colr_version
     check_mappings(game)
     check_structure(ttf, woff2)
     font = TTFont(str(ttf))
     check_shaping(game, font, ttf, lite)
-    check_colr(game, font)
+    check_colr(expected_colr_version, font)
     check_consistency(font, woff2)

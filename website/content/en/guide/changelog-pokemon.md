@@ -11,6 +11,12 @@ Sigilora Pokemon ships as the full `Sigilora Pokemon` family (default, orb, and 
 
 Font versions follow SemVer: a **Major** bump removes ligatures, changes existing text mappings, or removes glyphs; a **Minor** bump adds symbols or compatible aliases; a **Patch** is a visual fix.
 
+## Sigilora Pokemon 0.3.0
+
+- Add a COLRv0 fallback flavor of the full font, identical in glyphs, ligatures, and version. Engines without COLRv1 — Safari/WebKit, native CoreText, Windows 10 DirectWrite, Android 13 and below — receive it automatically through the game CSS on the web (or by installing the bundled `… V0` desktop font), so symbols render instead of blank space.
+- In that v0 fallback the `orb` (`ss01`) style is drawn from the `flat` style's art, so the glossy energy ball renders as the flat disc where COLRv1 is unavailable. The default text-color bare symbol and the flat badges are unchanged.
+- The Lite family (default style only) is built as COLRv0 directly — its bare `currentColor` symbols need no COLRv1 — so it has no v1/fallback split and renders everywhere.
+
 ## Sigilora Pokemon 0.2.0
 
 - Add two new styles per energy: `orb` (`ss01`, the glossy energy ball) and `flat` (`ss02`, a flat round badge filled with the font's official disc color).

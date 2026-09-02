@@ -37,13 +37,12 @@ jobs:
 
       # The game list and its order come from games.json (single source of
       # truth); adding a new game requires no changes to this workflow.
-      - name: Build all fonts (normalize / build / validate / package)
+      # `sigilora build` runs the full per-game pipeline: normalize -> compile
+      # (full + lite) -> validate -> package.
+      - name: Build all fonts (normalize / compile / validate / package)
         run: |
           for game in $(jq -r '.games[]' games.json); do
-            sigilora normalize "$game"
             sigilora build "$game"
-            sigilora validate "$game"
-            sigilora package "$game"
           done
 
       - name: Generate npm package.json
@@ -60,14 +59,21 @@ jobs:
             FV=$(python -c "import tomllib;print(tomllib.load(open('fonts/$game/config.toml','rb'))['font-version'])")
             DOWN="fonts/$game/build"
 
+            FILES=(Sigilora-$LABEL-$FV.ttf Sigilora-$LABEL-$FV.woff2 Sigilora-$LABEL-Lite-$FV.ttf Sigilora-$LABEL-Lite-$FV.woff2)
+            # COLRv0 fallback flavors (-v0) exist only where a family is COLRv1
+            # with [colr-fallback]; include whatever the build produced.
+            for v0 in Sigilora-$LABEL-$FV-v0.ttf Sigilora-$LABEL-$FV-v0.woff2 Sigilora-$LABEL-Lite-$FV-v0.ttf Sigilora-$LABEL-Lite-$FV-v0.woff2; do
+              [ -f "$DOWN/$v0" ] && FILES+=("$v0")
+            done
+
             # Per-game zip: TTF + WOFF2 + license
             mkdir -p "$OUT/$game"
-            cp "$DOWN/Sigilora-$LABEL-$FV.ttf" "$DOWN/Sigilora-$LABEL-$FV.woff2" "$DOWN/Sigilora-$LABEL-Lite-$FV.ttf" "$DOWN/Sigilora-$LABEL-Lite-$FV.woff2" LICENSE "$OUT/$game/"
+            cp "${FILES[@]/#/$DOWN/}" LICENSE "$OUT/$game/"
             (cd "$OUT" && zip -q -r "Sigilora-$LABEL-$FV.zip" "$game" && rm -rf "$game")
 
             # Full snapshot zip: all games' TTF + WOFF2 + license
             mkdir -p "$OUT/Sigilora-Fonts/$game"
-            cp "$DOWN/Sigilora-$LABEL-$FV.ttf" "$DOWN/Sigilora-$LABEL-$FV.woff2" "$DOWN/Sigilora-$LABEL-Lite-$FV.ttf" "$DOWN/Sigilora-$LABEL-Lite-$FV.woff2" LICENSE "$OUT/Sigilora-Fonts/$game/"
+            cp "${FILES[@]/#/$DOWN/}" LICENSE "$OUT/Sigilora-Fonts/$game/"
           done
           (cd "$OUT" && zip -q -r "Sigilora-Fonts-$PV.zip" Sigilora-Fonts && rm -rf Sigilora-Fonts)
 

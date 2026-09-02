@@ -11,6 +11,11 @@ Sigilora Riftbound ships as the `Sigilora Riftbound` family (default style) and 
 
 Font versions follow SemVer: a **Major** bump removes ligatures, changes existing text mappings, or removes glyphs; a **Minor** bump adds symbols or compatible aliases; a **Patch** is a visual fix.
 
+## Sigilora Riftbound 0.3.0
+
+- Add a COLRv0 fallback flavor of the font, identical in glyphs, ligatures, and version. Engines without COLRv1 — Safari/WebKit, native CoreText, Windows 10 DirectWrite, Android 13 and below — receive the v0 flavor automatically through the game CSS on the web (or by installing the bundled `… V0` desktop font), so symbols render instead of blank space.
+- The only COLRv1-requiring glyph, the `[A]` any-power rainbow gradient, has a dedicated `currentColor` (text-color) art in the v0 flavor. Every other glyph — domain runes, numbers, and the inverted style — is already flat or monochrome and is unchanged.
+
 ## Sigilora Riftbound 0.2.0
 
 - Add the Riftbound symbol set: `[E]` exhaust, `[M]` might, domain runes `[R]` `[G]` `[B]` `[O]` `[P]` `[Y]`, `[A]` any power, and `[0]`–`[12]` number symbols.
