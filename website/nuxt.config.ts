@@ -6,6 +6,12 @@ export default defineNuxtConfig({
       sqliteConnector: 'native',
     },
   },
+  // Production is deployed on Cloudflare Workers (cloudflare_module). For local
+  // `nuxt dev`, Nuxt Content's client-side SQL dump is only served under its node
+  // preset (the cloudflare preset reads it from build storage / ASSETS, which are
+  // absent in dev) — without it, client-side queryCollection returns null and the
+  // docs show "not found" on internal navigation. Hence the dev script sets
+  // NITRO_PRESET=node. Production build is unaffected (env var unset).
   nitro: {
     preset: 'cloudflare_module',
     cloudflare: {
