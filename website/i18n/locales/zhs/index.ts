@@ -2,7 +2,6 @@ export default {
   nav: {
     home: '首页',
     games: '游戏',
-    playground: 'Playground',
     docs: '文档',
     changelog: '版本记录',
   },
@@ -24,12 +23,8 @@ export default {
   playground: {
     title: 'Playground',
     subtitle: '输入游戏文本，实时预览彩色符号。',
-    game: '游戏',
     full: '全量',
     lite: 'Lite',
-    default: '默认',
-    shadow: '阴影',
-    flat: '扁平',
     placeholder: {
       magic: '{\'输入文本，例如 {W}{U}{R} Lightning Bolt 造成 {3} 点伤害。\'}',
       lorcana: '{\'输入文本，例如 支付 {3}{I} 打出此角色。\'}',

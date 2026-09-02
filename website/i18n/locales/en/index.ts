@@ -2,7 +2,6 @@ export default {
   nav: {
     home: 'Home',
     games: 'Games',
-    playground: 'Playground',
     docs: 'Docs',
     changelog: 'Changelog',
   },
@@ -24,12 +23,8 @@ export default {
   playground: {
     title: 'Playground',
     subtitle: 'Type game text and watch it become color symbols.',
-    game: 'Game',
     full: 'Full',
     lite: 'Lite',
-    default: 'Default',
-    shadow: 'Shadow',
-    flat: 'Flat',
     placeholder: {
       magic: '{\'Type text, e.g. {W}{U}{R} Lightning Bolt deals {3} damage.\'}',
       lorcana: '{\'Type text, e.g. Play this character for {3}{I}.\'}',

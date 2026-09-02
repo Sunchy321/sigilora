@@ -14,7 +14,7 @@ const manifests = [magicJson, lorcanaJson, riftboundJson, pokemonJson]
       <p class="mt-4 text-lg text-muted">{{ $t('hero.subtitle') }}</p>
       <div class="mt-8 flex justify-center gap-3">
         <UButton to="/docs/guide/install" size="lg">{{ $t('hero.cta') }}</UButton>
-        <UButton to="/playground" size="lg" variant="soft">{{ $t('nav.playground') }}</UButton>
+        <UButton to="/game" size="lg" variant="soft">{{ $t('nav.games') }}</UButton>
       </div>
     </section>
 

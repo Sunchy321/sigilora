@@ -56,6 +56,12 @@ const htmlSamples: Record<string, { sym: string; plain: string }> = {
   riftbound: { sym: '[R][M]', plain: 'Fury unit' },
   pokemon: { sym: '[G][R][W]', plain: 'a fully charged Grass board' },
 }
+// Short distinct sample to seed the playground (the curated lines already show
+// below under Examples, so the seed is not one of them).
+const seedSample = computed(() => {
+  const s = htmlSamples[game.value]
+  return `${s.sym} ${s.plain}`
+})
 const htmlCode = computed(() => {
   const s = htmlSamples[game.value] ?? { sym: '', plain: '' }
   return `<link rel="stylesheet" href="https://cdn.example.com/@sigilora/fonts/${code.value}.css">\n<i class="sigilora-${code.value}">${s.sym}</i> ${s.plain}`
@@ -83,6 +89,12 @@ const cssCode = computed(() => `.sigilora-${code.value} {\n  font-family: '${fam
         <UsageCode :title="$t('usage.html')" :code="htmlCode" />
         <UsageCode :title="$t('usage.css')" :code="cssCode" />
       </div>
+    </section>
+
+    <section class="mt-10 flex flex-col gap-4">
+      <h2 class="text-xl font-semibold">{{ $t('playground.title') }}</h2>
+      <p class="text-muted">{{ $t('playground.subtitle') }}</p>
+      <Playground :game="game" :active-style="activeStyle" :invertable="hasInverted" :seed="seedSample" />
     </section>
 
     <section class="mt-10 flex flex-col gap-4">
