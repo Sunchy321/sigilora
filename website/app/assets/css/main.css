@@ -10,7 +10,8 @@
   font-feature-settings: 'liga';
 }
 [data-sigilora-style='inverted'],
-[data-sigilora-style='shadow'] {
+[data-sigilora-style='shadow'],
+[data-sigilora-style='orb'] {
   font-feature-settings: 'liga', 'ss01';
 }
 [data-sigilora-style='flat'] {

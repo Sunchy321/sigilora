@@ -113,6 +113,7 @@ export default {
     shadow: 'Shadow',
     flat: 'Flat',
     inverted: 'Inverted',
+    orb: 'Orb',
   },
   'symbol-name': {
     white: 'White',

@@ -7,9 +7,14 @@ description: Sigilora Pokemon（宝可梦卡牌）字体的版本历史与兼容
 
 **Sigilora Pokemon** 字体的版本历史与兼容性说明。
 
-Sigilora Pokemon 以 `Sigilora Pokemon`（默认样式）与精简版 `Sigilora Pokemon Lite` 两个字体族发布。当前版本包含 11 个宝可梦卡牌基本能量符号，使用 COLRv1。每个能量通过标准 `liga` 特性，从能量单字母的方括号或花括号两种拼写之一转换——例如草属性为 `[G]` 与 `{G}`。字母沿用社区 EssentiarumTCG 约定（图标重建即提取自该字体）：C 无色、D 恶、F 斗、G 草、L 雷、M 钢、N 龙、P 超、R 火、W 水、Y 妖。
+Sigilora Pokemon 以全量 `Sigilora Pokemon`（default / orb / flat 三种样式）与精简版 `Sigilora Pokemon Lite`（仅默认样式）两个字体族发布。当前版本包含 11 个宝可梦卡牌基本能量符号，使用 COLRv1。每个能量通过标准 `liga` 特性，从能量单字母的方括号或花括号两种拼写之一转换——例如草属性为 `[G]` 与 `{G}`。字母沿用社区 EssentiarumTCG 约定（图标重建即提取自该字体）：C 无色、D 恶、F 斗、G 草、L 雷、M 钢、N 龙、P 超、R 火、W 水、Y 妖。
 
 字体版本遵循 SemVer：**Major** 表示删除 ligature、改变既有文本映射或移除字形；**Minor** 表示新增符号或兼容别名；**Patch** 为视觉修正。
+
+## Sigilora Pokemon 0.2.0
+
+- 为每个能量新增两种样式：`orb`（`ss01`，带光泽的能量球）与 `flat`（`ss02`，平面圆徽，盘面填充字体官方基色）。
+- `default` 样式改为无外圆的裸能量符号、随文字颜色（`currentColor`），便于行内嵌入。default / orb / flat 共享同一能量轮廓（取自其 `[X]`/`{X}` 拼写渲染的字形）。
 
 ## Sigilora Pokemon 0.1.0
 

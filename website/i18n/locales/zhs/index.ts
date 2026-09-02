@@ -113,6 +113,7 @@ export default {
     shadow: '阴影',
     flat: '扁平',
     inverted: '反色',
+    orb: '能量球',
   },
   'symbol-name': {
     white: '白',

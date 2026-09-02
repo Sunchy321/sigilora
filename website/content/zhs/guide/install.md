@@ -76,7 +76,7 @@ import '@sigilora/fonts/pokemon.css'
 
 每个游戏提供两个字体族：
 
-- **Sigilora <Game>** —— 全量字体。Magic 另有阴影与扁平样式，用 `font-feature-settings: 'ss01'`（阴影）或 `'ss02'`（扁平）切换；符文战场另有反色样式，用 `'ss01'` 切换。
+- **Sigilora <Game>** —— 全量字体。Magic 另有阴影与扁平样式，用 `font-feature-settings: 'ss01'`（阴影）或 `'ss02'`（扁平）切换；符文战场另有反色样式，用 `'ss01'` 切换。宝可梦卡牌另有能量球（orb）与扁平样式，用 `'ss01'`（能量球）或 `'ss02'`（扁平）切换；其默认样式为随文字颜色的裸能量符号。
 - **Sigilora <Game> Lite** —— 仅默认样式，体积更小。
 
 > 另见：[npm 包](/docs/guide/install-npm) · [桌面安装](/docs/guide/install-desktop) · [已知限制](/docs/guide/known-limitations)

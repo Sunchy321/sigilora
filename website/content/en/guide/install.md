@@ -76,7 +76,7 @@ Matching game text is converted to color symbols automatically through the stand
 
 Each game provides two families:
 
-- **Sigilora <Game>** — the full font. Magic additionally ships shadow and flat styles, switched via `font-feature-settings: 'ss01'` (shadow) or `'ss02'` (flat). Riftbound ships an inverted (反色) style via `'ss01'`.
+- **Sigilora <Game>** — the full font. Magic additionally ships shadow and flat styles, switched via `font-feature-settings: 'ss01'` (shadow) or `'ss02'` (flat). Riftbound ships an inverted (反色) style via `'ss01'`. Pokémon TCG ships orb and flat styles, switched via `'ss01'` (orb) or `'ss02'` (flat); its default style is the bare energy symbol in the text color.
 - **Sigilora <Game> Lite** — the default style only; smaller.
 
 > See also: [npm package](/docs/guide/install-npm) · [desktop](/docs/guide/install-desktop) · [known limitations](/docs/guide/known-limitations)
