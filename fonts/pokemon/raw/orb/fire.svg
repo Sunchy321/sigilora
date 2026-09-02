@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <clipPath id="orbClipFire" clipPathUnits="userSpaceOnUse"><circle cx="50" cy="50" r="50"/></clipPath>
+    <linearGradient id="backgroundFire" x1="0.146" y1="0.854" x2="0.854" y2="0.146">
+      <stop offset="0.000" stop-color="#C21A27"/>
+      <stop offset="1.000" stop-color="#FE6455"/>
+    </linearGradient>
+
+
+
+
+    <radialGradient id="bodyFire" cx="66.0" cy="30.0" r="62.0" gradientUnits="userSpaceOnUse">
+      <stop offset="0.0" stop-color="#FF725E"/>
+      <stop offset="0.35" stop-color="#EF403C"/>
+      <stop offset="0.7" stop-color="#C01F2B"/>
+      <stop offset="1.0" stop-color="#9A1825"/>
+    </radialGradient>
+    <linearGradient id="sheenFire" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#F6C0B2" stop-opacity="0"/>
+      <stop offset="0.06" stop-color="#FCE9E4" stop-opacity="0.04"/>
+      <stop offset="0.14" stop-color="#FFFFFF" stop-opacity="0.38"/>
+      <stop offset="0.86" stop-color="#FFFFFF" stop-opacity="0.38"/>
+      <stop offset="0.94" stop-color="#FCE9E4" stop-opacity="0.38"/>
+      <stop offset="1" stop-color="#F6C0B2" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="sheenMaskGradientFire" gradientUnits="userSpaceOnUse" cx="50" cy="50" r="50">
+      <stop offset="0.72" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="0.78" stop-color="#FFFFFF" stop-opacity="0.64"/>
+      <stop offset="0.85" stop-color="#FFFFFF" stop-opacity="1"/>
+      <stop offset="0.94" stop-color="#FFFFFF" stop-opacity="0.72"/>
+      <stop offset="0.98" stop-color="#FFFFFF" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+    <mask id="sheenMaskFire" maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100">
+      <path d="M 4.6 31.5 A 49 49 0 0 1 31.5 4.6 A 7.5 7.5 0 0 1 37.3 18.5 A 34 34 0 0 0 18.5 36.3 A 7.5 7.5 0 0 1 4.6 31.5 Z" fill="url(#sheenMaskGradientFire)"/>
+    </mask>
+  </defs>
+  <circle cx="50" cy="50" r="50" fill="url(#backgroundFire)"/>
+  <circle cx="50" cy="50" r="50" fill="url(#bodyFire)" opacity="0.28"/>
+
+
+  <path d="M493 123C490 123 489 127 492 128C517 144 566 181 579 231C589 271 570 305 560 319C559 321 556 320 555 318C553 299 537 248 440 234C438 234 436 236 437 238C448 285 441 367 406 427C372 484 328 499 311 503C308 504 307 501 308 499C322 482 357 431 311 393C259 350 230 324 218 297C207 272 211 247 223 216C224 213 220 211 218 212C155 267 182 328 201 357C203 360 199 363 197 361C157 327 122 288 117 241C110 178 148 127 167 102C171 98 175 91 175 91C136 103 103 135 89 150C87 152 84 150 84 147C106 62 178 -71 349 -71C536 -71 607 112 624 190C624 192 621 194 619 192C601 175 550 128 493 123ZM439 26C472 -19 384 -40 347 -40C310 -40 271 -27 260 -18C217 15 249 37 249 37C249 37 284 76 234 95C232 96 233 98 236 98C286 98 290 72 290 61C290 58 292 59 293 60C301 70 323 95 299 115C251 155 314 190 353 201C356 201 358 198 356 196C345 182 328 153 344 146C374 133 378 105 377 87C377 84 380 83 382 85C390 99 405 116 442 119C445 119 446 115 443 114C401 89 428 41 439 26Z" transform="translate(50.0 50.0) scale(0.144300) translate(-346.5 226.5) scale(1 -1)" fill="#2A030B"/>
+  <g clip-path="url(#orbClipFire)">
+    <path d="M 4.6 31.5 A 49 49 0 0 1 31.5 4.6 A 7.5 7.5 0 0 1 37.3 18.5 A 34 34 0 0 0 18.5 36.3 A 7.5 7.5 0 0 1 4.6 31.5 Z" fill="url(#sheenFire)" mask="url(#sheenMaskFire)" opacity="0.88"/>
+    <path d="M 8.1 28.6 A 47 47 0 0 1 28.6 8.1 A 4.2 4.2 0 0 1 32.7 16.2 A 38 38 0 0 0 16.2 32.7 A 4.2 4.2 0 0 1 8.1 28.6 Z" fill="#FFFFFF" opacity="0.88"/>
+  </g>
+</svg>

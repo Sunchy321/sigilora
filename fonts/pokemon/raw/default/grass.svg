@@ -1,49 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-  <defs>
-    <clipPath id="orbClipGrass" clipPathUnits="userSpaceOnUse"><circle cx="50" cy="50" r="50"/></clipPath>
-    <linearGradient id="backgroundGrass" x1="0.146" y1="0.854" x2="0.854" y2="0.146">
-      <stop offset="0.000" stop-color="#008233"/>
-      <stop offset="1.000" stop-color="#51BC3B"/>
-    </linearGradient>
-
-
-
-
-    <radialGradient id="bodyGrass" cx="64.0" cy="30.0" r="62.0" gradientUnits="userSpaceOnUse">
-      <stop offset="0.0" stop-color="#C2E53F"/>
-      <stop offset="0.35" stop-color="#88BD2C"/>
-      <stop offset="0.7" stop-color="#20771F"/>
-      <stop offset="1.0" stop-color="#00612C"/>
-    </radialGradient>
-    <linearGradient id="sheenGrass" x1="0" y1="1" x2="1" y2="0">
-      <stop offset="0" stop-color="#99BB8B" stop-opacity="0"/>
-      <stop offset="0.06" stop-color="#DBE7D6" stop-opacity="0.04"/>
-      <stop offset="0.14" stop-color="#FFFFFF" stop-opacity="0.38"/>
-      <stop offset="0.86" stop-color="#FFFFFF" stop-opacity="0.38"/>
-      <stop offset="0.94" stop-color="#DBE7D6" stop-opacity="0.34"/>
-      <stop offset="1" stop-color="#99BB8B" stop-opacity="0"/>
-    </linearGradient>
-    <radialGradient id="sheenMaskGradientGrass" gradientUnits="userSpaceOnUse" cx="50" cy="50" r="50">
-      <stop offset="0.72" stop-color="#000000" stop-opacity="0"/>
-      <stop offset="0.78" stop-color="#FFFFFF" stop-opacity="0.64"/>
-      <stop offset="0.85" stop-color="#FFFFFF" stop-opacity="1"/>
-      <stop offset="0.94" stop-color="#FFFFFF" stop-opacity="0.72"/>
-      <stop offset="0.98" stop-color="#FFFFFF" stop-opacity="0.16"/>
-      <stop offset="1" stop-color="#000000" stop-opacity="0"/>
-    </radialGradient>
-    <mask id="sheenMaskGrass" maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100">
-      <path d="M 4.6 31.5 A 49 49 0 0 1 31.5 4.6 A 7.5 7.5 0 0 1 37.3 18.5 A 34 34 0 0 0 18.5 36.3 A 7.5 7.5 0 0 1 4.6 31.5 Z" fill="url(#sheenMaskGradientGrass)"/>
-    </mask>
-  </defs>
-  <circle cx="50" cy="50" r="50" fill="url(#backgroundGrass)"/>
-  <circle cx="50" cy="50" r="50" fill="url(#bodyGrass)" opacity="0.28"/>
-
-
-  <path d="M344 18C377 22 604 55 604 185C603 316 449 484 441 509C441 510 439 511 438 510C394 498 91 370 91 184C90 68 203 33 256 23C258 23 258 22 259 21C266 -30 279 -62 282 -70C283 -71 283 -71 285 -71L351 -70C353 -70 354 -69 354 -67C351 -58 345 -30 342 14C342 16 343 17 344 18ZM307 83C305 57 304 30 304 3C305 2 304 1 303 1C301 1 300 1 300 2C299 3 279 36 276 100C240 145 196 165 146 159C145 159 144 159 144 160C143 161 144 163 145 163C208 193 262 160 277 149C279 169 283 189 288 209C259 246 220 261 169 258C168 258 167 259 166 260C166 261 167 262 168 262C243 286 285 261 299 248C303 261 307 273 312 286C297 312 270 343 227 344C225 344 224 345 224 346C224 347 225 348 226 349C282 362 321 329 328 322C346 361 370 402 398 443C398 444 400 444 401 443C402 443 402 441 402 440C384 405 368 367 355 327C375 338 427 363 502 339C503 338 504 337 504 336C504 335 502 334 501 334C416 346 361 301 341 281C338 269 335 257 332 244C368 267 449 291 534 242C535 242 536 240 535 239C535 238 533 238 532 238C422 278 338 212 323 198C319 178 316 158 313 138C383 189 476 170 525 153C526 153 527 152 527 151C526 149 525 149 524 149C509 152 375 175 307 83Z" transform="translate(50.0 50.0) scale(0.144300) translate(-346.5 226.5) scale(1 -1)" fill="#0B1900"/>
-  <g clip-path="url(#orbClipGrass)">
-    <path d="M 4.6 31.5 A 49 49 0 0 1 31.5 4.6 A 7.5 7.5 0 0 1 37.3 18.5 A 34 34 0 0 0 18.5 36.3 A 7.5 7.5 0 0 1 4.6 31.5 Z" fill="url(#sheenGrass)" mask="url(#sheenMaskGrass)" opacity="0.86"/>
-    <path d="M 8.1 28.6 A 47 47 0 0 1 28.6 8.1 A 4.2 4.2 0 0 1 32.7 16.2 A 38 38 0 0 0 16.2 32.7 A 4.2 4.2 0 0 1 8.1 28.6 Z" fill="#FFFFFF" opacity="0.86"/>
-  </g>
+  <path d="M344 18C377 22 604 55 604 185C603 316 449 484 441 509C441 510 439 511 438 510C394 498 91 370 91 184C90 68 203 33 256 23C258 23 258 22 259 21C266 -30 279 -62 282 -70C283 -71 283 -71 285 -71L351 -70C353 -70 354 -69 354 -67C351 -58 345 -30 342 14C342 16 343 17 344 18ZM307 83C305 57 304 30 304 3C305 2 304 1 303 1C301 1 300 1 300 2C299 3 279 36 276 100C240 145 196 165 146 159C145 159 144 159 144 160C143 161 144 163 145 163C164 172 182 175 198 175C237 175 266 157 277 149C279 169 283 189 288 209C259 246 220 261 169 258C168 258 167 259 166 260C166 261 167 262 168 262C191 269 210 272 227 272C266 272 289 257 299 248C303 261 307 273 312 286C297 312 270 343 227 344C225 344 224 345 224 346C224 347 225 348 226 349C235 351 244 352 252 352C294 352 322 328 328 322C346 361 370 402 398 443C398 444 400 444 401 443C402 443 402 441 402 440C384 405 368 367 355 327C369 335 398 349 440 349C458 349 479 346 502 339C503 338 504 337 504 336C504 335 502 334 501 334C491 335 482 336 473 336C404 336 359 299 341 281C338 269 335 257 332 244C353 257 388 271 430 271C462 271 498 263 534 242C535 242 536 240 535 239C535 238 533 238 532 238C507 247 483 251 462 251C387 251 335 209 323 198C319 178 316 158 313 138C347 163 386 171 424 171C463 171 500 162 525 153C526 153 527 152 527 151C526 149 525 149 524 149C519 150 498 154 471 154C421 154 351 142 307 83Z" transform="translate(50.0 50.0) scale(0.144300) translate(-346.5 226.5) scale(1 -1)" fill="currentColor"/>
 </svg>

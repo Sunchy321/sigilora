@@ -9,74 +9,74 @@
 name = "grass"
 ligature = ["[G]", "{G}"]
 category = "energy"
-svg = { default = "grass.svg" }
+svg = { default = "grass.svg", orb = "grass.svg", flat = "grass.svg" }
 
 
 [[symbols]]
 name = "fire"
 ligature = ["[R]", "{R}"]
 category = "energy"
-svg = { default = "fire.svg" }
+svg = { default = "fire.svg", orb = "fire.svg", flat = "fire.svg" }
 
 
 [[symbols]]
 name = "water"
 ligature = ["[W]", "{W}"]
 category = "energy"
-svg = { default = "water.svg" }
+svg = { default = "water.svg", orb = "water.svg", flat = "water.svg" }
 
 
 [[symbols]]
 name = "lightning"
 ligature = ["[L]", "{L}"]
 category = "energy"
-svg = { default = "lightning.svg" }
+svg = { default = "lightning.svg", orb = "lightning.svg", flat = "lightning.svg" }
 
 
 [[symbols]]
 name = "psychic"
 ligature = ["[P]", "{P}"]
 category = "energy"
-svg = { default = "psychic.svg" }
+svg = { default = "psychic.svg", orb = "psychic.svg", flat = "psychic.svg" }
 
 
 [[symbols]]
 name = "fighting"
 ligature = ["[F]", "{F}"]
 category = "energy"
-svg = { default = "fighting.svg" }
+svg = { default = "fighting.svg", orb = "fighting.svg", flat = "fighting.svg" }
 
 
 [[symbols]]
 name = "darkness"
 ligature = ["[D]", "{D}"]
 category = "energy"
-svg = { default = "darkness.svg" }
+svg = { default = "darkness.svg", orb = "darkness.svg", flat = "darkness.svg" }
 
 
 [[symbols]]
 name = "metal"
 ligature = ["[M]", "{M}"]
 category = "energy"
-svg = { default = "metal.svg" }
+svg = { default = "metal.svg", orb = "metal.svg", flat = "metal.svg" }
 
 
 [[symbols]]
 name = "fairy"
 ligature = ["[Y]", "{Y}"]
 category = "energy"
-svg = { default = "fairy.svg" }
+svg = { default = "fairy.svg", orb = "fairy.svg", flat = "fairy.svg" }
 
 
 [[symbols]]
 name = "dragon"
 ligature = ["[N]", "{N}"]
 category = "energy"
-svg = { default = "dragon.svg" }
+svg = { default = "dragon.svg", orb = "dragon.svg", flat = "dragon.svg" }
 
 
 [[symbols]]
 name = "colorless"
 ligature = ["[C]", "{C}"]
 category = "energy"
-svg = { default = "colorless.svg" }
+svg = { default = "colorless.svg", orb = "colorless.svg", flat = "colorless.svg" }

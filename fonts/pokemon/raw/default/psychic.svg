@@ -1,49 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-  <defs>
-    <clipPath id="orbClipPsychic" clipPathUnits="userSpaceOnUse"><circle cx="50" cy="50" r="50"/></clipPath>
-    <linearGradient id="backgroundPsychic" x1="0.146" y1="0.854" x2="0.854" y2="0.146">
-      <stop offset="0.000" stop-color="#7A3C96"/>
-      <stop offset="1.000" stop-color="#E19ACB"/>
-    </linearGradient>
-
-
-
-
-    <radialGradient id="bodyPsychic" cx="65.0" cy="27.0" r="64.0" gradientUnits="userSpaceOnUse">
-      <stop offset="0.0" stop-color="#EEADD4"/>
-      <stop offset="0.35" stop-color="#C678B7"/>
-      <stop offset="0.7" stop-color="#92479A"/>
-      <stop offset="1.0" stop-color="#723089"/>
-    </radialGradient>
-    <linearGradient id="sheenPsychic" x1="0" y1="1" x2="1" y2="0">
-      <stop offset="0" stop-color="#E4C8DF" stop-opacity="0"/>
-      <stop offset="0.06" stop-color="#F6ECF4" stop-opacity="0.04"/>
-      <stop offset="0.14" stop-color="#FFFFFF" stop-opacity="0.38"/>
-      <stop offset="0.86" stop-color="#FFFFFF" stop-opacity="0.38"/>
-      <stop offset="0.94" stop-color="#F6ECF4" stop-opacity="0.34"/>
-      <stop offset="1" stop-color="#E4C8DF" stop-opacity="0"/>
-    </linearGradient>
-    <radialGradient id="sheenMaskGradientPsychic" gradientUnits="userSpaceOnUse" cx="50" cy="50" r="50">
-      <stop offset="0.72" stop-color="#000000" stop-opacity="0"/>
-      <stop offset="0.78" stop-color="#FFFFFF" stop-opacity="0.64"/>
-      <stop offset="0.85" stop-color="#FFFFFF" stop-opacity="1"/>
-      <stop offset="0.94" stop-color="#FFFFFF" stop-opacity="0.72"/>
-      <stop offset="0.98" stop-color="#FFFFFF" stop-opacity="0.16"/>
-      <stop offset="1" stop-color="#000000" stop-opacity="0"/>
-    </radialGradient>
-    <mask id="sheenMaskPsychic" maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100">
-      <path d="M 4.6 31.5 A 49 49 0 0 1 31.5 4.6 A 7.5 7.5 0 0 1 37.3 18.5 A 34 34 0 0 0 18.5 36.3 A 7.5 7.5 0 0 1 4.6 31.5 Z" fill="url(#sheenMaskGradientPsychic)"/>
-    </mask>
-  </defs>
-  <circle cx="50" cy="50" r="50" fill="url(#backgroundPsychic)"/>
-  <circle cx="50" cy="50" r="50" fill="url(#bodyPsychic)" opacity="0.28"/>
-
-
-  <path d="M347 440C159 440 59 233 52 217C51 216 51 216 52 215C60 199 161 13 347 13C533 13 634 199 642 215C642 216 642 216 642 217C634 233 535 440 347 440ZM333 233C341 241 346 254 346 267C346 280 341 293 333 301C332 302 331 303 330 303C330 304 330 304 330 305C329 305 330 306 331 306C335 307 339 308 343 308C380 308 409 278 409 241C409 203 380 173 343 173C311 173 284 198 279 229C279 232 283 228 283 228C290 224 297 221 305 221C315 221 325 225 333 233ZM583 216C555 169 480 65 347 65C214 65 138 169 111 216C110 216 110 217 111 218C131 256 179 331 256 367C259 369 261 364 259 362C222 335 197 291 197 241C197 158 263 91 343 91C424 91 489 158 489 241C489 296 460 344 416 370C413 372 416 376 419 375C507 343 561 259 583 218C583 217 583 216 583 216Z" transform="translate(50.0 50.0) scale(0.144300) translate(-346.5 226.5) scale(1 -1)" fill="#1B0011"/>
-  <g clip-path="url(#orbClipPsychic)">
-    <path d="M 4.6 31.5 A 49 49 0 0 1 31.5 4.6 A 7.5 7.5 0 0 1 37.3 18.5 A 34 34 0 0 0 18.5 36.3 A 7.5 7.5 0 0 1 4.6 31.5 Z" fill="url(#sheenPsychic)" mask="url(#sheenMaskPsychic)" opacity="0.82"/>
-    <path d="M 8.1 28.6 A 47 47 0 0 1 28.6 8.1 A 4.2 4.2 0 0 1 32.7 16.2 A 38 38 0 0 0 16.2 32.7 A 4.2 4.2 0 0 1 8.1 28.6 Z" fill="#FFFFFF" opacity="0.82"/>
-  </g>
+  <path d="M347 440C159 440 59 233 52 217C51 216 51 216 52 215C60 199 161 13 347 13C533 13 634 199 642 215C642 216 642 216 642 217C634 233 535 440 347 440ZM346 267C346 274 339 303 330 303C330 304 330 304 330 305C329 305 330 306 331 306C335 307 339 308 343 308C380 308 409 278 409 241C409 203 380 173 343 173C311 173 284 198 279 229C279 232 283 228 283 228C290 224 297 221 305 221C330 221 346 243 346 267ZM583 216C555 169 480 65 347 65C214 65 138 169 111 216C110 216 110 217 111 218C131 256 179 331 256 367C259 369 261 364 259 362C222 335 197 291 197 241C197 158 263 91 343 91C424 91 489 158 489 241C489 296 460 344 416 370C413 372 416 376 419 375C507 343 561 259 583 218C583 217 583 216 583 216Z" transform="translate(50.0 50.0) scale(0.144300) translate(-346.5 226.5) scale(1 -1)" fill="currentColor"/>
 </svg>

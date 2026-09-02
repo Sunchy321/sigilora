@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <clipPath id="orbClipWater" clipPathUnits="userSpaceOnUse"><circle cx="50" cy="50" r="50"/></clipPath>
+    <linearGradient id="backgroundWater" x1="0.146" y1="0.854" x2="0.854" y2="0.146">
+      <stop offset="0.000" stop-color="#034E72"/>
+      <stop offset="1.000" stop-color="#00C1FF"/>
+    </linearGradient>
+
+
+
+
+    <radialGradient id="bodyWater" cx="68.0" cy="30.0" r="64.0" gradientUnits="userSpaceOnUse">
+      <stop offset="0.0" stop-color="#0EAEEA"/>
+      <stop offset="0.35" stop-color="#239EC8"/>
+      <stop offset="0.7" stop-color="#034E69"/>
+      <stop offset="1.0" stop-color="#033349"/>
+    </radialGradient>
+    <linearGradient id="sheenWater" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#97D6F4" stop-opacity="0"/>
+      <stop offset="0.06" stop-color="#DBF1FB" stop-opacity="0.04"/>
+      <stop offset="0.14" stop-color="#FFFFFF" stop-opacity="0.38"/>
+      <stop offset="0.86" stop-color="#FFFFFF" stop-opacity="0.38"/>
+      <stop offset="0.94" stop-color="#DBF1FB" stop-opacity="0.34"/>
+      <stop offset="1" stop-color="#97D6F4" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="sheenMaskGradientWater" gradientUnits="userSpaceOnUse" cx="50" cy="50" r="50">
+      <stop offset="0.72" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="0.78" stop-color="#FFFFFF" stop-opacity="0.64"/>
+      <stop offset="0.85" stop-color="#FFFFFF" stop-opacity="1"/>
+      <stop offset="0.94" stop-color="#FFFFFF" stop-opacity="0.72"/>
+      <stop offset="0.98" stop-color="#FFFFFF" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+    <mask id="sheenMaskWater" maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100">
+      <path d="M 4.6 31.5 A 49 49 0 0 1 31.5 4.6 A 7.5 7.5 0 0 1 37.3 18.5 A 34 34 0 0 0 18.5 36.3 A 7.5 7.5 0 0 1 4.6 31.5 Z" fill="url(#sheenMaskGradientWater)"/>
+    </mask>
+  </defs>
+  <circle cx="50" cy="50" r="50" fill="url(#backgroundWater)"/>
+  <circle cx="50" cy="50" r="50" fill="url(#bodyWater)" opacity="0.28"/>
+
+
+  <path d="M566 418C569 419 568 423 565 423C135 410 71 187 101 92C130 3 248 -47 338 -47C400 -47 477 -38 513 20C569 109 475 180 461 192C453 200 417 240 415 288C412 334 442 387 566 418ZM218 63C223 67 232 70 244 70C264 70 290 63 315 52C354 33 373 8 359 -5C353 -9 344 -12 333 -12C313 -12 287 -5 262 6C223 25 203 50 218 63Z" transform="translate(50.0 50.0) scale(0.144300) translate(-346.5 226.5) scale(1 -1)" fill="#070D10"/>
+  <g clip-path="url(#orbClipWater)">
+    <path d="M 4.6 31.5 A 49 49 0 0 1 31.5 4.6 A 7.5 7.5 0 0 1 37.3 18.5 A 34 34 0 0 0 18.5 36.3 A 7.5 7.5 0 0 1 4.6 31.5 Z" fill="url(#sheenWater)" mask="url(#sheenMaskWater)" opacity="0.82"/>
+    <path d="M 8.1 28.6 A 47 47 0 0 1 28.6 8.1 A 4.2 4.2 0 0 1 32.7 16.2 A 38 38 0 0 0 16.2 32.7 A 4.2 4.2 0 0 1 8.1 28.6 Z" fill="#FFFFFF" opacity="0.82"/>
+  </g>
+</svg>

@@ -1,12 +1,22 @@
 name = "Pokémon TCG"
 code = "pokemon"
-font-version = "0.1.0"
+font-version = "0.2.0"
 colr-version = "v1"
 
 [[categories]]
 name = "energy"
 
+# Styles: default (bare symbol in currentColor, for embedding in running text),
+# orb (glossy energy ball), flat (flat round badge with the font's official disc
+# colour). default/orb/flat share one canonical outline per energy; orb and flat
+# differ only in shading. Style order drives ssXX: orb -> ss01, flat -> ss02.
 [[styles]]
 name = "default"
+
+[[styles]]
+name = "orb"
+
+[[styles]]
+name = "flat"
 
 [compose]

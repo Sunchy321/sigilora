@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <circle cx="50" cy="50" r="50" fill="#FFD503"/>
+  <path d="M397 515 146 155C144 153 146 150 149 151L378 225C381 226 382 224 382 222L305 -57C305 -60 309 -62 310 -59L549 352C550 354 548 356 546 356L335 295C333 294 331 296 331 298L402 512C403 515 399 517 397 515Z" transform="translate(50.0 50.0) scale(0.135642) translate(-346.5 226.5) scale(1 -1)" fill="#251700"/>
+</svg>

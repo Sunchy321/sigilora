@@ -1,14 +1,20 @@
 #!/usr/bin/env python3
-"""Build per-type energy SVGs from glyph outlines + sampled colors.
+"""Build the three pokemon energy style sources under fonts/pokemon/raw/<style>/.
 
-Layer order (matching the approved Grass prototype):
-  1. orb body  - diagonal base gradient plus radial color shading
-  2. symbol    - EssentiarumTCG outline, y-flipped, scale-fit, dark fill
-  3. sheen     - curved white gloss patch floating above the symbol
+All three styles share ONE canonical symbol outline per type - the lowercase
+glyph that the EssentiarumTCG `[X]`/`{X}` ligatures render (assets/glyphs.json
+"sym_path"). They differ only in presentation:
 
-viewBox is "0 0 100 100" (orb radius 50), matching the project's SVG convention.
-Colors come from assets/colors.json (sampled from the official PNGs); Grass is
-pinned to the user-approved values.
+  default  - bare symbol, no disc, fill=currentColor (adapts to the text color)
+  orb      - glossy energy ball (approved gradient + radial shading + gloss)
+  flat     - flat round badge: disc filled with the font's official base color
+             (glyphs.json "disc_color"), same symbol, same placement as orb
+
+orb and flat use an identical transform/scale so their discs and symbols are the
+same size; orb adds the shading/gloss layers that flat omits.
+
+viewBox is "0 0 100 100" (disc radius 50), matching the project's SVG convention.
+raw/ is the long-term source; `sigilora normalize pokemon` produces svg/ from it.
 """
 from __future__ import annotations
 
@@ -16,8 +22,8 @@ import json
 import sys
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[1]
-SVG_DIR = ROOT / "svg"
+ROOT = Path(__file__).resolve().parents[1]  # fonts/pokemon/design
+RAW_DIR = ROOT.parent / "raw"  # fonts/pokemon/raw (style sources for `sigilora normalize`)
 GLYPHS = json.loads((ROOT / "assets" / "glyphs.json").read_text())
 COLORS = json.loads((ROOT / "assets" / "colors.json").read_text())
 
@@ -187,6 +193,45 @@ def symbol_filter(shadow: tuple[float, float, float, str, float], uid: str) -> s
             f'    </filter>')
 
 
+def symbol_placement(t: str) -> tuple[dict, str]:
+    """Shared canonical symbol (path, per-type scale, disc-relative transform).
+
+    The same glyph and transform are used by default/orb/flat so the three styles
+    stay shape-identical; orb and flat additionally end up the same size because
+    both place the symbol relative to the disc centre this way.
+    """
+    c = COLORS[t]
+    glyph = GLYPHS[c["letter"]]
+    sym_scale = c["scale"] * (VIEW / 2) / ORB_R
+    sym_tf = (f'translate({VIEW / 2} {VIEW / 2}) scale({sym_scale:.6f}) '
+              f'translate(-{ORB_CX} {ORB_CY}) scale(1 -1)')
+    return glyph, sym_tf
+
+
+def default_svg(t: str) -> str:
+    """Bare no-circle symbol that inherits the surrounding text colour."""
+    glyph, sym_tf = symbol_placement(t)
+    return f'''<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {VIEW:.0f} {VIEW:.0f}">
+  <path d="{glyph['sym_path']}" transform="{sym_tf}" fill="currentColor"/>
+</svg>
+'''
+
+
+def flat_svg(t: str) -> str:
+    """Flat round badge: official disc colour (from the font) + plain symbol."""
+    c = COLORS[t]
+    glyph, sym_tf = symbol_placement(t)
+    return f'''<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {VIEW:.0f} {VIEW:.0f}">
+  <circle cx="50" cy="50" r="50" fill="{glyph['disc_color']}"/>
+  <path d="{glyph['sym_path']}" transform="{sym_tf}" fill="{c['symbol']}"/>
+</svg>
+'''
+
+
 def build_svg(t: str) -> str:
     c = COLORS[t]
     gain = c.get("color_gain", 1.08)
@@ -198,11 +243,8 @@ def build_svg(t: str) -> str:
     body_center = c.get("body_center", [BODY_GEOMETRY[t][0] / 100, BODY_GEOMETRY[t][1] / 100])
     body_cx, body_cy = body_center[0] * VIEW, body_center[1] * VIEW
     body_r = c.get("body_radius", BODY_GEOMETRY[t][2] / VIEW) * VIEW
-    glyph = GLYPHS[c["letter"]]
+    glyph, sym_tf = symbol_placement(t)
     uid = t  # unique gradient id prefix so multiple SVGs can be inlined together
-    sym_scale = c["scale"] * (VIEW / 2) / ORB_R
-    sym_tf = (f'translate({VIEW / 2} {VIEW / 2}) scale({sym_scale:.6f}) '
-              f'translate(-{ORB_CX} {ORB_CY}) scale(1 -1)')
     body_stops = "\n".join(
         f'      <stop offset="{o}" stop-color="{brighten(b, gain)}"/>'
         for (o, _), b in zip(STOPS, c["body"])
@@ -249,12 +291,17 @@ def build_svg(t: str) -> str:
 '''
 
 
+STYLES = {"default": default_svg, "orb": build_svg, "flat": flat_svg}
+
+
 def main() -> None:
-    SVG_DIR.mkdir(exist_ok=True)
     names = sys.argv[1:] if len(sys.argv) > 1 else list(COLORS)
     for t in names:
-        (SVG_DIR / f"{t}.svg").write_text(build_svg(t))
-        print(f"wrote svg/{t}.svg  scale={COLORS[t]['scale']}")
+        for style, builder in STYLES.items():
+            target = RAW_DIR / style / f"{t.lower()}.svg"
+            target.parent.mkdir(parents=True, exist_ok=True)
+            target.write_text(builder(t))
+        print(f"wrote raw/{{default,orb,flat}}/{t.lower()}.svg  scale={COLORS[t]['scale']}")
 
 
 if __name__ == "__main__":
