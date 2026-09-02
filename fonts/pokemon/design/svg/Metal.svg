@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <clipPath id="orbClipMetal" clipPathUnits="userSpaceOnUse"><circle cx="50" cy="50" r="50"/></clipPath>
+    <linearGradient id="backgroundMetal" x1="0.146" y1="0.854" x2="0.854" y2="0.146">
+      <stop offset="0.000" stop-color="#394037"/>
+      <stop offset="1.000" stop-color="#FFFFFD"/>
+    </linearGradient>
+
+
+    <radialGradient id="metalTriangleMetal" cx="50%" cy="66.667%" r="68%">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="1"/>
+      <stop offset="0.40" stop-color="#FFFFFF" stop-opacity="0.92"/>
+      <stop offset="0.65" stop-color="#FFFFFF" stop-opacity="0.46"/>
+      <stop offset="0.85" stop-color="#FFFFFF" stop-opacity="0"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="symbolShadowMetal" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="1.5" stdDeviation="2.2" flood-color="#F6F2E8" flood-opacity="0.82"/>
+    </filter>
+    <radialGradient id="bodyMetal" cx="60.0" cy="32.0" r="66.0" gradientUnits="userSpaceOnUse">
+      <stop offset="0.0" stop-color="#AFAB9F"/>
+      <stop offset="0.35" stop-color="#BAB8B2"/>
+      <stop offset="0.7" stop-color="#BDB5A4"/>
+      <stop offset="1.0" stop-color="#5C615D"/>
+    </radialGradient>
+    <linearGradient id="sheenMetal" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#FDFDFB" stop-opacity="0"/>
+      <stop offset="0.06" stop-color="#FEFEFE" stop-opacity="0.04"/>
+      <stop offset="0.14" stop-color="#FFFFFF" stop-opacity="0.38"/>
+      <stop offset="0.86" stop-color="#FFFFFF" stop-opacity="0.38"/>
+      <stop offset="0.94" stop-color="#FEFEFE" stop-opacity="0.42"/>
+      <stop offset="1" stop-color="#FDFDFB" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="sheenMaskGradientMetal" gradientUnits="userSpaceOnUse" cx="50" cy="50" r="50">
+      <stop offset="0.72" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="0.78" stop-color="#FFFFFF" stop-opacity="0.64"/>
+      <stop offset="0.85" stop-color="#FFFFFF" stop-opacity="1"/>
+      <stop offset="0.94" stop-color="#FFFFFF" stop-opacity="0.72"/>
+      <stop offset="0.98" stop-color="#FFFFFF" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+    <mask id="sheenMaskMetal" maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100">
+      <path d="M 4.6 31.5 A 49 49 0 0 1 31.5 4.6 A 7.5 7.5 0 0 1 37.3 18.5 A 34 34 0 0 0 18.5 36.3 A 7.5 7.5 0 0 1 4.6 31.5 Z" fill="url(#sheenMaskGradientMetal)"/>
+    </mask>
+  </defs>
+  <circle cx="50" cy="50" r="50" fill="url(#backgroundMetal)"/>
+  <circle cx="50" cy="50" r="50" fill="url(#bodyMetal)" opacity="0.28"/>
+
+  <path d="M345 90C346 88 348 88 349 90L472 307C473 308 472 311 470 311H225C222 311 221 308 222 307Z" transform="translate(50.0 50.0) scale(0.144300) translate(-346.5 226.5) scale(1 -1) translate(347 230) scale(1.5) translate(-347 -230)" fill="url(#metalTriangleMetal)"/>
+  <path d="M345 90C346 88 348 88 349 90L472 307C473 308 472 311 470 311H225C222 311 221 308 222 307ZM187 216C189 216 190 218 189 220L146 294C146 295 146 296 146 297L190 372C190 372 191 373 192 373H278C280 373 281 375 280 377L249 432C248 432 248 433 247 433H158C157 433 156 432 155 432L77 297C77 296 77 295 77 294L122 217C122 216 123 216 124 216ZM425 -33C426 -33 427 -33 427 -32L472 45C472 46 472 47 472 48L440 102C439 104 437 104 436 102L393 28C392 27 391 26 390 26L304 27C303 27 302 27 302 28L259 102C258 104 255 104 254 102L222 48C222 47 222 46 222 45L267 -32C267 -33 268 -33 269 -33ZM570 215C571 215 572 216 573 217L617 294C617 295 617 296 617 297L539 432C539 432 538 433 537 433H448C447 433 446 432 446 432L414 377C413 375 415 373 417 373L503 372C504 372 505 372 505 371L548 297C549 296 549 295 548 294L505 220C504 218 505 216 508 216Z" transform="translate(50.0 50.0) scale(0.144300) translate(-346.5 226.5) scale(1 -1)" fill="#101719" filter="url(#symbolShadowMetal)"/>
+  <g clip-path="url(#orbClipMetal)">
+    <path d="M 4.6 31.5 A 49 49 0 0 1 31.5 4.6 A 7.5 7.5 0 0 1 37.3 18.5 A 34 34 0 0 0 18.5 36.3 A 7.5 7.5 0 0 1 4.6 31.5 Z" fill="url(#sheenMetal)" mask="url(#sheenMaskMetal)" opacity="0.95"/>
+    <path d="M 8.1 28.6 A 47 47 0 0 1 28.6 8.1 A 4.2 4.2 0 0 1 32.7 16.2 A 38 38 0 0 0 16.2 32.7 A 4.2 4.2 0 0 1 8.1 28.6 Z" fill="#FFFFFF" opacity="0.95"/>
+  </g>
+</svg>

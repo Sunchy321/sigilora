@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <clipPath id="orbClipDarkness" clipPathUnits="userSpaceOnUse"><circle cx="50" cy="50" r="50"/></clipPath>
+    <linearGradient id="backgroundDarkness" gradientUnits="userSpaceOnUse" x1="16.4971" y1="17.7739" x2="84.1454" y2="82.8424">
+      <stop offset="0" stop-color="#9DB6DF"/>
+      <stop offset="0.1675" stop-color="#285666"/>
+      <stop offset="0.4434" stop-color="#1A2734"/>
+      <stop offset="0.5911" stop-color="#1D2C3A"/>
+      <stop offset="0.867" stop-color="#275666"/>
+      <stop offset="1" stop-color="#9DB7DF"/>
+    </linearGradient>
+    <radialGradient id="darknessInnerHighlightDarkness" gradientUnits="userSpaceOnUse" cx="50" cy="26" r="21">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0"/>
+      <stop offset="0.48" stop-color="#FFFFFF" stop-opacity="0"/>
+      <stop offset="0.66" stop-color="#FFFFFF" stop-opacity="0.92"/>
+      <stop offset="0.78" stop-color="#FFFFFF" stop-opacity="1"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="1"/>
+    </radialGradient>
+    <radialGradient id="darknessHighlightDarkness" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="1"/>
+      <stop offset="0.38" stop-color="#E9F5FA" stop-opacity="0.90"/>
+      <stop offset="0.70" stop-color="#8BC7DB" stop-opacity="0.42"/>
+      <stop offset="0.90" stop-color="#3D8EA9" stop-opacity="0.12"/>
+      <stop offset="1" stop-color="#3D8EA9" stop-opacity="0"/>
+    </radialGradient>
+
+
+    <radialGradient id="bodyDarkness" cx="62.0" cy="32.0" r="64.0" gradientUnits="userSpaceOnUse">
+      <stop offset="0.0" stop-color="#476F82"/>
+      <stop offset="0.35" stop-color="#90A0AC"/>
+      <stop offset="0.7" stop-color="#A39E95"/>
+      <stop offset="1.0" stop-color="#99ABAD"/>
+    </radialGradient>
+    <linearGradient id="sheenDarkness" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#D2D9E0" stop-opacity="0"/>
+      <stop offset="0.06" stop-color="#EFF2F4" stop-opacity="0.04"/>
+      <stop offset="0.14" stop-color="#FFFFFF" stop-opacity="0.38"/>
+      <stop offset="0.86" stop-color="#FFFFFF" stop-opacity="0.38"/>
+      <stop offset="0.94" stop-color="#EFF2F4" stop-opacity="0.48"/>
+      <stop offset="1" stop-color="#D2D9E0" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="sheenMaskGradientDarkness" gradientUnits="userSpaceOnUse" cx="50" cy="50" r="50">
+      <stop offset="0.72" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="0.78" stop-color="#FFFFFF" stop-opacity="0.64"/>
+      <stop offset="0.85" stop-color="#FFFFFF" stop-opacity="1"/>
+      <stop offset="0.94" stop-color="#FFFFFF" stop-opacity="0.72"/>
+      <stop offset="0.98" stop-color="#FFFFFF" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+    <mask id="sheenMaskDarkness" maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100">
+      <path d="M 4.6 31.5 A 49 49 0 0 1 31.5 4.6 A 7.5 7.5 0 0 1 37.3 18.5 A 34 34 0 0 0 18.5 36.3 A 7.5 7.5 0 0 1 4.6 31.5 Z" fill="url(#sheenMaskGradientDarkness)"/>
+    </mask>
+  </defs>
+  <circle cx="50" cy="50" r="50" fill="url(#backgroundDarkness)"/>
+
+  <path d="M 61.1 18.4 C 64.0 21.3 65.8 25.3 65.8 29.7 C 65.8 39.7 56.8 47.3 46.6 45.2 C 40.4 44.0 35.6 38.9 34.5 32.8 C 33.4 27.3 35.2 22.1 38.9 18.4 L 42.5 18.4 L 42.5 28.5 A 7.5 7.5 0 0 0 57.5 28.5 L 57.5 18.4 Z" fill="url(#darknessInnerHighlightDarkness)"/>
+
+  <path d="M347 13C485 13 597 110 597 230C597 327 523 409 422 437C420 438 418 435 419 433C438 414 450 388 450 359C450 294 391 244 324 258C284 266 252 299 245 339C238 375 250 409 274 433C276 435 274 438 271 437C170 409 96 327 96 230C96 110 208 13 347 13Z" transform="translate(50.0 50.0) scale(0.152958) translate(-346.5 226.5) scale(1 -1)" fill="#080A0B"/>
+  <g clip-path="url(#orbClipDarkness)">
+    <ellipse cx="80" cy="80" rx="37" ry="21" transform="rotate(-45 80 80)" fill="url(#darknessHighlightDarkness)" opacity="0.9"/>
+  </g>
+</svg>

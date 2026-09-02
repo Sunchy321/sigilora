@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <clipPath id="orbClipFairy" clipPathUnits="userSpaceOnUse"><circle cx="50" cy="50" r="50"/></clipPath>
+    <linearGradient id="backgroundFairy" x1="0.146" y1="0.854" x2="0.854" y2="0.146">
+      <stop offset="0.000" stop-color="#76142B"/>
+      <stop offset="0.500" stop-color="#E53289"/>
+      <stop offset="1.000" stop-color="#ECBACA"/>
+    </linearGradient>
+
+
+
+
+    <radialGradient id="bodyFairy" cx="65.0" cy="28.999999999999996" r="62.0" gradientUnits="userSpaceOnUse">
+      <stop offset="0.0" stop-color="#F4B2BF"/>
+      <stop offset="0.35" stop-color="#E85D94"/>
+      <stop offset="0.7" stop-color="#E02E4D"/>
+      <stop offset="1.0" stop-color="#A41238"/>
+    </radialGradient>
+    <linearGradient id="sheenFairy" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#FCEFF3" stop-opacity="0"/>
+      <stop offset="0.06" stop-color="#FEF9FB" stop-opacity="0.04"/>
+      <stop offset="0.14" stop-color="#FFFFFF" stop-opacity="0.38"/>
+      <stop offset="0.86" stop-color="#FFFFFF" stop-opacity="0.38"/>
+      <stop offset="0.94" stop-color="#FEF9FB" stop-opacity="0.36"/>
+      <stop offset="1" stop-color="#FCEFF3" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="sheenMaskGradientFairy" gradientUnits="userSpaceOnUse" cx="50" cy="50" r="50">
+      <stop offset="0.72" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="0.78" stop-color="#FFFFFF" stop-opacity="0.64"/>
+      <stop offset="0.85" stop-color="#FFFFFF" stop-opacity="1"/>
+      <stop offset="0.94" stop-color="#FFFFFF" stop-opacity="0.72"/>
+      <stop offset="0.98" stop-color="#FFFFFF" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+    <mask id="sheenMaskFairy" maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100">
+      <path d="M 4.6 31.5 A 49 49 0 0 1 31.5 4.6 A 7.5 7.5 0 0 1 37.3 18.5 A 34 34 0 0 0 18.5 36.3 A 7.5 7.5 0 0 1 4.6 31.5 Z" fill="url(#sheenMaskGradientFairy)"/>
+    </mask>
+  </defs>
+  <circle cx="50" cy="50" r="50" fill="url(#backgroundFairy)"/>
+  <circle cx="50" cy="50" r="50" fill="url(#bodyFairy)" opacity="0.48"/>
+
+
+  <path d="M339 -37C339 -36 336 91 238 145C173 180 141 228 141 290C141 360 182 420 182 420C183 421 183 423 182 424C181 424 180 425 179 424C178 423 87 363 87 225C87 5 333 -39 336 -40C337 -40 337 -39 338 -39C338 -38 339 -38 339 -37ZM607 225C607 363 517 423 516 424C515 425 513 424 512 424C511 423 511 421 512 420C513 420 554 360 554 290C554 228 522 180 456 145C358 91 356 -36 356 -37C356 -38 356 -38 357 -39C357 -39 358 -40 359 -40C361 -39 607 5 607 225ZM386 275C407 314 454 343 493 362C496 363 498 367 497 370C495 373 492 375 489 374C469 369 453 364 432 364C419 364 409 366 401 370C369 386 361 440 353 470C353 470 353 470 353 471C352 471 352 471 352 471C352 472 352 472 351 472C351 473 351 473 350 473C350 473 350 473 349 473C349 474 349 474 348 474C348 474 348 474 347 474C347 474 346 474 345 474C345 473 344 473 343 472C343 472 343 472 342 471C342 471 342 471 342 471C342 470 342 470 341 469C341 468 328 387 294 370C286 366 275 364 262 364C248 364 234 367 205 374C202 375 199 373 198 370C197 367 198 364 201 362C202 362 281 326 308 275C330 233 333 184 342 138C342 138 342 137 342 137C342 137 342 136 342 136C343 136 343 135 343 135C343 135 344 135 345 134C345 134 346 134 346 134C346 134 347 133 348 134C349 134 349 134 350 134C350 134 350 134 350 135C351 135 351 135 351 135C352 135 352 136 352 136C352 136 353 137 353 137C353 137 353 138 353 139C358 181 367 238 386 275Z" transform="translate(50.0 50.0) scale(0.158730) translate(-346.5 226.5) scale(1 -1)" fill="#1E1415"/>
+  <g clip-path="url(#orbClipFairy)">
+    <path d="M 4.6 31.5 A 49 49 0 0 1 31.5 4.6 A 7.5 7.5 0 0 1 37.3 18.5 A 34 34 0 0 0 18.5 36.3 A 7.5 7.5 0 0 1 4.6 31.5 Z" fill="url(#sheenFairy)" mask="url(#sheenMaskFairy)" opacity="0.86"/>
+    <path d="M 8.1 28.6 A 47 47 0 0 1 28.6 8.1 A 4.2 4.2 0 0 1 32.7 16.2 A 38 38 0 0 0 16.2 32.7 A 4.2 4.2 0 0 1 8.1 28.6 Z" fill="#FFFFFF" opacity="0.86"/>
+  </g>
+</svg>

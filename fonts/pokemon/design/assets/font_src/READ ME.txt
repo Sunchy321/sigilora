@@ -1,0 +1,15 @@
+Thank you for downloading the Essentiarum TCG font!
+
+Just a quick heads up: there are four versions of this font:
+* XXXX-COLR.otf = intended for web browsers
+* XXXX-SVG.otf = intended for apps like Adobe Photoshop
+* XXXX-sbix.ttf = intended for Apple-related apps
+* XXXX-CBDT.ttf = intended for Google-related apps
+
+If one version doesn't work, try the other. If NONE of these work, let me know! Email me nick15@pokemonaaah.net
+
+If anything, I've included a copy of the older EssentiarumTCG v0.96 font just in case nothing works and you still need a decent TCG font.
+
+Please enjoy!
+
+— Nick15

@@ -1,0 +1,262 @@
+{
+  "Grass": {
+    "letter": "G",
+    "body": [
+      "#B4D43A",
+      "#7EAF29",
+      "#1E6E1D",
+      "#005A29"
+    ],
+    "symbol": "#0B1900",
+    "sheen": "#99BB8B",
+    "sheen_rel": [
+      -0.44,
+      -0.44
+    ],
+    "scale": 1.0,
+    "background": ["#00782F", "#4BAE37"],
+    "background_angle": -45,
+    "body_center": [0.64, 0.30],
+    "body_radius": 0.62,
+    "highlight_size": [14, 18],
+    "highlight_angle": 30,
+    "highlight_opacity": [0.86, 0.34]
+  },
+  "Fire": {
+    "letter": "R",
+    "body": [
+      "#F06A57",
+      "#DD3B38",
+      "#B21D28",
+      "#8F1622"
+    ],
+    "symbol": "#2A030B",
+    "sheen": "#F6C0B2",
+    "sheen_rel": [
+      -0.44,
+      -0.44
+    ],
+    "scale": 1.0,
+    "background": ["#B41824", "#EB5D4F"],
+    "background_angle": -45,
+    "body_center": [0.66, 0.30],
+    "body_radius": 0.62,
+    "highlight_size": [14, 18],
+    "highlight_angle": 30,
+    "highlight_opacity": [0.88, 0.38]
+  },
+  "Water": {
+    "letter": "W",
+    "body": [
+      "#0DA1D9",
+      "#2092B9",
+      "#034861",
+      "#032F44"
+    ],
+    "symbol": "#070D10",
+    "sheen": "#97D6F4",
+    "sheen_rel": [
+      -0.44,
+      -0.44
+    ],
+    "scale": 1.0,
+    "background": ["#03486A", "#00B3ED"],
+    "background_angle": -45,
+    "body_center": [0.68, 0.30],
+    "body_radius": 0.64,
+    "highlight_size": [14, 18],
+    "highlight_angle": 30,
+    "highlight_opacity": [0.82, 0.34]
+  },
+  "Lightning": {
+    "letter": "L",
+    "body": [
+      "#FFD800",
+      "#F8C300",
+      "#E4A900",
+      "#BF7900"
+    ],
+    "symbol": "#251700",
+    "sheen": "#FFEC99",
+    "sheen_rel": [
+      -0.44,
+      -0.44
+    ],
+    "scale": 0.94,
+    "background": ["#D08A00", "#F5B500"],
+    "background_angle": -45,
+    "body_center": [0.64, 0.28],
+    "body_radius": 0.62,
+    "highlight_size": [14, 18],
+    "highlight_angle": 30,
+    "highlight_opacity": [0.90, 0.38]
+  },
+  "Psychic": {
+    "letter": "P",
+    "body": [
+      "#DCA0C4",
+      "#B76FA9",
+      "#87428F",
+      "#6A2C7F"
+    ],
+    "symbol": "#1B0011",
+    "sheen": "#E4C8DF",
+    "sheen_rel": [
+      -0.44,
+      -0.44
+    ],
+    "scale": 1.0,
+    "background": ["#71388B", "#D08FBC"],
+    "background_angle": -45,
+    "body_center": [0.65, 0.27],
+    "body_radius": 0.64,
+    "highlight_size": [14, 18],
+    "highlight_angle": 30,
+    "highlight_opacity": [0.82, 0.34]
+  },
+  "Fighting": {
+    "letter": "F",
+    "body": [
+      "#E26A24",
+      "#C84A18",
+      "#8D250F",
+      "#5A180B"
+    ],
+    "symbol": "#2A0800",
+    "sheen": "#FFD4AF",
+    "sheen_rel": [
+      -0.44,
+      -0.44
+    ],
+    "scale": 0.94,
+    "background": ["#A52E0F", "#E15B1A"],
+    "background_angle": -45,
+    "body_opacity": 0.30,
+    "body_center": [0.66, 0.30],
+    "body_radius": 0.62,
+    "highlight_size": [14, 18],
+    "highlight_angle": 30,
+    "highlight_opacity": [0.82, 0.32]
+  },
+  "Darkness": {
+    "letter": "D",
+    "body": [
+      "#426778",
+      "#85949F",
+      "#97928A",
+      "#8E9EA0"
+    ],
+    "symbol": "#080A0B",
+    "sheen": "#D2D9E0",
+    "sheen_rel": [
+      -0.44,
+      -0.44
+    ],
+    "scale": 1.06,
+    "background": ["#000000", "#4D9CB5"],
+    "background_angle": 45,
+    "body_opacity": 0.14,
+    "body_center": [0.62, 0.32],
+    "body_radius": 0.64,
+    "highlight_size": [14, 18],
+    "highlight_angle": 30,
+    "highlight_opacity": [0.92, 0.48]
+  },
+  "Metal": {
+    "letter": "M",
+    "body": [
+      "#A29E93",
+      "#ACAAA5",
+      "#AFA898",
+      "#555A56"
+    ],
+    "symbol": "#101719",
+    "sheen": "#FDFDFB",
+    "sheen_rel": [
+      -0.44,
+      -0.44
+    ],
+    "scale": 1.0,
+    "background": ["#353B33", "#F3F2EA"],
+    "background_angle": -45,
+    "body_center": [0.60, 0.32],
+    "body_radius": 0.66,
+    "highlight_size": [14, 18],
+    "highlight_angle": 30,
+    "highlight_opacity": [0.95, 0.42]
+  },
+  "Fairy": {
+    "letter": "Y",
+    "body": [
+      "#F4B2BF",
+      "#E85D94",
+      "#E02E4D",
+      "#A41238"
+    ],
+    "symbol": "#1E1415",
+    "sheen": "#FCEFF3",
+    "sheen_rel": [
+      -0.44,
+      -0.44
+    ],
+    "scale": 1.1,
+    "background": ["#76142B", "#E53289", "#ECBACA"],
+    "background_angle": -45,
+    "body_center": [0.65, 0.29],
+    "body_radius": 0.62,
+    "body_opacity": 0.48,
+    "color_gain": 1.0,
+    "highlight_size": [14, 18],
+    "highlight_angle": 30,
+    "highlight_opacity": [0.86, 0.36]
+  },
+  "Dragon": {
+    "letter": "N",
+    "body": [
+      "#807849",
+      "#ADA158",
+      "#4B4013",
+      "#694423"
+    ],
+    "symbol": "#16150E",
+    "sheen": "#F4F6E8",
+    "sheen_rel": [
+      -0.44,
+      -0.44
+    ],
+    "scale": 0.94,
+    "background": ["#171714", "#D0AF25"],
+    "background_angle": -45,
+    "body_center": [0.64, 0.30],
+    "body_radius": 0.64,
+    "body_opacity": 0.68,
+    "highlight_size": [14, 18],
+    "highlight_angle": 30,
+    "highlight_opacity": [0.84, 0.34]
+  },
+  "Colorless": {
+    "letter": "C",
+    "body": [
+      "#E3E4E4",
+      "#ECECEC",
+      "#E1E1E2",
+      "#B9BABA"
+    ],
+    "symbol": "#282524",
+    "sheen": "#FEFEFE",
+    "sheen_rel": [
+      -0.44,
+      -0.44
+    ],
+    "scale": 1.0,
+    "background": ["#8A8B8B", "#FFFFFF", "#8A8B8B"],
+    "background_angle": -45,
+    "color_gain": 1.0,
+    "body_opacity": 0.36,
+    "body_center": [0.60, 0.32],
+    "body_radius": 0.66,
+    "highlight_size": [14, 18],
+    "highlight_angle": 30,
+    "highlight_opacity": [0.85, 0.34]
+  }
+}
