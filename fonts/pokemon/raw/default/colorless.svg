@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <clipPath id="orbClipColorless" clipPathUnits="userSpaceOnUse"><circle cx="50" cy="50" r="50"/></clipPath>
+    <linearGradient id="backgroundColorless" x1="0.146" y1="0.854" x2="0.854" y2="0.146">
+      <stop offset="0.000" stop-color="#8A8B8B"/>
+      <stop offset="0.500" stop-color="#FFFFFF"/>
+      <stop offset="1.000" stop-color="#8A8B8B"/>
+    </linearGradient>
+
+
+
+
+    <radialGradient id="bodyColorless" cx="60.0" cy="32.0" r="66.0" gradientUnits="userSpaceOnUse">
+      <stop offset="0.0" stop-color="#E3E4E4"/>
+      <stop offset="0.35" stop-color="#ECECEC"/>
+      <stop offset="0.7" stop-color="#E1E1E2"/>
+      <stop offset="1.0" stop-color="#B9BABA"/>
+    </radialGradient>
+    <linearGradient id="sheenColorless" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#FEFEFE" stop-opacity="0"/>
+      <stop offset="0.06" stop-color="#FFFFFF" stop-opacity="0.04"/>
+      <stop offset="0.14" stop-color="#FFFFFF" stop-opacity="0.38"/>
+      <stop offset="0.86" stop-color="#FFFFFF" stop-opacity="0.38"/>
+      <stop offset="0.94" stop-color="#FFFFFF" stop-opacity="0.34"/>
+      <stop offset="1" stop-color="#FEFEFE" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="sheenMaskGradientColorless" gradientUnits="userSpaceOnUse" cx="50" cy="50" r="50">
+      <stop offset="0.72" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="0.78" stop-color="#FFFFFF" stop-opacity="0.64"/>
+      <stop offset="0.85" stop-color="#FFFFFF" stop-opacity="1"/>
+      <stop offset="0.94" stop-color="#FFFFFF" stop-opacity="0.72"/>
+      <stop offset="0.98" stop-color="#FFFFFF" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+    <mask id="sheenMaskColorless" maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100">
+      <path d="M 4.6 31.5 A 49 49 0 0 1 31.5 4.6 A 7.5 7.5 0 0 1 37.3 18.5 A 34 34 0 0 0 18.5 36.3 A 7.5 7.5 0 0 1 4.6 31.5 Z" fill="url(#sheenMaskGradientColorless)"/>
+    </mask>
+  </defs>
+  <circle cx="50" cy="50" r="50" fill="url(#backgroundColorless)"/>
+  <circle cx="50" cy="50" r="50" fill="url(#bodyColorless)" opacity="0.36"/>
+
+
+  <path d="M588 84C591 83 593 87 591 89C560 116 467 200 467 227C466 253 560 337 591 364C593 366 591 370 588 369C549 356 430 318 406 330C383 343 357 466 349 507C348 509 344 509 344 507C335 466 309 344 287 330C264 316 144 355 105 368C102 369 100 366 103 364C133 336 226 253 227 226C228 199 134 115 103 88C101 86 103 83 106 84C145 96 264 135 287 122C311 110 336 -14 345 -54C345 -57 349 -57 350 -54C358 -14 384 109 407 123C430 137 549 97 588 84Z" transform="translate(50.0 50.0) scale(0.144300) translate(-346.5 226.5) scale(1 -1)" fill="#282524"/>
+  <g clip-path="url(#orbClipColorless)">
+    <path d="M 4.6 31.5 A 49 49 0 0 1 31.5 4.6 A 7.5 7.5 0 0 1 37.3 18.5 A 34 34 0 0 0 18.5 36.3 A 7.5 7.5 0 0 1 4.6 31.5 Z" fill="url(#sheenColorless)" mask="url(#sheenMaskColorless)" opacity="0.85"/>
+    <path d="M 8.1 28.6 A 47 47 0 0 1 28.6 8.1 A 4.2 4.2 0 0 1 32.7 16.2 A 38 38 0 0 0 16.2 32.7 A 4.2 4.2 0 0 1 8.1 28.6 Z" fill="#FFFFFF" opacity="0.85"/>
+  </g>
+</svg>

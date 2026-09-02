@@ -1,0 +1,82 @@
+# Pokémon TCG energy symbol font mappings.
+# Each energy converts through the standard liga feature from both a bracket
+# ([G]) and brace ({G}) representation of the energy type's single letter.
+# The letters follow the community EssentiarumTCG font convention that the
+# icon reconstruction was extracted from: C colorless, D darkness, F fighting,
+# G grass, L lightning, M metal, N dragon, P psychic, R fire, W water, Y fairy.
+
+[[symbols]]
+name = "grass"
+ligature = ["[G]", "{G}"]
+category = "energy"
+svg = { default = "grass.svg" }
+
+
+[[symbols]]
+name = "fire"
+ligature = ["[R]", "{R}"]
+category = "energy"
+svg = { default = "fire.svg" }
+
+
+[[symbols]]
+name = "water"
+ligature = ["[W]", "{W}"]
+category = "energy"
+svg = { default = "water.svg" }
+
+
+[[symbols]]
+name = "lightning"
+ligature = ["[L]", "{L}"]
+category = "energy"
+svg = { default = "lightning.svg" }
+
+
+[[symbols]]
+name = "psychic"
+ligature = ["[P]", "{P}"]
+category = "energy"
+svg = { default = "psychic.svg" }
+
+
+[[symbols]]
+name = "fighting"
+ligature = ["[F]", "{F}"]
+category = "energy"
+svg = { default = "fighting.svg" }
+
+
+[[symbols]]
+name = "darkness"
+ligature = ["[D]", "{D}"]
+category = "energy"
+svg = { default = "darkness.svg" }
+
+
+[[symbols]]
+name = "metal"
+ligature = ["[M]", "{M}"]
+category = "energy"
+svg = { default = "metal.svg" }
+
+
+[[symbols]]
+name = "fairy"
+ligature = ["[Y]", "{Y}"]
+category = "energy"
+svg = { default = "fairy.svg" }
+
+
+[[symbols]]
+name = "dragon"
+ligature = ["[N]", "{N}"]
+category = "energy"
+svg = { default = "dragon.svg" }
+
+
+[[symbols]]
+name = "colorless"
+ligature = ["[C]", "{C}"]
+category = "energy"
+svg = { default = "colorless.svg" }

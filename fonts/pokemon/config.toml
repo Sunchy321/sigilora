@@ -1,0 +1,12 @@
+name = "Pokémon TCG"
+code = "pokemon"
+font-version = "0.1.0"
+colr-version = "v1"
+
+[[categories]]
+name = "energy"
+
+[[styles]]
+name = "default"
+
+[compose]
