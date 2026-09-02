@@ -2,8 +2,9 @@
 import magicJson from '~/data/magic.json'
 import lorcanaJson from '~/data/lorcana.json'
 import riftboundJson from '~/data/riftbound.json'
+import pokemonJson from '~/data/pokemon.json'
 
-const manifests = [magicJson, lorcanaJson, riftboundJson]
+const manifests = [magicJson, lorcanaJson, riftboundJson, pokemonJson]
 </script>
 
 <template>

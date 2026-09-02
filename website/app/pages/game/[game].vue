@@ -2,9 +2,11 @@
 import magicJson from '~/data/magic.json'
 import lorcanaJson from '~/data/lorcana.json'
 import riftboundJson from '~/data/riftbound.json'
+import pokemonJson from '~/data/pokemon.json'
 import magicSymbols from '~/data/magic-symbols.json'
 import lorcanaSymbols from '~/data/lorcana-symbols.json'
 import riftboundSymbols from '~/data/riftbound-symbols.json'
+import pokemonSymbols from '~/data/pokemon-symbols.json'
 
 interface GameManifest {
   game: string
@@ -26,8 +28,8 @@ interface GameSymbol {
 const route = useRoute()
 const { t, tm, rt } = useI18n()
 
-const manifests = { magic: magicJson, lorcana: lorcanaJson, riftbound: riftboundJson } as Record<string, GameManifest>
-const symbolSets = { magic: magicSymbols, lorcana: lorcanaSymbols, riftbound: riftboundSymbols } as Record<string, GameSymbol[]>
+const manifests = { magic: magicJson, lorcana: lorcanaJson, riftbound: riftboundJson, pokemon: pokemonJson } as Record<string, GameManifest>
+const symbolSets = { magic: magicSymbols, lorcana: lorcanaSymbols, riftbound: riftboundSymbols, pokemon: pokemonSymbols } as Record<string, GameSymbol[]>
 
 const game = computed(() => (route.params.game as string) || 'magic')
 const manifest = computed(() => manifests[game.value]!)
@@ -52,6 +54,7 @@ const htmlSamples: Record<string, { sym: string; plain: string }> = {
   magic: { sym: '{W}{U}{R}', plain: 'Lightning Bolt' },
   lorcana: { sym: '{S}{W}', plain: 'A character' },
   riftbound: { sym: '[R][M]', plain: 'Fury unit' },
+  pokemon: { sym: '[G][R][W]', plain: 'a fully charged Grass board' },
 }
 const htmlCode = computed(() => {
   const s = htmlSamples[game.value] ?? { sym: '', plain: '' }

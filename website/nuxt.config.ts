@@ -21,6 +21,7 @@ export default defineNuxtConfig({
         { rel: 'stylesheet', href: '/fonts/magic/magic.css' },
         { rel: 'stylesheet', href: '/fonts/lorcana/lorcana.css' },
         { rel: 'stylesheet', href: '/fonts/riftbound/riftbound.css' },
+        { rel: 'stylesheet', href: '/fonts/pokemon/pokemon.css' },
       ],
     },
   },

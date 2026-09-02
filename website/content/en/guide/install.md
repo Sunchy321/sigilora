@@ -51,13 +51,26 @@ import '@sigilora/fonts/riftbound.css'
 }
 ```
 
-Matching game text is converted to color symbols automatically through the standard `liga` feature — for example `{W}{U}{B}{R}{G}` in Magic, `{S}{W}{L}{I}` in Lorcana, or `[R][M]` in Riftbound.
+For Pokémon TCG:
+
+```js
+import '@sigilora/fonts/pokemon.css'
+```
+
+```css
+.sigilora-pokemon {
+  font-family: 'Sigilora Pokemon', serif;
+}
+```
+
+Matching game text is converted to color symbols automatically through the standard `liga` feature — for example `{W}{U}{B}{R}{G}` in Magic, `{S}{W}{L}{I}` in Lorcana, `[R][M]` in Riftbound, or `[G]`/`{G}` in Pokémon TCG.
 
 ## Supported games
 
 - **Magic: The Gathering** — import `@sigilora/fonts/magic.css`, font family `Sigilora Magic`. Symbols such as `{W}`, `{U}`, `{B}`, `{R}`, `{G}`, `{T}`, `[+1]`…
 - **Lorcana** — import `@sigilora/fonts/lorcana.css`, font family `Sigilora Lorcana`. Symbols such as `{S}`, `{W}`, `{L}`, `{M}`, `{I}`, `{C}`, `{E}`…
 - **Riftbound** — import `@sigilora/fonts/riftbound.css`, font family `Sigilora Riftbound`. Symbols such as `[E]`, `[M]`, `[R]`, `[A]`, `[2]`…
+- **Pokémon TCG** — import `@sigilora/fonts/pokemon.css`, font family `Sigilora Pokemon`. Energy symbols such as `[G]`, `[R]`, `[W]`, `[L]`, `[P]`, `[C]`…
 
 ## Font families
 

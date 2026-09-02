@@ -27,6 +27,7 @@ const navSections = computed(() => [
       { label: t('game-name.magic'), to: '/docs/guide/changelog-magic' },
       { label: t('game-name.lorcana'), to: '/docs/guide/changelog-lorcana' },
       { label: t('game-name.riftbound'), to: '/docs/guide/changelog-riftbound' },
+      { label: t('game-name.pokemon'), to: '/docs/guide/changelog-pokemon' },
     ],
   },
 ])

@@ -51,13 +51,26 @@ import '@sigilora/fonts/riftbound.css'
 }
 ```
 
-匹配的游戏文本会通过标准 `liga` 特性自动转换为彩色符号——例如 Magic 中的 `{W}{U}{B}{R}{G}`、Lorcana 中的 `{S}{W}{L}{I}`，或符文战场中的 `[R][M]`。
+以宝可梦卡牌（Pokémon TCG）为例：
+
+```js
+import '@sigilora/fonts/pokemon.css'
+```
+
+```css
+.sigilora-pokemon {
+  font-family: 'Sigilora Pokemon', serif;
+}
+```
+
+匹配的游戏文本会通过标准 `liga` 特性自动转换为彩色符号——例如 Magic 中的 `{W}{U}{B}{R}{G}`、Lorcana 中的 `{S}{W}{L}{I}`、符文战场中的 `[R][M]`，或宝可梦卡牌中的 `[G]`/`{G}`。
 
 ## 支持的游戏
 
 - **万智牌（Magic: The Gathering）** —— 导入 `@sigilora/fonts/magic.css`，字体族 `Sigilora Magic`。符号如 `{W}`、`{U}`、`{B}`、`{R}`、`{G}`、`{T}`、`[+1]`……
 - **洛卡纳（Lorcana）** —— 导入 `@sigilora/fonts/lorcana.css`，字体族 `Sigilora Lorcana`。符号如 `{S}`、`{W}`、`{L}`、`{M}`、`{I}`、`{C}`、`{E}`……
 - **符文战场（Riftbound）** —— 导入 `@sigilora/fonts/riftbound.css`，字体族 `Sigilora Riftbound`。符号如 `[E]`、`[M]`、`[R]`、`[A]`、`[2]`……
+- **宝可梦卡牌（Pokémon TCG）** —— 导入 `@sigilora/fonts/pokemon.css`，字体族 `Sigilora Pokemon`。能量符号如 `[G]`、`[R]`、`[W]`、`[L]`、`[P]`、`[C]`……
 
 ## 字体族
 

@@ -2,9 +2,10 @@
 import magicJson from '~/data/magic.json'
 import lorcanaJson from '~/data/lorcana.json'
 import riftboundJson from '~/data/riftbound.json'
+import pokemonJson from '~/data/pokemon.json'
 
 const { t } = useI18n()
-const manifests = [magicJson, lorcanaJson, riftboundJson]
+const manifests = [magicJson, lorcanaJson, riftboundJson, pokemonJson]
 
 const columns = computed(() => [
   { accessorKey: 'family', header: t('games.family') },
